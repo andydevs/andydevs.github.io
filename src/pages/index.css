@@ -1,0 +1,17 @@
+* {
+    font-family: 'Consolas', Arial;
+    font-weight: 100;
+}
+
+body {
+    margin: 0;
+}
+
+a::before {
+    content: '>';
+}
+a {
+    text-decoration: none;
+    margin-left: 2pt;
+    margin-right: 2pt;
+}

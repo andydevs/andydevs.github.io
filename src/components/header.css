@@ -1,0 +1,24 @@
+.header {
+    margin: 0pt;
+    background-color: lightblue;
+}
+
+.navbar {
+    padding: 16pt;
+}
+
+.title {
+    margin: 80pt 20pt;
+    display: inline-block;
+}
+.title-upper {
+    margin: 0;
+    font-size: 42pt;
+    border-bottom: 2pt solid gray;
+}
+.title-lower {
+    margin: 0;
+    font-size: 14pt;
+    text-align: right;
+    color: gray;
+}

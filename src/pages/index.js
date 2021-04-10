@@ -6,9 +6,23 @@ import Skills from "../components/skills"
 import Work from "../components/work";
 import Contact from "../components/contact"
 import Footer from "../components/footer"
+import { graphql } from "gatsby"
 import "./index.css"
 
-export default function Home() {
+export const query = graphql`
+    query PageQuery {
+        contentJson {
+            projects {
+                title,
+                description,
+                website,
+                github
+            }
+        }
+    }
+`
+
+export default function Home({ data }) {
     return (
         <div>
             <div id='app-root'>
@@ -20,7 +34,7 @@ export default function Home() {
                         you can find it <a href="#">Here</a>
                     </p>
 
-                    <Projects/>
+                    <Projects projects={data.contentJson.projects}/>
                     <Education/>
                     <Skills/>
                     <Work/>

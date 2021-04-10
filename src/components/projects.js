@@ -1,47 +1,22 @@
 import React from "react"
+import Project from "./project"
 
-export default function Projects() {
+export default function Projects({ projects }) {
+    console.log(projects)
+
     return (
         <section className="projects">
             <h2>Projects</h2>
-
-            {/* The projects are in a list */}
             <div>
-
-                <div>
-                    <h3>Andy's Notebook</h3>
-                    <p>
-                        Image
-                    </p>
-                    <p>
-                        Ongoing project where I demo
-                        and experiement with different
-                        programming and data science
-                        things in Jupyter Notebook
-                    </p>
-                    <p>
-                        <a href="https://github.com/andydevs/andys-notebook">GitHub</a>
-                        <a href="https://andydevs.github.io/andys-notebook">Website</a>
-                    </p>
-                </div>
-
-                <div>
-                    <h3>Blocky's Adventure in Blockworld</h3>
-                    <p>
-                        Image
-                    </p>
-                    <p>
-                        My first videogame... it's not anything
-                        to write home about. It serves as a testbench
-                        for learning about different elements of game
-                        design
-                    </p>
-                    <p>
-                        <a href="https://github.com/andydevs/blockys-adventure-in-blockworld">GitHub</a>
-                        <a href="https://github.com/andydevs/blockys-adventure-in-blockworld/releases">Releases</a>
-                    </p>
-                </div>
-
+                {projects.map(
+                    ({ id, title, description, github, website }) => 
+                        <Project
+                            key={id}
+                            title={title}
+                            description={description}
+                            github={github}
+                            website={website}/>
+                )}
             </div>
 
         </section>

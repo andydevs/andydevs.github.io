@@ -11,21 +11,23 @@ import "./index.css"
 export default function Home() {
     return (
         <div>
-            <Header/>
-            <main>
-                {/* Blog redirect notice */}
-                <p>
-                    If you're looking for the old blog,
-                    you can find it <a href="#">Here</a>
-                </p>
+            <div id='app-root'>
+                <Header/>
+                <main>
+                    {/* Blog redirect notice */}
+                    <p>
+                        If you're looking for the old blog,
+                        you can find it <a href="#">Here</a>
+                    </p>
 
-                <Projects/>
-                <Education/>
-                <Skills/>
-                <Work/>
-                <Contact/>
-            </main>
-            <Footer/>
+                    <Projects/>
+                    <Education/>
+                    <Skills/>
+                    <Work/>
+                    <Contact/>
+                </main>
+                <Footer/>
+            </div>
         </div>
     )
 }

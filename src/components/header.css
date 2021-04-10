@@ -1,10 +1,17 @@
 .header {
     margin: 0pt;
-    background-color: lightblue;
+    background-color:var(--primary-color);
+    color: white;
+    border-radius: 16pt;
 }
 
 .navbar {
     padding: 16pt;
+}
+
+.nav-link {
+    color: white;
+    margin-right: 12pt;
 }
 
 .title {
@@ -14,11 +21,11 @@
 .title-upper {
     margin: 0;
     font-size: 42pt;
-    border-bottom: 2pt solid gray;
+    border-bottom: 2pt solid #aaa;
 }
 .title-lower {
     margin: 0;
     font-size: 14pt;
     text-align: right;
-    color: gray;
+    color: #aaa;
 }

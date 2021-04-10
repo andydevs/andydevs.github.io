@@ -2,7 +2,7 @@ import React from "react"
 
 export default function Projects() {
     return (
-        <section>
+        <section className="projects">
             <h2>Projects</h2>
 
             {/* The projects are in a list */}

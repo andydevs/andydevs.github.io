@@ -5,6 +5,17 @@
  */
 
 module.exports = {
-  /* Your site config here */
-  plugins: [],
+    siteMetadata: {
+        title: `Andydevs`,
+    },
+    plugins: [
+        `gatsby-transformer-json`,
+        {
+            resolve: `gatsby-source-filesystem`,
+            options: {
+                name: `content`,
+                path: `${__dirname}/content/`,
+            },
+        }
+    ],
 }

@@ -2,7 +2,7 @@ import React from "react"
 
 export default function Education() {
     return (
-        <section>
+        <section className="education">
             <h2>Education</h2>
             <div>
                 <p>Drexel University</p>

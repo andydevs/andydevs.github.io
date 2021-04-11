@@ -6,11 +6,24 @@ import Skills from "../sections/skills"
 import Work from "../sections/work";
 import Contact from "../sections/contact"
 import Footer from "../sections/footer"
+import { Helmet } from "react-helmet";
+import { graphql, useStaticQuery } from "gatsby";
 import "./index.css"
 
-export default function Home({ data }) {
+export default function Home() {
+    const { site } = useStaticQuery(graphql`
+        query SiteWideQuery {
+            site {
+                siteMetadata {
+                    title
+                }
+            }
+        }
+    `)
+
     return (
         <div>
+            <Helmet title={site.siteMetadata.title}/>
             <div id='app-root'>
                 <Header/>
                 <main>

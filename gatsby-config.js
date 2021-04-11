@@ -7,8 +7,10 @@
 module.exports = {
     siteMetadata: {
         title: `Andydevs`,
+        desctiption: 'Hobbyist developer and software engineer. This website showcases projects and work experience'
     },
     plugins: [
+        `gatsby-plugin-react-helmet`,
         `gatsby-transformer-json`,
         {
             resolve: `gatsby-source-filesystem`,

@@ -3,9 +3,9 @@ import { graphql, useStaticQuery } from "gatsby";
 import Project from "../components/project"
 
 export default function Projects() {
-    const { contentJson } = useStaticQuery(graphql`
+    const { contentYaml: { projects } } = useStaticQuery(graphql`
         query ProjectsQuery {
-            contentJson {
+            contentYaml {
                 projects {
                     id,
                     title,
@@ -21,7 +21,7 @@ export default function Projects() {
         <section className="projects">
             <h2>Projects</h2>
             <div>
-                {contentJson.projects.map(
+                {projects.map(
                     ({ id, title, description, github, website }) => 
                         <Project
                             key={id}

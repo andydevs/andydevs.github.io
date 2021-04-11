@@ -3,14 +3,17 @@ import React from "react"
 const GitHubLink = ({ repo }) =>
     <a href={"https://github.com/andydevs/" + repo}>GitHub</a>
 
-export default function Project(props) {
+const WebsiteLink = ({ url }) =>
+    <a href={url}>Website</a>
+
+export default function Project({ title, description, website, github }) {
     return (
         <div>
-            <h3>{ props.title }</h3>
-            <p>{ props.description }</p>
+            <h3>{ title }</h3>
+            <p>{ description }</p>
             <p>
-                { props.website && <a href={props.website}>Website</a> }
-                { props.github && <GitHubLink repo={props.github}/> }
+                { website && <WebsiteLink url={website}/> }
+                { github && <GitHubLink repo={github}/> }
             </p>
         </div>
     )

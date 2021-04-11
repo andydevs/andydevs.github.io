@@ -1,11 +1,11 @@
 import React from "react"
-import Header from "../components/header"
-import Projects from "../components/projects"
-import Education from "../components/education"
-import Skills from "../components/skills"
-import Work from "../components/work";
-import Contact from "../components/contact"
-import Footer from "../components/footer"
+import Header from "../sections/header"
+import Projects from "../sections/projects"
+import Education from "../sections/education"
+import Skills from "../sections/skills"
+import Work from "../sections/work";
+import Contact from "../sections/contact"
+import Footer from "../sections/footer"
 import "./index.css"
 
 export default function Home({ data }) {

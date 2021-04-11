@@ -1,6 +1,6 @@
 import React from "react"
 import { graphql, useStaticQuery } from "gatsby";
-import Project from "./project"
+import Project from "../components/project"
 
 export default function Projects() {
     const { contentJson } = useStaticQuery(graphql`

@@ -1,36 +1,37 @@
 import React from "react"
+import WorkUnit from "../components/workunit";
+import { useStaticQuery, graphql } from "gatsby";
 
 export default function Work() {
+    const { contentYaml: { work } } = useStaticQuery(graphql`
+        query WorkQuery {
+            contentYaml {
+                work {
+                    company,
+                    jobTitle,
+                    timeline {
+                        current,
+                        start {
+                            month, 
+                            year
+                        },
+                        end {
+                            month,
+                            year
+                        }
+                    }
+                }
+            }
+        }
+    `)
+
     return (
         <section id="work-experience">
             <h2>Work Experience</h2>
-
-            {/* Work list */}
             <div>
-                {/* Work unit */}
-                <div>
-                    {/* Title subtitle group */}
-                    <div>
-                        <h3>Raytheon</h3>
-                        <h4>Software Engineer</h4>
-                        <h4>2020 - present</h4>
-                    </div>
-                    <ul>
-                        <li>Did some awesome stuff</li>
-                        <li>Work in a group of people</li>
-                    </ul>
-                </div>
-
-                <div>
-                    <div>
-                        <h3>Mathworks</h3>
-                        <h4>Live Editor Intern</h4>
-                        <h4>2018</h4>
-                    </div>
-                    <ul>
-                        <li>Stuff</li>
-                    </ul>
-                </div>
+                {work.map(unit => (
+                    <WorkUnit key={unit.id} {...unit}/>
+                ))}
             </div>
         </section>
     )

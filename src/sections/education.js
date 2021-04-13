@@ -1,14 +1,31 @@
 import React from "react"
+import { graphql, useStaticQuery } from "gatsby";
 
 export default function Education() {
+    const { contentYaml: { education } } = useStaticQuery(graphql`
+        query EducationQuery {
+            contentYaml {
+                education {
+                    school,
+                    degree,
+                    graduated {
+                        month,
+                        year
+                    },
+                    GPA
+                }
+            }
+        }
+    `)
+
     return (
         <section className="education">
             <h2>Education</h2>
             <div>
-                <p>Drexel University</p>
-                <p>Bachelor's in Computer Engineering</p>
-                <p>Graduated June 2020</p>
-                <p>GPA: 3.20</p>
+                <p>{education.school}</p>
+                <p>{education.degree}</p>
+                <p>Graduated {education.graduated.month} {education.graduated.year}</p>
+                <p>GPA: {education.GPA}</p>
             </div>
         </section>
     )

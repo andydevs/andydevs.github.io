@@ -3,11 +3,10 @@ import Header from "../sections/header"
 import Projects from "../sections/projects"
 import Education from "../sections/education"
 import Skills from "../sections/skills"
-import Work from "../sections/work";
-import Contact from "../sections/contact"
+import Work from "../sections/work"
 import Footer from "../sections/footer"
 import { Helmet } from "react-helmet";
-import { graphql, useStaticQuery } from "gatsby";
+import { graphql, useStaticQuery } from "gatsby"
 import "./index.css"
 
 export default function Home() {
@@ -36,7 +35,6 @@ export default function Home() {
                     <Education/>
                     <Skills/>
                     <Work/>
-                    <Contact/>
                 </main>
                 <Footer/>
             </div>

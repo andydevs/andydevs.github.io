@@ -27,7 +27,7 @@ export default function Home() {
                 <Header/>
                 <main>
                     {/* Blog redirect notice */}
-                    <p>
+                    <p className='alert'>
                         If you're looking for the old blog,
                         you can find it <a href="#">Here</a>
                     </p>

@@ -1,31 +1,20 @@
-.header {
-    margin: 0pt;
-    background-color:var(--primary-color);
-    color: white;
-    border-radius: 16pt;
-}
-
-.navbar {
-    padding: 16pt;
-}
-
 .nav-link {
-    color: white;
     margin-right: 12pt;
 }
 
 .title {
-    margin: 80pt 20pt;
+    margin: 80pt 0pt;
     display: inline-block;
+    color: var(--secondary-color);
 }
 .title-upper {
     margin: 0;
-    font-size: 42pt;
+    font-size: 64pt;
     border-bottom: 2pt solid #aaa;
 }
 .title-lower {
     margin: 0;
-    font-size: 14pt;
+    font-size: 18pt;
     text-align: right;
     color: #aaa;
 }

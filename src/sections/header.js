@@ -5,11 +5,13 @@ export default function Header() {
     return (
         <header className='header'>
             <nav className='navbar'>
-                <a href='#projects' className='nav-link'>Projects</a>
-                <a href='#education' className='nav-link'>Education</a>
-                <a href='#skills' className='nav-link'>Skills</a>
-                <a href='#work-experience' className='nav-link'>Work</a>
-                <a href='#contact' className='nav-link'>Contact</a>
+                <ul className='nav-list'>
+                    <li className='nav-link'><a href='#projects'>Projects</a></li>
+                    <li className='nav-link'><a href='#education'>Education</a></li>
+                    <li className='nav-link'><a href='#skills'>Skills</a></li>
+                    <li className='nav-link'><a href='#work-experience'>Work</a></li>
+                    <li className='nav-link'><a href='#contact'>Contact</a></li>
+                </ul>
             </nav>
             
             <div className='title'>

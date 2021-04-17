@@ -19,7 +19,7 @@ export default function Education() {
     `)
 
     return (
-        <section className="education">
+        <section id="education">
             <h2>Education</h2>
             <div>
                 <p>{education.school}</p>

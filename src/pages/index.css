@@ -2,7 +2,8 @@
     --theme-blue: #00acff;
     --theme-purple: #D300FF;
     --theme-red: #FF5300;
-    --theme-green: #2CFF00;
+    --theme-green: #2bff00;
+    --theme-gray: #aaa;
 }
 
 * {
@@ -35,19 +36,4 @@ h2 {
 h2:before {
     content: '>';
     margin-right: 4pt;
-}
-
-.alert {
-    font-weight: bold;
-    margin: 24pt 0pt;
-    padding: 16pt;
-    border-radius: 12pt;
-    background-color: var(--theme-red);
-    color: white;
-    -webkit-box-shadow: 4px 4px 21px -6px rgba(0,0,0,0.37);
-    -moz-box-shadow: 4px 4px 21px -6px rgba(0,0,0,0.37);
-    box-shadow: 4px 4px 21px -6px rgba(0,0,0,0.37);
-}
-.alert > a {
-    color: white;
 }

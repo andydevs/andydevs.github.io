@@ -1,4 +1,5 @@
 import React from "react"
+import Panel from "../components/panel";
 
 const GitHubLink = ({ repo }) =>
     <a href={"https://github.com/andydevs/" + repo}>GitHub</a>
@@ -8,13 +9,13 @@ const WebsiteLink = ({ url }) =>
 
 export default function Project({ title, description, website, github }) {
     return (
-        <div>
+        <Panel color="blue">
             <h3>{ title }</h3>
             <p>{ description }</p>
             <p>
                 { website && <WebsiteLink url={website}/> }
                 { github && <GitHubLink repo={github}/> }
             </p>
-        </div>
+        </Panel>
     )
 }

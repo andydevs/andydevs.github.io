@@ -7,6 +7,7 @@ export default function Work() {
         query WorkQuery {
             contentYaml {
                 work {
+                    id,
                     company,
                     jobTitle,
                     timeline {

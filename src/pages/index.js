@@ -5,6 +5,7 @@ import Education from "../sections/education"
 import Skills from "../sections/skills"
 import Work from "../sections/work"
 import Footer from "../sections/footer"
+import Alert from "../components/alert"
 import { Helmet } from "react-helmet";
 import { graphql, useStaticQuery } from "gatsby"
 import "./index.css"
@@ -27,13 +28,13 @@ export default function Home() {
                 <Header/>
                 <main>
                     {/* Blog redirect notice */}
-                    <p className='alert'>
+                    <Alert>
                         If you're looking for the old blog,
                         you can find it <a href="#">Here</a>
-                    </p>
+                    </Alert>
+                    <Skills/>
                     <Projects/>
                     <Education/>
-                    <Skills/>
                     <Work/>
                 </main>
                 <Footer/>

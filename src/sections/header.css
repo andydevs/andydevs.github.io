@@ -1,11 +1,5 @@
 .navbar {
     text-align: right;
-    background-color: var(--theme-blue);
-    padding: 8pt 16pt;
-    border-radius: 12pt;
-    -webkit-box-shadow: 4px 4px 21px -6px rgba(0,0,0,0.37);
-    -moz-box-shadow: 4px 4px 21px -6px rgba(0,0,0,0.37);
-    box-shadow: 4px 4px 21px -6px rgba(0,0,0,0.37);
 }
 
 .nav-list {

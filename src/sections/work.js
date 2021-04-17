@@ -28,7 +28,7 @@ export default function Work() {
 
     return (
         <section id="work-experience">
-            <h2>Work Experience</h2>
+            <h2 className="text-purple">Work Experience</h2>
             <div>
                 {work.map(unit => (
                     <WorkUnit key={unit.id} {...unit}/>

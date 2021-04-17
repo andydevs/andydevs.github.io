@@ -2,7 +2,6 @@ import React from "react"
 import Header from "../sections/header"
 import Projects from "../sections/projects"
 import Education from "../sections/education"
-import Skills from "../sections/skills"
 import Work from "../sections/work"
 import Footer from "../sections/footer"
 import Alert from "../components/alert"
@@ -32,7 +31,6 @@ export default function Home() {
                         If you're looking for the old blog,
                         you can find it <a href="#">Here</a>
                     </Alert>
-                    <Skills/>
                     <Projects/>
                     <Education/>
                     <Work/>

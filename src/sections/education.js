@@ -21,7 +21,7 @@ export default function Education() {
 
     return (
         <section id="education">
-            <h2>Education</h2>
+            <h2 className="text-green">Education</h2>
             <Panel color="green">
                 <p>{education.school}</p>
                 <p>{education.degree}</p>

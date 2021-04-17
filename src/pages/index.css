@@ -1,10 +1,16 @@
 :root {
-    --theme-blue: #00acff;
-    --theme-purple: #D300FF;
-    --theme-red: #FF5300;
-    --theme-green: #2bff00;
+    --theme-blue: #009ebf;
+    --theme-purple: #8000bf;
+    --theme-red: #bf2100;
+    --theme-green: #3ebf00;
     --theme-gray: #aaa;
 }
+
+.text-gray { color: var(--theme-gray); }
+.text-blue { color: var(--theme-blue); }
+.text-purple { color: var(--theme-purple); }
+.text-red { color: var(--theme-red); }
+.text-green { color: var(--theme-green) }
 
 * {
     font-family: 'Consolas', Arial;

@@ -30,13 +30,6 @@ education:
     year: 2020
   GPA: 3.20
 
-skills:
-  - section: Programming Languages
-    skills:
-      - Python
-      - C++
-      - Javascript
-
 work:
   - id: 0
     company: Raytheon

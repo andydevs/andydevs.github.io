@@ -1,7 +1,8 @@
 :root {
-    --primary-color: #000dc9;
-    --secondary-color: #ffee00;
-    --alert-color: #ff4444;
+    --theme-blue: #00acff;
+    --theme-purple: #D300FF;
+    --theme-red: #FF5300;
+    --theme-green: #2CFF00;
 }
 
 * {
@@ -11,8 +12,6 @@
 
 body {
     margin: 0;
-    background-color: var(--primary-color);
-    color: white;
 }
 
 #app-root {
@@ -24,14 +23,14 @@ a::before {
     margin-right: 2pt;
 }
 a {
-    color: var(--secondary-color);
+    color: var(--theme-blue);
     text-decoration: none;
     margin-left: 2pt;
     margin-right: 2pt;
 }
 
 h2 {
-    color: var(--secondary-color);
+    color: var(--theme-blue);
 }
 h2:before {
     content: '>';
@@ -41,11 +40,13 @@ h2:before {
 .alert {
     font-weight: bold;
     margin: 24pt 0pt;
-    padding: 8pt;
-    background-color: var(--alert-color);
-    -webkit-box-shadow: 4px 8px 21px -6px rgba(0,0,0,0.37);
-    -moz-box-shadow: 4px 8px 21px -6px rgba(0,0,0,0.37);
-    box-shadow: 4px 8px 21px -6px rgba(0,0,0,0.37);
+    padding: 16pt;
+    border-radius: 12pt;
+    background-color: var(--theme-red);
+    color: white;
+    -webkit-box-shadow: 4px 4px 21px -6px rgba(0,0,0,0.37);
+    -moz-box-shadow: 4px 4px 21px -6px rgba(0,0,0,0.37);
+    box-shadow: 4px 4px 21px -6px rgba(0,0,0,0.37);
 }
 .alert > a {
     color: white;

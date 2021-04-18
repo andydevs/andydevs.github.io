@@ -42,3 +42,7 @@ h2:before {
     content: '>';
     margin-right: 4pt;
 }
+
+ul {
+    padding-left: 24pt;
+}

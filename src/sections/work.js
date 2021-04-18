@@ -1,8 +1,9 @@
 import React from "react"
-import WorkUnit from "../components/workunit";
+import Panel from '../components/panel';
 import { useStaticQuery, graphql } from "gatsby";
 
 export default function Work() {
+    // Query
     const { contentYaml: { work } } = useStaticQuery(graphql`
         query WorkQuery {
             contentYaml {
@@ -27,13 +28,25 @@ export default function Work() {
         }
     `)
 
+    // Render
     return (
         <section id="work-experience">
             <h2 className="text-purple">Work Experience</h2>
             <div>
-                {work.map(unit => (
-                    <WorkUnit key={unit.id} {...unit}/>
-                ))}
+                {work.map(({ company, jobTitle, timeline, highlights }) =>
+                    <Panel color="purple">
+                        <Panel.Header>
+                            <Panel.Title>{company}</Panel.Title>
+                            <Panel.Subtitle>{jobTitle}</Panel.Subtitle>
+                            <Panel.Subtitle>
+                                {timeline.start.month} {timeline.start.year}
+                                &nbsp; &mdash; &nbsp;
+                                {timeline.current ? 'Present' : `${timeline.end.month} ${timeline.end.year}`}
+                            </Panel.Subtitle>
+                        </Panel.Header>
+                        <ul>{highlights.map((highlight, index) => <li key={index}>{highlight}</li>)}</ul>
+                    </Panel>
+                )}
             </div>
         </section>
     )

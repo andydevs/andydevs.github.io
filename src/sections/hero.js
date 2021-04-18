@@ -3,7 +3,6 @@ import { graphql, useStaticQuery } from "gatsby";
 import "./hero.css"
 
 export default function Hero() {
-
     // Query
     const { contentYaml: { blurb } } = useStaticQuery(graphql`
         query HeroQuery {
@@ -13,6 +12,7 @@ export default function Hero() {
         }
     `)
 
+    // Render
     return (
         <div className='hero'>
             <div className='hero-container'>

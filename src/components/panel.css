@@ -2,6 +2,7 @@
     padding: 8pt 16pt;
     margin: 16pt 0pt;
     border-radius: 12pt;
+    border-color: inherit;
 
     /* Shadow */
     -webkit-box-shadow: 4px 4px 21px -6px rgba(0,0,0,0.37);
@@ -11,6 +12,27 @@
 .panel a {
     color: inherit;
 }
+
+
+.panel-header { 
+    margin: 8pt 0pt;
+    padding-bottom: 8pt;
+    border-bottom: 1pt solid;
+}
+.panel-title { 
+    font-weight: bold;
+    margin: 4pt 0pt;
+}
+.panel-subtitle { 
+    font-style: italic;
+    margin: 2pt 0pt;
+}
+.panel-footer {
+    margin: 8pt 0pt;
+    padding-top: 8pt;
+    border-top: 1pt solid;
+}
+
 
 .panel-gray { 
     background-color: var(--theme-gray);

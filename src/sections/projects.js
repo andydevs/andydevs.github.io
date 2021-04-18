@@ -1,8 +1,9 @@
 import React from "react"
-import { graphql, useStaticQuery } from "gatsby";
-import Project from "../components/project"
+import Panel from "../components/panel";
+import { graphql, useStaticQuery } from "gatsby"
 
 export default function Projects() {
+    // Query
     const { contentYaml: { projects } } = useStaticQuery(graphql`
         query ProjectsQuery {
             contentYaml {
@@ -17,18 +18,22 @@ export default function Projects() {
         }
     `)
 
+    // Render
     return (
         <section id="projects">
             <h2>Projects</h2>
             <div>
-                {projects.map(
-                    ({ id, title, description, github, website }) => 
-                        <Project
-                            key={id}
-                            title={title}
-                            description={description}
-                            github={github}
-                            website={website}/>
+                {projects.map(({ id, title, description, github, website }) => 
+                    <Panel key={id} color="blue">
+                        <Panel.Header>
+                            <Panel.Title>{title}</Panel.Title>
+                        </Panel.Header>
+                        <p>{description}</p>
+                        <Panel.Footer>
+                            { website && <a href={website}>Website</a> }
+                            { github && <a href={`https://github.com/andydevs/${github}`}>GitHub</a> }
+                        </Panel.Footer>
+                    </Panel>
                 )}
             </div>
         </section>

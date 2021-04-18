@@ -1,0 +1,16 @@
+.navbar {
+    text-align: right;
+}
+
+.nav-list {
+    margin: 0;
+    padding: 0pt;
+}
+
+.nav-link {
+    list-style: none;
+    margin: 12pt 0pt;
+}
+.nav-link > a {
+    color: white;
+}

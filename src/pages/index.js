@@ -1,11 +1,12 @@
 import React from "react"
-import Header from "../sections/header"
+import Navbar from "../sections/navbar"
+import Hero from "../sections/hero"
 import Projects from "../sections/projects"
 import Education from "../sections/education"
 import Work from "../sections/work"
 import Footer from "../sections/footer"
 import Alert from "../components/alert"
-import { Helmet } from "react-helmet";
+import { Helmet } from "react-helmet"
 import { graphql, useStaticQuery } from "gatsby"
 import "./index.css"
 
@@ -24,8 +25,9 @@ export default function Home() {
         <div>
             <Helmet title={site.siteMetadata.title}/>
             <div id='app-root'>
-                <Header/>
+                <Navbar/>
                 <main>
+                    <Hero/>
                     <Alert>
                         If you're looking for the old blog,
                         you can find it <a href="https://andydevs.github.io/">Here</a>

@@ -26,10 +26,9 @@ export default function Home() {
             <div id='app-root'>
                 <Header/>
                 <main>
-                    {/* Blog redirect notice */}
                     <Alert>
                         If you're looking for the old blog,
-                        you can find it <a href="#">Here</a>
+                        you can find it <a href="https://andydevs.github.io/">Here</a>
                     </Alert>
                     <Projects/>
                     <Education/>

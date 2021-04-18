@@ -1,0 +1,12 @@
+.work-header { 
+    margin: 8pt 0pt;
+    padding-bottom: 8pt;
+    border-bottom: 1px solid white;
+}
+.work-title, .work-subtitle { margin: 2pt 0pt; }
+.work-title { font-weight: bold; margin: 4pt 0pt; }
+.work-subtitle { font-style: italic; }
+
+.highlight-list {
+    padding-left: 24pt;
+}

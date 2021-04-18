@@ -3,6 +3,8 @@ import { graphql, useStaticQuery } from "gatsby";
 import Panel from "../components/panel";
 
 export default function Education() {
+
+    // Graphql query
     const { contentYaml: { education } } = useStaticQuery(graphql`
         query EducationQuery {
             contentYaml {
@@ -19,6 +21,7 @@ export default function Education() {
         }
     `)
 
+    // Render
     return (
         <section id="education">
             <h2 className="text-green">Education</h2>

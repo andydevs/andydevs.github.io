@@ -20,7 +20,8 @@ export default function Work() {
                             month,
                             year
                         }
-                    }
+                    },
+                    highlights
                 }
             }
         }

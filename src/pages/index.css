@@ -12,6 +12,8 @@
 .text-red { color: var(--theme-red); }
 .text-green { color: var(--theme-green) }
 
+.bold { font-weight: bold; }
+
 * {
     font-family: 'Consolas', Arial;
     font-weight: 100;

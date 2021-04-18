@@ -16,15 +16,12 @@
     font-family: 'Consolas', Arial;
     font-weight: 100;
 }
-
 body {
     margin: 0;
 }
-
 #app-root {
     margin: 16pt;
 }
-
 a::before {
     content: '>';
     margin-right: 2pt;

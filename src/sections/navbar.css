@@ -2,6 +2,12 @@
     text-align: right;
 }
 
+.nav-toggle {
+    background: none;
+    border: none;
+    color: inherit;
+}
+
 .nav-list {
     margin: 0;
     padding: 0pt;

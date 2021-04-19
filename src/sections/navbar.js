@@ -1,5 +1,7 @@
 import React from "react"
 import Panel from "../components/panel";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faBars } from '@fortawesome/free-solid-svg-icons'
 import "./navbar.css"
 
 export default function Navbar() {
@@ -11,7 +13,7 @@ export default function Navbar() {
         <Panel color="blue" className='navbar'>
             <div className='nav-header'>
                 <button onClick={toggleEvent} className='nav-toggle'>
-                    Toggle
+                    <FontAwesomeIcon icon={faBars} size="3x"/>
                 </button>
             </div>
             {toggle &&

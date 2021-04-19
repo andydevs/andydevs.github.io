@@ -1,5 +1,4 @@
 import React from "react"
-import Navbar from "../sections/navbar"
 import Hero from "../sections/hero"
 import Projects from "../sections/projects"
 import Work from "../sections/work"
@@ -22,15 +21,12 @@ export default function Home() {
     return (
         <div>
             <Helmet title={site.siteMetadata.title}/>
-            <div id='app-root'>
-                <Navbar/>
-                <main>
-                    <Hero/>
-                    <Projects/>
-                    <Work/>
-                </main>
+            <main id='app-root'>
+                <Hero/>
+                <Projects/>
+                <Work/>
                 <Footer/>
-            </div>
+            </main>
         </div>
     )
 }

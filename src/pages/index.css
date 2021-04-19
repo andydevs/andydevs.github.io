@@ -45,9 +45,6 @@ a {
     margin-left: 2pt;
     margin-right: 2pt;
 }
-a.icon-link {
-    margin: 6pt;
-}
 
 h1 {
     color: var(--blue3);

@@ -1,19 +1,15 @@
 .panel {
     padding: 16pt;
-    margin: 8pt 0pt;
+    margin: 12pt 0pt;
     border-radius: 6pt;
     border-color: inherit;
+    background-color: var(--blue1point5);
 
     /* Shadow */
     -webkit-box-shadow: 4px 4px 21px -6px rgba(0,0,0,0.37);
     -moz-box-shadow: 4px 4px 21px -6px rgba(0,0,0,0.37);
     box-shadow: 4px 4px 21px -6px rgba(0,0,0,0.37);
 }
-.panel a {
-    color: inherit;
-}
-
-
 .panel-header { 
     margin: 8pt 0pt;
     padding-bottom: 8pt;
@@ -31,26 +27,4 @@
     margin: 8pt 0pt;
     padding-top: 8pt;
     border-top: 1pt solid;
-}
-
-
-.panel-gray { 
-    background-color: var(--theme-gray);
-    color: white;
-}
-.panel-blue { 
-    background-color: var(--theme-blue);
-    color: white; 
-}
-.panel-purple { 
-    background-color: var(--theme-purple);
-    color: white;
-}
-.panel-green { 
-    background-color: var(--theme-green);
-    color: black;
-}
-.panel-red { 
-    background-color: var(--theme-red);
-    color: white;
 }

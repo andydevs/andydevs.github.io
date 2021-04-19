@@ -1,9 +1,9 @@
 import React from "react";
 import "./panel.css";
 
-export default function Panel({ color='gray', className, children }) {
+export default function Panel({ className='', children }) {
     return (
-        <div className={'panel panel-' + color + ' ' + className}>
+        <div className={`panel ${className}`}>
             {children}
         </div>
     )

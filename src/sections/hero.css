@@ -1,5 +1,5 @@
 .hero {
-    margin: 8pt 16pt;
+    margin: 0pt 8pt;
     padding: 100pt 0pt;
     display: grid;
     grid-template-rows: 1fr;
@@ -14,14 +14,19 @@
 .title-upper {
     margin: 0;
     font-size: 44pt;
-    color: var(--theme-blue);
+    color: var(--blue3);
+    border-bottom: none;
+}
+.title-upper::before {
+    content: '';
 }
 .title-lower {
     margin: 0;
     font-size: 18pt;
     text-align: left;
-    border-top: 1px solid #aaa;
-    color: #aaa;
+    padding-top: 4pt;
+    border-top: 1px solid #ccc;
+    color: #ccc;
 }
 .blurb {
     text-align: left;

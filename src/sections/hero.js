@@ -21,6 +21,8 @@ export default function Hero() {
                     <h2 className='title-lower'>Andydevs</h2>
                 </div>
                 <p className='blurb'>{blurb}</p>
+                <p className='bold'>If you're looking for the old blog, you can find it
+                <a href="https://andydevs.github.io/">Here</a></p>
             </div>
         </div>
     )

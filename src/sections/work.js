@@ -31,10 +31,10 @@ export default function Work() {
     // Render
     return (
         <section id="work-experience">
-            <h2 className="text-purple">Work Experience</h2>
+            <h1>Work Experience</h1>
             <div>
-                {work.map(({ company, jobTitle, timeline, highlights }) =>
-                    <Panel color="purple">
+                {work.map(({ id, company, jobTitle, timeline, highlights }) =>
+                    <Panel key={id}>
                         <Panel.Header>
                             <Panel.Title>{company}</Panel.Title>
                             <Panel.Subtitle>{jobTitle}</Panel.Subtitle>

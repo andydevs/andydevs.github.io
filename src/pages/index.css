@@ -1,4 +1,9 @@
 :root {
+    --blue1: #0047BE;
+    --blue1point5: #0053e4;
+    --blue2: #00aaff;
+    --blue3: #00ffff;
+
     --theme-blue: #009ebf;
     --theme-purple: #8000bf;
     --theme-red: #bf2100;
@@ -20,25 +25,37 @@
 }
 body {
     margin: 0;
+    background-color: var(--blue1);
+    color: white;
 }
 #app-root {
-    margin: 8pt;
+    margin: 12pt;
 }
 a::before {
     content: '>';
     margin-right: 2pt;
 }
+a.icon-link::before {
+    content: '';
+    margin-right: 0;
+}
 a {
-    color: var(--theme-blue);
+    color: var(--blue3);
     text-decoration: none;
     margin-left: 2pt;
     margin-right: 2pt;
 }
-
-h2 {
-    color: var(--theme-blue);
+a.icon-link {
+    margin: 4pt 8pt;
 }
-h2:before {
+
+h1 {
+    color: var(--blue3);
+    font-size: 24pt;
+    padding-bottom: 6pt;
+    border-bottom: 2pt solid var(--blue2);
+}
+h1:before,h2:before {
     content: '>';
     margin-right: 4pt;
 }

@@ -10,7 +10,7 @@ export default function Navbar() {
     const toggleEvent = () => setToggle(!toggle);
 
     return (
-        <Panel color="blue" className='navbar'>
+        <div className='navbar'>
             <div className='nav-header'>
                 <button onClick={toggleEvent} className='nav-toggle'>
                     <FontAwesomeIcon icon={faBars} size="3x"/>
@@ -24,6 +24,6 @@ export default function Navbar() {
                     <li className='nav-link'><a href='#work-experience'>Work</a></li>
                     <li className='nav-link'><a href='#contact'>Contact</a></li>
                 </ul>}
-        </Panel>
+        </div>
     )
 }

@@ -1,6 +1,8 @@
 import React from "react"
 import { graphql, useStaticQuery } from "gatsby";
-import Panel from "../components/panel";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
+import "./footer.css"
 
 export default function Footer() {
     const { contentYaml: { contact } } = useStaticQuery(graphql`
@@ -18,13 +20,15 @@ export default function Footer() {
 
     return (
         <footer>
-            <Panel>
-                <p>Copyright &copy; Anshul Kharbanda 2021</p>
-                <p>
-                    <a href={"mailto://" + contact.email}>Email</a>
-                    <a href={contact.linkedin}>LinkedIn</a>
-                </p>
-            </Panel>
+            <p>Copyright &copy; Anshul Kharbanda 2021</p>
+            <p>
+                <a className='icon-link' href={`mailto://${contact.email}`}>
+                    <FontAwesomeIcon icon={faEnvelope} size='2x'/>
+                </a>
+                <a className='icon-link' href={contact.linkedin}>
+                    <FontAwesomeIcon icon='linkedin' size='2x'/>
+                </a>
+            </p>
         </footer>
     )
 }

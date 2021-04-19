@@ -4,7 +4,6 @@ import Hero from "../sections/hero"
 import Projects from "../sections/projects"
 import Work from "../sections/work"
 import Footer from "../sections/footer"
-import Panel from "../components/panel";
 import { Helmet } from "react-helmet"
 import { graphql, useStaticQuery } from "gatsby"
 import "./index.css"
@@ -27,10 +26,6 @@ export default function Home() {
                 <Navbar/>
                 <main>
                     <Hero/>
-                    <Panel color="red" className='alert'>
-                        <p className='bold'>If you're looking for the old blog, you can find it
-                        <a href="https://andydevs.github.io/">Here</a></p>
-                    </Panel>
                     <Projects/>
                     <Work/>
                 </main>

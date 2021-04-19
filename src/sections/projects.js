@@ -21,10 +21,10 @@ export default function Projects() {
     // Render
     return (
         <section id="projects">
-            <h2>Projects</h2>
+            <h1>Projects</h1>
             <div>
                 {projects.map(({ id, title, description, github, website }) => 
-                    <Panel key={id} color="blue">
+                    <Panel key={id}>
                         <Panel.Header>
                             <Panel.Title>{title}</Panel.Title>
                         </Panel.Header>

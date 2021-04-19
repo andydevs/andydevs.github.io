@@ -1,6 +1,6 @@
 .hero {
+    height: 100vh;
     margin: 0pt 8pt;
-    padding: 100pt 0pt;
     display: grid;
     grid-template-rows: 1fr;
     grid-template-columns: 1fr;

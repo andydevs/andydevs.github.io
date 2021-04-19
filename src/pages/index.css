@@ -63,3 +63,7 @@ h1:before,h2:before {
 ul {
     padding-left: 24pt;
 }
+
+ul > li {
+    margin: 8pt 0pt;
+}

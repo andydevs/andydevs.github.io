@@ -22,7 +22,7 @@ body {
     margin: 0;
 }
 #app-root {
-    margin: 16pt;
+    margin: 8pt;
 }
 a::before {
     content: '>';

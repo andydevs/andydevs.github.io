@@ -1,7 +1,7 @@
 .panel {
-    padding: 8pt 16pt;
-    margin: 16pt 0pt;
-    border-radius: 12pt;
+    padding: 16pt;
+    margin: 8pt 0pt;
+    border-radius: 6pt;
     border-color: inherit;
 
     /* Shadow */

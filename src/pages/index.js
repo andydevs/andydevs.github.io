@@ -2,7 +2,6 @@ import React from "react"
 import Navbar from "../sections/navbar"
 import Hero from "../sections/hero"
 import Projects from "../sections/projects"
-import Education from "../sections/education"
 import Work from "../sections/work"
 import Footer from "../sections/footer"
 import Panel from "../components/panel";
@@ -33,7 +32,6 @@ export default function Home() {
                         <a href="https://andydevs.github.io/">Here</a></p>
                     </Panel>
                     <Projects/>
-                    <Education/>
                     <Work/>
                 </main>
                 <Footer/>

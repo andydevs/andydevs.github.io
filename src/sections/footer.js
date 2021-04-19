@@ -2,6 +2,7 @@ import React from "react"
 import { graphql, useStaticQuery } from "gatsby";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
+import { faLinkedin, faGithub } from "@fortawesome/free-brands-svg-icons";
 import "./footer.css"
 
 export default function Footer() {
@@ -11,7 +12,8 @@ export default function Footer() {
                 contact {
                     email,
                     social {
-                        linkedin
+                        linkedin,
+                        github
                     }
                 }
             }
@@ -25,8 +27,11 @@ export default function Footer() {
                 <a className='icon-link' href={`mailto://${contact.email}`}>
                     <FontAwesomeIcon icon={faEnvelope} size='2x'/>
                 </a>
-                <a className='icon-link' href={contact.linkedin}>
-                    <FontAwesomeIcon icon='linkedin' size='2x'/>
+                <a className='icon-link' href={contact.social.linkedin}>
+                    <FontAwesomeIcon icon={faLinkedin} size='2x'/>
+                </a>
+                <a className='icon-link' href={`https://www.github.com/${contact.social.github}`}>
+                    <FontAwesomeIcon icon={faGithub} size='2x'/>
                 </a>
             </p>
         </footer>

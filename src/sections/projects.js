@@ -32,7 +32,7 @@ export default function Projects() {
     return (
         <section id="projects">
             <h1>Projects</h1>
-            <div>
+            <div className='grid'>
                 {projects.map(({ id, title, image, description, github, website }) => 
                     <Panel key={id}>
                         { image && <Panel.Image alt='Andys Notebook' src={image.childImageSharp.fluid.base64} /> }

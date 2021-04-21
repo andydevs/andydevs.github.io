@@ -49,3 +49,17 @@ ul {
 ul > li {
     margin: 8pt 0pt;
 }
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: auto;
+    gap: 16pt;
+}
+
+@media screen and (max-width: 700px) {
+    .grid {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+    }
+}

@@ -32,7 +32,7 @@ export default function Work() {
     return (
         <section id="work-experience">
             <h1>Work Experience</h1>
-            <div>
+            <div className='grid'>
                 {work.map(({ id, company, jobTitle, timeline, highlights }) =>
                     <Panel key={id}>
                         <Panel.Body>

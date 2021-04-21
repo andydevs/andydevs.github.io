@@ -1,5 +1,5 @@
 .panel {
-    border-radius: 6pt;
+    border-radius: 8pt;
     border-color: inherit;
     background-color: var(--less-black);
     overflow: hidden;

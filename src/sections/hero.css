@@ -15,7 +15,7 @@
     margin: 0;
     padding-bottom: 0;
     font-size: 44pt;
-    color: var(--blue3);
+    color: var(--blue);
 }
 .title-upper::before {
     content: '';

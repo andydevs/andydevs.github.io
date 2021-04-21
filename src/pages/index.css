@@ -1,23 +1,9 @@
 :root {
-    --blue1: #0047BE;
-    --blue1point5: #0053e4;
-    --blue2: #00aaff;
-    --blue3: #00ffff;
-
-    --theme-blue: #009ebf;
-    --theme-purple: #8000bf;
-    --theme-red: #bf2100;
-    --theme-green: #3ebf00;
-    --theme-gray: #aaa;
+    --black: #333333;
+    --less-black: #404040;
+    --blue: #44ccff;
+    --white: #cccccc;
 }
-
-.text-gray { color: var(--theme-gray); }
-.text-blue { color: var(--theme-blue); }
-.text-purple { color: var(--theme-purple); }
-.text-red { color: var(--theme-red); }
-.text-green { color: var(--theme-green) }
-
-.bold { font-weight: bold; }
 
 * {
     font-family: 'Consolas', Arial;
@@ -25,7 +11,7 @@
 }
 body {
     margin: 0;
-    background-color: var(--blue1);
+    background-color: var(--black);
     color: white;
 }
 #app-root {
@@ -40,14 +26,14 @@ a.icon-link::before {
     margin-right: 0;
 }
 a {
-    color: var(--blue3);
+    color: var(--blue);
     text-decoration: none;
     margin-left: 2pt;
     margin-right: 2pt;
 }
 
 h1 {
-    color: var(--blue3);
+    color: var(--blue);
     font-size: 24pt;
     padding-bottom: 6pt;
 }

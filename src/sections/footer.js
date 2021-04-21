@@ -22,11 +22,13 @@ export default function Footer() {
 
     return (
         <footer>
-            <p>Copyright &copy; Anshul Kharbanda 2021</p>
             <p>
                 <IconLink icon={faEnvelope} href={`mailto://${contact.email}`}/>
                 <IconLink icon={faLinkedin} href={contact.social.linkedin}/>
                 <IconLink icon={faGithub} href={`https://www.github.com/${contact.social.github}`}/>
+            </p>
+            <p>
+                Site Design largely inspired by <a href='http://brittanychiang.com'>Brittany Chiang</a>
             </p>
         </footer>
     )

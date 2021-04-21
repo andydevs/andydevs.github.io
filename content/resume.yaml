@@ -2,7 +2,15 @@
 blurb: >
   Software engineer by trade. Hobbyist programmer with wide experience 
   in programming languages and frameworks. Most experienced in Python 
-  and Javascript. 
+  and Javascript.
+
+education:
+  school: Drexel University
+  degree: Bachelor's in Computer Engineering
+  graduated:
+    month: June
+    year: 2020
+  GPA: 3.20
 
 contact:
   email: akanshul97@gmail.com
@@ -28,14 +36,6 @@ projects:
       home about. It serves as a testbench for learning 
       about different elements of game design
     github: blockys-adventure-in-blockworld
-
-education:
-  school: Drexel University
-  degree: Bachelor's in Computer Engineering
-  graduated:
-    month: June
-    year: 2020
-  GPA: 3.20
 
 work:
   - id: 0

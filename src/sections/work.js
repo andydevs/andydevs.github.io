@@ -35,16 +35,17 @@ export default function Work() {
             <div>
                 {work.map(({ id, company, jobTitle, timeline, highlights }) =>
                     <Panel key={id}>
-                        <Panel.Header>
-                            <Panel.Title>{company}</Panel.Title>
-                            <Panel.Subtitle>{jobTitle}</Panel.Subtitle>
-                            <Panel.Subtitle>
+                        <Panel.Body>
+                            <h3>{company}</h3>
+                            <h4>{jobTitle}</h4>
+                            <h4>
                                 {timeline.start.month} {timeline.start.year}
                                 &nbsp; &mdash; &nbsp;
                                 {timeline.current ? 'Present' : `${timeline.end.month} ${timeline.end.year}`}
-                            </Panel.Subtitle>
-                        </Panel.Header>
-                        <ul>{highlights.map((highlight, index) => <li key={index}>{highlight}</li>)}</ul>
+                            </h4>
+                            <hr/>
+                            <ul>{highlights.map((highlight, index) => <li key={index}>{highlight}</li>)}</ul>
+                        </Panel.Body>
                     </Panel>
                 )}
             </div>

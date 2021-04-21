@@ -13,6 +13,7 @@ contact:
 projects:
   - id: 0
     title: Andy's Notebook
+    image: images/andys-notebook.png
     description: >
       Ongoing project where I demo and experiement 
       with different programming and data science 

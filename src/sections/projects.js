@@ -11,10 +11,17 @@ export default function Projects() {
         query ProjectsQuery {
             contentYaml {
                 projects {
-                    id,
-                    title,
-                    description,
-                    website,
+                    id
+                    title
+                    image {
+                        childImageSharp {
+                            fluid(base64Width: 600) {
+                                base64
+                            }
+                        }
+                    }
+                    description
+                    website
                     github
                 }
             }
@@ -26,16 +33,15 @@ export default function Projects() {
         <section id="projects">
             <h1>Projects</h1>
             <div>
-                {projects.map(({ id, title, description, github, website }) => 
+                {projects.map(({ id, title, image, description, github, website }) => 
                     <Panel key={id}>
-                        <Panel.Header>
+                        { image && <Panel.Image alt='Andys Notebook' src={image.childImageSharp.fluid.base64} /> }
+                        <Panel.Body>
                             <Panel.Title>{title}</Panel.Title>
-                        </Panel.Header>
-                        <p>{description}</p>
-                        <Panel.Footer>
+                            <p>{description}</p>
                             { website && <IconLink icon={faGlobe} size='lg' href={website}/> }
                             { github && <IconLink icon={faGithub} size='lg' href={`https://github.com/andydevs/${github}`}/> }
-                        </Panel.Footer>
+                        </Panel.Body>
                     </Panel>
                 )}
             </div>

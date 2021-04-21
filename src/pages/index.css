@@ -50,7 +50,6 @@ h1 {
     color: var(--blue3);
     font-size: 24pt;
     padding-bottom: 6pt;
-    border-bottom: 2pt solid var(--blue2);
 }
 h1:before,h2:before {
     content: '>';

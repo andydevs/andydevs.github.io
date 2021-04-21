@@ -6,14 +6,16 @@
 
 module.exports = {
     siteMetadata: {
-        title: `Andydevs`,
+        title: 'Andydevs',
         desctiption: 'Hobbyist developer and software engineer. This website showcases projects and work experience'
     },
     plugins: [
-        `gatsby-plugin-react-helmet`,
-        `gatsby-transformer-yaml`,
+        'gatsby-plugin-sharp',
+        'gatsby-plugin-react-helmet',
+        'gatsby-transformer-yaml',
+        'gatsby-transformer-sharp',
         {
-            resolve: `gatsby-source-filesystem`,
+            resolve: 'gatsby-source-filesystem',
             options: {
                 path: `${__dirname}/content/`,
             }

@@ -13,9 +13,9 @@
 }
 .title-upper {
     margin: 0;
+    padding-bottom: 0;
     font-size: 44pt;
     color: var(--blue3);
-    border-bottom: none;
 }
 .title-upper::before {
     content: '';
@@ -24,8 +24,6 @@
     margin: 0;
     font-size: 18pt;
     text-align: left;
-    padding-top: 4pt;
-    border-top: 1px solid #ccc;
     color: #ccc;
 }
 .blurb {

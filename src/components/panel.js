@@ -1,3 +1,4 @@
+import React from "react";
 import styled from "styled-components";
 
 const Panel = styled.div`
@@ -15,6 +16,39 @@ const Panel = styled.div`
 Panel.Image = styled.img`
     width: 100%;
 `
+
+const ImageTitleDiv = styled.div`
+    position: static;
+`
+
+const ImageTitleContainer = styled.div`
+    position: relative;
+`
+
+const Image = styled.img`
+    position: relative;
+    z-index: 0;
+    width: 100%;
+`
+
+const Title = styled.h3`
+    position: absolute;
+    z-index: 1;
+    margin: 0;
+    bottom: 16pt;
+    left: 16pt;
+    font-weight: bold;
+    font-size: 24pt;
+`
+
+Panel.ImageTitle = ({ title, base64 }) => (
+    <ImageTitleDiv>
+        <ImageTitleContainer>
+            <Image alt={title} src={base64}/>
+            <Title>{title}</Title>
+        </ImageTitleContainer>
+    </ImageTitleDiv>
+)
 
 Panel.Body = styled.div`
     margin: 16pt;

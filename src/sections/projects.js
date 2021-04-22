@@ -16,7 +16,7 @@ export default function Projects() {
                     title
                     image {
                         childImageSharp {
-                            fluid(base64Width: 600) {
+                            fluid(base64Width: 600, duotone: { highlight: "#44ccff", shadow: "#333333" }) {
                                 base64
                             }
                         }
@@ -36,9 +36,13 @@ export default function Projects() {
             <Grid>
                 {projects.map(({ id, title, image, description, github, website }) => 
                     <Panel key={id}>
-                        { image && <Panel.Image alt={title} src={image.childImageSharp.fluid.base64} /> }
+                        { image && 
+                            <Panel.ImageTitle 
+                                title={title} 
+                                base64={image.childImageSharp.fluid.base64}/> 
+                        }
                         <Panel.Body>
-                            <h3>{title}</h3>
+                            { !image && <h3>{title}</h3> }
                             <p>{description}</p>
                             { website && <IconLink icon={faGlobe} href={website}/> }
                             { github && <IconLink icon={faGithub} href={`https://github.com/andydevs/${github}`}/> }

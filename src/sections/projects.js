@@ -2,7 +2,7 @@ import React from "react"
 import Panel from "../components/panel";
 import Grid from "../components/grid";
 import { graphql, useStaticQuery } from "gatsby"
-import { faGlobe } from "@fortawesome/free-solid-svg-icons";
+import { faExternalLinkAlt } from "@fortawesome/free-solid-svg-icons";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import IconLink from "../components/iconlink";
 
@@ -22,7 +22,7 @@ export default function Projects() {
                         }
                     }
                     description
-                    website
+                    main
                     github
                 }
             }
@@ -34,7 +34,7 @@ export default function Projects() {
         <section id="projects">
             <h1>Projects</h1>
             <Grid>
-                {projects.map(({ id, title, image, description, github, website }) => 
+                {projects.map(({ id, title, image, description, github, main }) => 
                     <Panel key={id}>
                         { image && 
                             <Panel.ImageTitle 
@@ -44,8 +44,10 @@ export default function Projects() {
                         <Panel.Body>
                             { !image && <h3>{title}</h3> }
                             <p>{description}</p>
-                            { website && <IconLink icon={faGlobe} href={website}/> }
-                            { github && <IconLink icon={faGithub} href={`https://github.com/andydevs/${github}`}/> }
+                            <IconLink.Group>
+                                { main && <IconLink icon={faExternalLinkAlt} href={main}/> }
+                                { github && <IconLink icon={faGithub} href={`https://github.com/andydevs/${github}`}/> }
+                            </IconLink.Group>
                         </Panel.Body>
                     </Panel>
                 )}

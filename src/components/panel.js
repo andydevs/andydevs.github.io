@@ -13,10 +13,6 @@ const Panel = styled.div`
     box-shadow: 4px 4px 21px -6px rgba(0,0,0,0.37);
 `
 
-Panel.Image = styled.img`
-    width: 100%;
-`
-
 const ImageTitleDiv = styled.div`
     position: static;
 `

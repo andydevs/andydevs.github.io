@@ -39,8 +39,7 @@ export default function Projects() {
                         { image && 
                             <Panel.ImageTitle 
                                 title={title} 
-                                base64={image.childImageSharp.fluid.base64}/> 
-                        }
+                                base64={image.childImageSharp.fluid.base64}/> }
                         <Panel.Body>
                             { !image && <h3>{title}</h3> }
                             <p>{description}</p>

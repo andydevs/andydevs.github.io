@@ -1,5 +1,6 @@
 import React from "react"
 import Hero from "../sections/hero"
+import About from "../sections/about";
 import Projects from "../sections/projects"
 import Work from "../sections/work"
 import Footer from "../sections/footer"
@@ -79,6 +80,7 @@ export default function Home() {
             <GlobalStyle/>
             <StyledMain>
                 <Hero/>
+                <About/>
                 <Projects/>
                 <Work/>
                 <Footer/>

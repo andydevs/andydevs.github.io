@@ -1,5 +1,4 @@
 import React from 'react'
-import { graphql, useStaticQuery } from 'gatsby'
 import styled from 'styled-components'
 
 const HeroDiv = styled.div`
@@ -32,22 +31,12 @@ const Subtitle = styled.h2`
 `
 
 export default function Hero() {
-    // Query
-    const { contentYaml: { blurb } } = useStaticQuery(graphql`
-        query HeroQuery {
-            contentYaml {
-                blurb
-            }
-        }
-    `)
-
     // Render
     return (
         <HeroDiv>
             <HeroContainer>
                 <Title>Anshul Kharbanda</Title>
                 <Subtitle>Andydevs</Subtitle>
-                <p>{blurb}</p>
                 <p>If you're looking for the 
                     old blog, you can find it 
                     <a href="https://andydevs.github.io/">Here</a></p>

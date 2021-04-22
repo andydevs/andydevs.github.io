@@ -7,10 +7,10 @@ import IconLink from "../components/iconlink";
 
 export default function Projects() {
     // Query
-    const { contentYaml: { projects } } = useStaticQuery(graphql`
+    const { allProjectsYaml: { nodes: projects } } = useStaticQuery(graphql`
         query ProjectsQuery {
-            contentYaml {
-                projects {
+            allProjectsYaml {
+                nodes {
                     id
                     title
                     image {

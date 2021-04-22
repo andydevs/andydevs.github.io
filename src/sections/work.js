@@ -4,10 +4,10 @@ import { useStaticQuery, graphql } from "gatsby";
 
 export default function Work() {
     // Query
-    const { contentYaml: { work } } = useStaticQuery(graphql`
+    const { allWorkYaml: { nodes: workunits } } = useStaticQuery(graphql`
         query WorkQuery {
-            contentYaml {
-                work {
+            allWorkYaml {
+                nodes {
                     id,
                     company,
                     jobTitle,
@@ -33,7 +33,7 @@ export default function Work() {
         <section id="work-experience">
             <h1>Work Experience</h1>
             <div className='grid'>
-                {work.map(({ id, company, jobTitle, timeline, highlights }) =>
+                {workunits.map(({ id, company, jobTitle, timeline, highlights }) =>
                     <Panel key={id}>
                         <Panel.Body>
                             <h3>{company}</h3>

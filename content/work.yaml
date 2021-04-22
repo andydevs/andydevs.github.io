@@ -1,65 +1,60 @@
 ---
-work:
-  - id: 0
-    company: Raytheon
-    jobTitle: Software Engineer
-    timeline:
-      current: true
-      start:
-        month: Dec
-        year: 2020
-    highlights:
-      - Developed internal solution for integrating SIMDIS with radar software programs.
-  
-  - id: 1
-    company: Drexel IT
-    jobTitle: Technical Support Intern
-    timeline:
-      current: false
-      start:
-        month: March
-        year: 2019
-      end:
-        month: Sept
-        year: 2019
-    highlights:
-      - Helped users with computer software accounts issues both by email and over the phone.
-      - Worked with the RemedyForce ticketing system, BeyondTrust Remote Support, Active Directory, Hybrid Exchange, and Office365.
-      - Communicated with other team members to resolve issues.
+- company: Raytheon
+  jobTitle: Software Engineer
+  timeline:
+    current: true
+    start:
+      month: Dec
+      year: 2020
+  highlights:
+    - Developed internal solution for integrating SIMDIS with radar software programs.
 
-  - id: 2
-    company: Mathworks
-    jobTitle: Live Editor Intern
-    timeline:
-      current: false
-      start:
-        month: Apr
-        year: 2018
-      end:
-        month: Sept
-        year: 2018
-    highlights:
-      - Developed an internal application to help development team manage work
-      - Worked with team to develop requirements and created a detailed task breakdown list
-      - Worked with Node JS, Express JS, MongoDB, Redis, jQuery, React, and Vue.js
-      - Communicated progress and planned completion of application features with supervisor
-      - Rolled out application to production and presented it to team of 30 engineers for daily use
+- company: Drexel IT
+  jobTitle: Technical Support Intern
+  timeline:
+    current: false
+    start:
+      month: March
+      year: 2019
+    end:
+      month: Sept
+      year: 2019
+  highlights:
+    - Helped users with computer software accounts issues both by email and over the phone.
+    - Worked with the RemedyForce ticketing system, BeyondTrust Remote Support, Active Directory, Hybrid Exchange, and Office365.
+    - Communicated with other team members to resolve issues.
 
-  - id: 3
-    company: HPE
-    jobTitle: SmartSAN Intern
-    timeline:
-      current: false
-      start:
-        month: Apr
-        year: 2017
-      end:
-        month: Sept
-        year: 2017
-    highlights:
-      - Set up and installed operating systems on Virtual (VMWare) and Physical (HPE ProLiant) servers
-      - Implemented a continuous integration server using Jenkins for SmartFabric Orchestrator (a Java program)
-      - Created build script in Ant using IntelliJ IDE. Contributed via git to remote repository hosted by TeamForge
-      - Worked in agile project environment; followed development sprints and implemented user stories
-      - Presented continuous integration project at HPE’s intern project fair; won second place
+- company: Mathworks
+  jobTitle: Live Editor Intern
+  timeline:
+    current: false
+    start:
+      month: Apr
+      year: 2018
+    end:
+      month: Sept
+      year: 2018
+  highlights:
+    - Developed an internal application to help development team manage work
+    - Worked with team to develop requirements and created a detailed task breakdown list
+    - Worked with Node JS, Express JS, MongoDB, Redis, jQuery, React, and Vue.js
+    - Communicated progress and planned completion of application features with supervisor
+    - Rolled out application to production and presented it to team of 30 engineers for daily use
+
+- company: HPE
+  jobTitle: SmartSAN Intern
+  timeline:
+    current: false
+    start:
+      month: Apr
+      year: 2017
+    end:
+      month: Sept
+      year: 2017
+  highlights:
+    - Set up and installed operating systems on Virtual (VMWare) and Physical (HPE ProLiant) servers
+    - Implemented a continuous integration server using Jenkins for SmartFabric Orchestrator (a Java program)
+    - Created build script in Ant using IntelliJ IDE. Contributed via git to remote repository hosted by TeamForge
+    - Worked in agile project environment; followed development sprints and implemented user stories
+    - Presented continuous integration project at HPE’s intern project fair; won second place
 ...

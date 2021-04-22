@@ -1,6 +1,35 @@
-import React from "react"
-import { graphql, useStaticQuery } from "gatsby";
-import "./hero.css"
+import React from 'react'
+import { graphql, useStaticQuery } from 'gatsby'
+import styled from 'styled-components'
+
+const HeroDiv = styled.div`
+    height: 100vh;
+    margin: 0pt 8pt;
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr;
+    place-items: center;
+`
+
+const HeroContainer = styled.div`
+    margin: auto;
+    display: inline-block;
+`
+
+const Title = styled.h1`
+    margin: 0;
+    padding-bottom: 0;
+    font-size: 44pt;
+    color: var(--blue);
+    &:before { content:''; }
+`
+
+const Subtitle = styled.h2`
+    margin: 0;
+    font-size: 18pt;
+    text-align: left;
+    color: #ccc;
+`
 
 export default function Hero() {
     // Query
@@ -14,16 +43,15 @@ export default function Hero() {
 
     // Render
     return (
-        <div className='hero'>
-            <div className='hero-container'>
-                <div className='title'>
-                    <h1 className='title-upper'>Anshul Kharbanda</h1>
-                    <h2 className='title-lower'>Andydevs</h2>
-                </div>
-                <p className='blurb'>{blurb}</p>
-                <p className='bold'>If you're looking for the old blog, you can find it
-                <a href="https://andydevs.github.io/">Here</a></p>
-            </div>
-        </div>
+        <HeroDiv>
+            <HeroContainer>
+                <Title>Anshul Kharbanda</Title>
+                <Subtitle>Andydevs</Subtitle>
+                <p>{blurb}</p>
+                <p>If you're looking for the 
+                    old blog, you can find it 
+                    <a href="https://andydevs.github.io/">Here</a></p>
+            </HeroContainer>
+        </HeroDiv>
     )
 }

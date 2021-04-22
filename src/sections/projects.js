@@ -16,7 +16,7 @@ export default function Projects() {
                     title
                     image {
                         childImageSharp {
-                            fluid(base64Width: 600, duotone: { highlight: "#44ccff", shadow: "#333333" }) {
+                            fluid(base64Width: 600, duotone: { highlight: "#00aaff", shadow: "#333333" }) {
                                 base64
                             }
                         }

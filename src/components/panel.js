@@ -1,16 +1,37 @@
-import React from "react";
-import "./panel.css";
+import styled from "styled-components";
 
-export default function Panel({ className='', children }) {
-    return (
-        <div className={`panel ${className}`}>
-            {children}
-        </div>
-    )
-}
-Panel.Header = ({ children }) => <div className='panel-header'>{children}</div>
-Panel.Body = ({ children }) => <div className='panel-body'>{children}</div>
-Panel.Footer = ({ children }) => <div className='panel-footer'>{children}</div>
-Panel.Image = ({ src, alt }) => <img className='panel-image' src={src}/>
-Panel.Title = ({ children }) => <h3 className='panel-title'>{children}</h3>
-Panel.Subtitle = ({ children }) => <h4 className='panel-subtitle'>{children}</h4>
+const Panel = styled.div`
+    border-radius: 8pt;
+    border-color: inherit;
+    background-color: var(--less-black);
+    overflow: hidden;
+
+    /* Shadow */
+    -webkit-box-shadow: 4px 4px 21px -6px rgba(0,0,0,0.37);
+    -moz-box-shadow: 4px 4px 21px -6px rgba(0,0,0,0.37);
+    box-shadow: 4px 4px 21px -6px rgba(0,0,0,0.37);
+`
+
+Panel.Image = styled.img`
+    width: 100%;
+`
+
+Panel.Body = styled.div`
+    margin: 16pt;
+    h3 {
+        font-weight: bold;
+        margin: 4pt 0pt;
+    }
+    h4 { 
+        font-style: italic;
+        margin: 2pt 0pt;
+    }
+    hr {
+        margin: 12pt 0pt;
+    }
+    ul {
+        list-style-type: circle;
+    }
+`
+
+export default Panel

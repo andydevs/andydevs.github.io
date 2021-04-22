@@ -1,5 +1,6 @@
 import React from "react"
 import Panel from "../components/panel";
+import Grid from "../components/grid";
 import { graphql, useStaticQuery } from "gatsby"
 import { faGlobe } from "@fortawesome/free-solid-svg-icons";
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
@@ -32,19 +33,19 @@ export default function Projects() {
     return (
         <section id="projects">
             <h1>Projects</h1>
-            <div className='grid'>
+            <Grid>
                 {projects.map(({ id, title, image, description, github, website }) => 
                     <Panel key={id}>
-                        { image && <Panel.Image alt='Andys Notebook' src={image.childImageSharp.fluid.base64} /> }
+                        { image && <Panel.Image alt={title} src={image.childImageSharp.fluid.base64} /> }
                         <Panel.Body>
-                            <Panel.Title>{title}</Panel.Title>
+                            <h3>{title}</h3>
                             <p>{description}</p>
-                            { website && <IconLink icon={faGlobe} size='lg' href={website}/> }
-                            { github && <IconLink icon={faGithub} size='lg' href={`https://github.com/andydevs/${github}`}/> }
+                            { website && <IconLink icon={faGlobe} href={website}/> }
+                            { github && <IconLink icon={faGithub} href={`https://github.com/andydevs/${github}`}/> }
                         </Panel.Body>
                     </Panel>
                 )}
-            </div>
+            </Grid>
         </section>
     )
 }

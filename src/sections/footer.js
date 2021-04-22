@@ -3,7 +3,12 @@ import { graphql, useStaticQuery } from "gatsby";
 import IconLink from '../components/iconlink';
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import { faLinkedin, faGithub } from "@fortawesome/free-brands-svg-icons";
-import "./footer.css"
+import styled from 'styled-components';
+
+const StyledFooter = styled.footer`
+    padding: 12pt 0pt;
+    text-align: center;
+`
 
 export default function Footer() {
     const { contentYaml: { contact } } = useStaticQuery(graphql`
@@ -21,7 +26,7 @@ export default function Footer() {
     `)
 
     return (
-        <footer>
+        <StyledFooter>
             <p>
                 <IconLink icon={faEnvelope} href={`mailto://${contact.email}`}/>
                 <IconLink icon={faLinkedin} href={contact.social.linkedin}/>
@@ -30,6 +35,6 @@ export default function Footer() {
             <p>
                 Site Design largely inspired by <a href='http://brittanychiang.com'>Brittany Chiang</a>
             </p>
-        </footer>
+        </StyledFooter>
     )
 }

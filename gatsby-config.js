@@ -10,6 +10,7 @@ module.exports = {
         desctiption: 'Hobbyist developer and software engineer. This website showcases projects and work experience'
     },
     plugins: [
+        'gatsby-plugin-styled-components',
         'gatsby-plugin-sharp',
         'gatsby-plugin-react-helmet',
         'gatsby-transformer-yaml',

@@ -5,7 +5,62 @@ import Work from "../sections/work"
 import Footer from "../sections/footer"
 import { Helmet } from "react-helmet"
 import { graphql, useStaticQuery } from "gatsby"
-import "./index.css"
+import styled, { createGlobalStyle } from "styled-components";
+
+const GlobalStyle = createGlobalStyle`
+    :root {
+        --black: #333333;
+        --less-black: #404040;
+        --blue: #44ccff;
+        --white: #cccccc;
+    }
+
+    * {
+        font-family: 'Consolas', Arial;
+        font-weight: 100;
+    }
+    body {
+        margin: 0;
+        background-color: var(--black);
+        color: white;
+    }
+    a::before {
+        content: '>';
+        margin-right: 2pt;
+    }
+    a.icon-link::before {
+        content: '';
+        margin-right: 0;
+    }
+    a {
+        color: var(--blue);
+        text-decoration: none;
+        margin-left: 2pt;
+        margin-right: 2pt;
+    }
+
+    h1 {
+        color: var(--blue);
+        font-size: 24pt;
+        padding-bottom: 6pt;
+    }
+    h1:before,h2:before {
+        content: '>';
+        margin-right: 4pt;
+    }
+
+    ul {
+        padding-left: 24pt;
+    }
+
+    ul > li {
+        margin: 8pt 0pt;
+    }
+`
+
+const StyledMain = styled.main`
+    margin: 12pt;
+`
 
 export default function Home() {
     const { site } = useStaticQuery(graphql`
@@ -21,12 +76,13 @@ export default function Home() {
     return (
         <div>
             <Helmet title={site.siteMetadata.title}/>
-            <main id='app-root'>
+            <GlobalStyle/>
+            <StyledMain>
                 <Hero/>
                 <Projects/>
                 <Work/>
                 <Footer/>
-            </main>
+            </StyledMain>
         </div>
     )
 }

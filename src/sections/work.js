@@ -1,5 +1,6 @@
 import React from "react"
 import Panel from '../components/panel';
+import Grid from "../components/grid";
 import { useStaticQuery, graphql } from "gatsby";
 
 export default function Work() {
@@ -32,7 +33,7 @@ export default function Work() {
     return (
         <section id="work-experience">
             <h1>Work Experience</h1>
-            <div className='grid'>
+            <Grid>
                 {workunits.map(({ id, company, jobTitle, timeline, highlights }) =>
                     <Panel key={id}>
                         <Panel.Body>
@@ -48,7 +49,7 @@ export default function Work() {
                         </Panel.Body>
                     </Panel>
                 )}
-            </div>
+            </Grid>
         </section>
     )
 }

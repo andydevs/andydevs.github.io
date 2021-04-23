@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import HeroLogo from "../graphics/hero-logo.svg";
 
 const HeroDiv = styled.div`
     height: 100vh;
@@ -30,11 +31,25 @@ const Subtitle = styled.h2`
     color: #ccc;
 `
 
+const HeroLogoContainer = styled.div`
+    width: 100%;
+    text-align: center;
+
+    svg {
+        max-width: 400px;
+        width: 100%;
+        height: 100%;
+    }
+`
+
 export default function Hero() {
     // Render
     return (
         <HeroDiv>
             <HeroContainer>
+                <HeroLogoContainer>
+                    <HeroLogo/>
+                </HeroLogoContainer>
                 <Title>Anshul Kharbanda</Title>
                 <Subtitle>Andydevs</Subtitle>
                 <p>If you're looking for the 

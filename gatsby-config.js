@@ -6,8 +6,7 @@
 
 module.exports = {
     siteMetadata: {
-        title: 'Andydevs',
-        desctiption: 'Hobbyist developer and software engineer. This website showcases projects and work experience'
+        title: 'Andydevs'
     },
     plugins: [
         'gatsby-plugin-styled-components',
@@ -19,6 +18,14 @@ module.exports = {
             resolve: 'gatsby-source-filesystem',
             options: {
                 path: `${__dirname}/content/`,
+            }
+        },
+        {
+            resolve: "gatsby-plugin-react-svg",
+            options: {
+                rule: {
+                    include: /graphics/ // See below to configure properly
+                }
             }
         }
     ],

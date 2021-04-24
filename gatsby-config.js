@@ -19,14 +19,6 @@ module.exports = {
             options: {
                 path: `${__dirname}/content/`,
             }
-        },
-        {
-            resolve: "gatsby-plugin-react-svg",
-            options: {
-                rule: {
-                    include: /graphics/ // See below to configure properly
-                }
-            }
         }
-    ],
+    ]
 }

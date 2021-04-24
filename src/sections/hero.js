@@ -1,5 +1,6 @@
-import React, { useRef, useEffect } from 'react'
+import React from 'react'
 import styled from 'styled-components'
+import useAnimation from '../hooks/useAnimation';
 import heroAnimation from '../assets/hero-animation';
 
 const HeroDiv = styled.div`
@@ -35,42 +36,8 @@ const WhiteA = styled.a`
     color: var(--white);
 `
 
-function useAnimation(routine) {
-    const animMountRef = useRef();
-
-    useEffect(() => {
-        // If canvas exists remove it
-        let canvas = document.getElementById('#tiles-canvas')
-        if (canvas) { canvas.remove(); }
-
-        // Create new canvas and attach it to ref
-        canvas = document.createElement('canvas')
-        canvas.id = '#tiles-canvas'
-        animMountRef.current.appendChild(canvas)
-        let ctx = canvas.getContext('2d')
-
-        // Make sure canvas is the same size as ref
-        canvas.width = animMountRef.current.offsetWidth
-        canvas.height = animMountRef.current.offsetHeight
-        window.addEventListener('resize', function() {
-            canvas.width = animMountRef.current.offsetWidth
-            canvas.height = animMountRef.current.offsetHeight    
-        })
-
-        // Animate generator routine
-        let coroutine = routine(canvas, ctx)
-        function anim() {
-            if (coroutine.next()) {
-                requestAnimationFrame(anim)
-            }
-        }
-        requestAnimationFrame(anim)
-    }, [])
-
-    return animMountRef
-}
-
 export default function Hero() {
+    // Animation
     const animMountRef = useAnimation(heroAnimation);
 
     // Render

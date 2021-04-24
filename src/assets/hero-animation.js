@@ -2,7 +2,7 @@ export default function* heroAnimation(canvas, ctx) {
     // Parameters
     let size = 64
     let colors = [
-        { r: 0x33, g: 0x33, b: 0x33 },
+        { r: 0x00, g: 0x00, b: 0x00 },
         { r: 0x00, g: 0xaa, b: 0xff }
     ]
 

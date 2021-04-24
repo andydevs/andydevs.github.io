@@ -86,8 +86,8 @@ export default function Home() {
                 <About/>
                 <Projects/>
                 <Work/>
-                <Footer/>
             </StyledMain>
+            <Footer/>
         </div>
     )
 }

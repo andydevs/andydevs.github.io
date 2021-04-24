@@ -60,7 +60,10 @@ const GlobalStyle = createGlobalStyle`
 `
 
 const StyledMain = styled.main`
-    margin: 12pt;
+    margin: 12pt 10%;
+    @media screen and (max-width: 1200px) {
+        margin: 12pt;
+    }
 `
 
 export default function Home() {

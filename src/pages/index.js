@@ -13,7 +13,7 @@ const GlobalStyle = createGlobalStyle`
         --black: #333333;
         --less-black: #404040;
         --blue: #00aaff;
-        --white: #cccccc;
+        --white: white;
     }
 
     * {
@@ -78,8 +78,8 @@ export default function Home() {
         <div>
             <Helmet title={site.siteMetadata.title}/>
             <GlobalStyle/>
+            <Hero/>
             <StyledMain>
-                <Hero/>
                 <About/>
                 <Projects/>
                 <Work/>

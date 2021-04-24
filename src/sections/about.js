@@ -8,11 +8,29 @@ const Grid = styled.div`
     grid-template-rows: 1fr;
     grid-template-areas: "photo description";
     gap: 16pt;
+
+    @media screen and (max-width: 900px) {
+        grid-template-columns: auto;
+        grid-template-rows: auto auto;
+        grid-template-areas:
+            "photo"
+            "description";
+        place-items: center;
+    }
 `
 
 const Image = styled.img`
     grid-area: photo;
+
+    // Styling
     border-radius: 8pt;
+    -webkit-box-shadow: 4px 4px 21px -6px rgba(0,0,0,0.37);
+    -moz-box-shadow: 4px 4px 21px -6px rgba(0,0,0,0.37);
+    box-shadow: 4px 4px 21px -6px rgba(0,0,0,0.37);
+
+    @media screen and (max-width: 700px) {
+        width: 100%;
+    }
 `
 
 const Description = styled.div`
@@ -40,7 +58,7 @@ export default function About() {
                 blurb
             }
             imageSharp(fluid: {originalName: {eq: "profile.jpg"}}) {
-                fluid(maxWidth: 300, base64Width: 300, duotone: { highlight: "#00aaff", shadow: "#000000" }) {
+                fluid(base64Width: 400, duotone: { highlight: "#00aaff", shadow: "#000000" }) {
                     base64
                 }
             }

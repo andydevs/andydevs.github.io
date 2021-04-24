@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import useAnimation from '../hooks/useAnimation';
+import use2dAnimation from '../hooks/use2dAnimation';
 import heroAnimation from '../assets/hero-animation';
 
 const HeroDiv = styled.div`
@@ -38,7 +38,7 @@ const WhiteA = styled.a`
 
 export default function Hero() {
     // Animation
-    const animMountRef = useAnimation(heroAnimation);
+    const animMountRef = use2dAnimation(heroAnimation);
 
     // Render
     return (

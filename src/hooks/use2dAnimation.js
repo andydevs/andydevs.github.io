@@ -1,6 +1,6 @@
 import { useRef, useEffect } from 'react';
 
-export default function useAnimation(routine) {
+export default function use2dAnimation(routine) {
     // Set up animation on ref
     const animMountRef = useRef();
     useEffect(() => {

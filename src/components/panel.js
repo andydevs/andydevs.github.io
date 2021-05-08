@@ -31,8 +31,9 @@ const Title = styled.h3`
     position: absolute;
     z-index: 1;
     margin: 0;
-    bottom: 16pt;
-    left: 16pt;
+    bottom: 0pt;
+    left: 0pt;
+    margin: 16pt;
     font-weight: bold;
     font-size: 24pt;
 `

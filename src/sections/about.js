@@ -28,37 +28,75 @@ const Image = styled.img`
     -moz-box-shadow: 4px 4px 21px -6px rgba(0,0,0,0.37);
     box-shadow: 4px 4px 21px -6px rgba(0,0,0,0.37);
 
+    max-width: 300px;
+
     @media screen and (max-width: 700px) {
-        width: 100%;
+        width: 70%;
     }
 `
 
 const Description = styled.div`
     grid-area: description;
-    grid-template-columns: auto 1fr;
-    grid-template-rows: 1fr 1fr;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto 1fr;
     grid-template-areas:
         "blurb blurb"
         "education skills";
+
+    @media screen and (max-width: 700px) {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(3, auto);
+        grid-template-areas:
+            "blurb"
+            "education"
+            "skills";
+    }
 `
 
 const Blurb = styled.p`
     grid-area: blurb;
 `
 
+const Education = styled.div`
+    grid-area: education;
+`
+
+const Skills = styled.div`
+    grid-area: skills;
+`
+
 
 export default function About() {
     // Query
     const { 
-        contentYaml: { blurb },
+        contentYaml: { 
+            blurb,
+            education: {
+                school,
+                degree,
+                graduated,
+                GPA
+            }
+        },
         imageSharp: { fluid: { base64: profile } }
     } = useStaticQuery(graphql`
         query AboutQuery {
             contentYaml {
-                blurb
+                blurb,
+                education {
+                    school,
+                    degree,
+                    graduated {
+                        month,
+                        year
+                    },
+                    GPA
+                }
             }
             imageSharp(fluid: {originalName: {eq: "profile.jpg"}}) {
-                fluid(base64Width: 400, duotone: { highlight: "#00aaff", shadow: "#000000" }) {
+                fluid(base64Width: 600, duotone: { highlight: "#00aaff", shadow: "#000000" }) {
                     base64
                 }
             }
@@ -72,6 +110,21 @@ export default function About() {
                 <Image alt="Profile" src={profile}/>
                 <Description>
                     <Blurb>{blurb}</Blurb>
+                    <Education>
+                        <h3>Education</h3>
+                        <p>{ school }</p>
+                        <p>{ degree }</p>
+                        <p>Graduated { graduated.month } { graduated.year }</p>
+                        <p>Cumulative GPA: { GPA }</p>
+                    </Education>
+                    <Skills>
+                        <h3>Skills</h3>
+                        <ul>
+                            <li>Python</li>
+                            <li>Javascript</li>
+                            <li>C/C++</li>
+                        </ul>
+                    </Skills>
                 </Description>
             </Grid>
         </section>

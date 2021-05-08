@@ -78,7 +78,8 @@ export default function About() {
                 degree,
                 graduated,
                 GPA
-            }
+            },
+            skills
         },
         imageSharp: { fluid: { base64: profile } }
     } = useStaticQuery(graphql`
@@ -93,7 +94,8 @@ export default function About() {
                         year
                     },
                     GPA
-                }
+                },
+                skills
             }
             imageSharp(fluid: {originalName: {eq: "profile.jpg"}}) {
                 fluid(base64Width: 600, duotone: { highlight: "#00aaff", shadow: "#000000" }) {
@@ -120,9 +122,8 @@ export default function About() {
                     <Skills>
                         <h3>Skills</h3>
                         <ul>
-                            <li>Python</li>
-                            <li>Javascript</li>
-                            <li>C/C++</li>
+                            {skills.map((skill, index) => 
+                                <li key={index}>{skill}</li>)}
                         </ul>
                     </Skills>
                 </Description>

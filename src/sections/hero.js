@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import use2dAnimation from '../hooks/use2dAnimation';
+import useHexHeroAnimation from '../hooks/useHexHeroAnimation';
 import heroAnimation from '../assets/hero-animation';
 
 const HeroDiv = styled.div`
@@ -14,6 +14,8 @@ const HeroContainer = styled.div`
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    background-color: #333;
+    padding: 16pt;
     display: inline-block;
 `
 
@@ -21,6 +23,7 @@ const Title = styled.h1`
     margin: 0;
     padding-bottom: 0;
     font-size: 44pt;
+    font-style: bold;
     color: var(--white);
     &:before { content:''; }
 `
@@ -38,7 +41,7 @@ const WhiteA = styled.a`
 
 export default function Hero() {
     // Animation
-    const animMountRef = use2dAnimation(heroAnimation);
+    const animMountRef = useHexHeroAnimation(100, 0.01, 0.95);
 
     // Render
     return (

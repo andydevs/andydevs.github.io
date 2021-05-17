@@ -67,6 +67,10 @@ const StyledMain = styled.main`
     }
 `
 
+const Message = styled.p`
+    margin: 16pt 0pt;
+`
+
 export default function Home() {
     const { site } = useStaticQuery(graphql`
         query SiteWideQuery {
@@ -84,6 +88,10 @@ export default function Home() {
             <GlobalStyle/>
             <Hero/>
             <StyledMain>
+                <Message>
+                    If you're looking for the old blog, you can find it 
+                    <a href="https://andydevs.github.io/">Here</a>
+                </Message>
                 <About/>
                 <Projects/>
                 <Work/>

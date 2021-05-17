@@ -11,10 +11,10 @@ const HeroDiv = styled.div`
 
 const HeroContainer = styled.div`
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    bottom: 0%;
+    right: 0%;
     background-color: #333;
+    margin: 16pt;
     padding: 16pt;
     display: inline-block;
 `
@@ -35,10 +35,6 @@ const Subtitle = styled.h2`
     color: var(--white);
 `
 
-const WhiteA = styled.a`
-    color: var(--white);
-`
-
 export default function Hero() {
     // Animation
     const animMountRef = useHexHeroAnimation(100, 0.01, 0.95);
@@ -49,9 +45,6 @@ export default function Hero() {
             <HeroContainer>
                 <Title>Anshul Kharbanda</Title>
                 <Subtitle>Andydevs</Subtitle>
-                <p>If you're looking for the 
-                    old blog, you can find it 
-                    <WhiteA href="https://andydevs.github.io/">Here</WhiteA></p>
             </HeroContainer>
         </HeroDiv>
     )

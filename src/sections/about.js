@@ -55,15 +55,22 @@ const Description = styled.div`
     }
 `
 
+const SubsectionTitle = styled.h3`
+    padding-bottom: 8pt;
+    border-bottom: 1pt solid;
+`
+
 const Blurb = styled.p`
     grid-area: blurb;
 `
 
 const Education = styled.div`
+    margin: 0pt 8pt;
     grid-area: education;
 `
 
 const Skills = styled.div`
+    margin: 0pt 8pt;
     grid-area: skills;
 `
 
@@ -113,14 +120,14 @@ export default function About() {
                 <Description>
                     <Blurb>{blurb}</Blurb>
                     <Education>
-                        <h3>Education</h3>
+                        <SubsectionTitle>Education</SubsectionTitle>
                         <p>{ school }</p>
                         <p>{ degree }</p>
                         <p>Graduated { graduated.month } { graduated.year }</p>
                         <p>Cumulative GPA: { GPA }</p>
                     </Education>
                     <Skills>
-                        <h3>Skills</h3>
+                        <SubsectionTitle>Skills</SubsectionTitle>
                         <ul>
                             {skills.map((skill, index) => 
                                 <li key={index}>{skill}</li>)}

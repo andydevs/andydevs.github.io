@@ -37,7 +37,7 @@ const Subtitle = styled.h2`
 
 export default function Hero() {
     // Animation
-    const animMountRef = useHexHeroAnimation(100, 0.01, 0.95);
+    const animMountRef = useHexHeroAnimation(50, 0.01, 0.95);
 
     // Render
     return (

@@ -4,11 +4,12 @@ import Two from 'two.js';
 export default function useHexHeroAnimation({
         radius=50,
         timeRate=0.01,
-        spacing=0.10,
-        period=10,
+        spacing=0.00,
+        period=20,
         rotations=5,
         sizePower=2,
-        rotationPower=3
+        rotationPower=3,
+        stableTime=4
 }) {
     // Generate ref
     const animationRef = useRef()
@@ -74,18 +75,18 @@ export default function useHexHeroAnimation({
 
         // Wave patterns for size and rotation
         const sizeSignal = time => {
-            let m = 4 * (time % period) / period
-            return m < 1 ? 0                        // Waiting
-                : m < 2 ? easeOut(m % 1, sizePower) // Rising
-                : m < 3 ? 1                         // Sustaining
-                : 1 - easeIn(m % 1, sizePower)      // Falling
+            let m = (2 + 2*stableTime) * (time % period) / period
+            return m < stableTime ? 0                            // Waiting
+                : m < stableTime + 1 ? easeOut(m % 1, sizePower) // Rising
+                : m < 2*stableTime + 1 ? 1                       // Sustaining
+                : 1 - easeIn(m % 1, sizePower)                   // Falling
         }
         const rotationSignal = time => {
-            let m = 4 * (time % period) / period
-            return m < 1 ? 0                            // Waiting
-                : m < 2 ? easeOut(m % 1, rotationPower) // Rising
-                : m < 3 ? 1                             // Sustaining
-                : 1 + easeIn(m % 1, rotationPower)      // Falling
+            let m = (2 + 2*stableTime) * (time % period) / period
+            return m < 2 ? 0                                         // Waiting
+                : m < stableTime + 1 ? easeOut(m % 1, rotationPower) // Rising
+                : m < 2*stableTime + 1 ? 1                           // Sustaining
+                : 1 + easeIn(m % 1, rotationPower)                   // Falling
         }
 
         // Animation loop

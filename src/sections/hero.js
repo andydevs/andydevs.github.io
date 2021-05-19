@@ -13,7 +13,6 @@ const HeroContainer = styled.div`
     bottom: 50%;
     transform: translateY(50%);
     right: 0%;
-    background-color: #333;
     margin: 0pt 16pt;
     padding: 16pt;
     display: inline-block;

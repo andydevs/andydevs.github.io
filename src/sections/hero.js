@@ -1,7 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
 import useHexHeroAnimation from '../hooks/useHexHeroAnimation';
-import heroAnimation from '../assets/hero-animation';
 
 const HeroDiv = styled.div`
     position: relative;
@@ -11,10 +10,11 @@ const HeroDiv = styled.div`
 
 const HeroContainer = styled.div`
     position: absolute;
-    bottom: 0%;
+    bottom: 50%;
+    transform: translateY(50%);
     right: 0%;
     background-color: #333;
-    margin: 16pt;
+    margin: 0pt 16pt;
     padding: 16pt;
     display: inline-block;
 `

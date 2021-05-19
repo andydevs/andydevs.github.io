@@ -18,7 +18,7 @@ const GlobalStyle = createGlobalStyle`
     }
 
     * {
-        font-family: 'Consolas', Arial;
+        font-family: Arial, sans-serif;
         font-weight: 100;
     }
     body {

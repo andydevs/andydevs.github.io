@@ -3,13 +3,12 @@ import Two from 'two.js';
 
 export default function useHexHeroAnimation({
         radius=50,
-        timeRate=0.01,
-        spacing=0.00,
-        period=20,
         rotations=5,
-        sizePower=2,
-        rotationPower=3,
-        stableTime=4
+        period=20,
+        stableTime=4,
+        spacing=0.00,
+        timeRate=0.01,
+        easingCurvature=0.7
 }) {
     // Generate ref
     const animationRef = useRef()
@@ -70,23 +69,27 @@ export default function useHexHeroAnimation({
         // Ease in and out functions
         // Credit to: https://easings.net
         // Created by: Andrey Sitnik and Ivan Solovev
-        const easeIn = (x, p=2) => Math.pow(x, p)
-        const easeOut = (x, p=2) => 1 - Math.pow(1 - x, p)
+        const bias = x => {
+            let k = Math.pow(1 - easingCurvature, 3)
+            return (x * k) / (x * k - x + 1)
+        }
+        const easeIn = x => bias(x)
+        const easeOut = x => 1 - bias(1 - x)
 
         // Wave patterns for size and rotation
-        const sizeSignal = time => {
-            let m = (2 + 2*stableTime) * (time % period) / period
-            return m < stableTime ? 0                            // Waiting
-                : m < stableTime + 1 ? easeOut(m % 1, sizePower) // Rising
-                : m < 2*stableTime + 1 ? 1                       // Sustaining
-                : 1 - easeIn(m % 1, sizePower)                   // Falling
+        const upDown = time => {
+            let m = 2 * (1 + stableTime) * time
+            return m < stableTime ? 0                 // Waiting
+                : m < stableTime + 1 ? easeOut(m % 1) // Rising
+                : m < 2*stableTime + 1 ? 1            // Sustaining
+                : 1 - easeIn(m % 1)                   // Falling
         }
-        const rotationSignal = time => {
-            let m = (2 + 2*stableTime) * (time % period) / period
-            return m < 2 ? 0                                         // Waiting
-                : m < stableTime + 1 ? easeOut(m % 1, rotationPower) // Rising
-                : m < 2*stableTime + 1 ? 1                           // Sustaining
-                : 1 + easeIn(m % 1, rotationPower)                   // Falling
+        const upUp = time => {
+            let m = 2 * (1 + 1*stableTime) * time
+            return m < 2 ? 0                          // Waiting
+                : m < stableTime + 1 ? easeOut(m % 1) // Rising
+                : m < 2*stableTime + 1 ? 1            // Sustaining
+                : 1 + easeIn(m % 1)                   // Falling
         }
 
         // Animation loop
@@ -99,12 +102,13 @@ export default function useHexHeroAnimation({
                     let height = grid.length
 
                     // Compute alpha parameter
-                    let alpha = (i/width + j/height)/2
+                    let alpha = (i/width + j/height)/2 + t
+                    alpha = (alpha % period) / period
 
                     // Set polygon features
                     let polygon = grid[j][i]
-                    polygon.scale = (1 - spacing)*sizeSignal(alpha + t)
-                    polygon.rotation = rotations*Math.PI*rotationSignal(alpha + t)
+                    polygon.scale = (1 - spacing)*upDown(alpha)
+                    polygon.rotation = rotations*Math.PI*upUp(alpha)
                 }
             }
 

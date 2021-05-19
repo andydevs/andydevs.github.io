@@ -86,7 +86,7 @@ export default function useHexHeroAnimation({
         }
         const upUp = time => {
             let m = 2 * (1 + 1*stableTime) * time
-            return m < 2 ? 0                          // Waiting
+            return m < stableTime ? 0                 // Waiting
                 : m < stableTime + 1 ? easeOut(m % 1) // Rising
                 : m < 2*stableTime + 1 ? 1            // Sustaining
                 : 1 + easeIn(m % 1)                   // Falling

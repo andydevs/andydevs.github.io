@@ -1,7 +1,11 @@
 import { useRef, useEffect } from 'react';
 import Two from 'two.js';
 
-export default function useHexHeroAnimation(radius=50, timeRate=0.01, preAlpha=0.90) {
+export default function useHexHeroAnimation({
+        radius=50,
+        timeRate=0.01,
+        preAlpha=0.90
+}) {
     // Generate ref
     const animationRef = useRef()
 

@@ -4,7 +4,11 @@ import Two from 'two.js';
 export default function useHexHeroAnimation({
         radius=50,
         timeRate=0.01,
-        preAlpha=0.90
+        spacing=0.10,
+        period=10,
+        rotations=5,
+        sizePower=2,
+        rotationPower=3
 }) {
     // Generate ref
     const animationRef = useRef()
@@ -27,90 +31,87 @@ export default function useHexHeroAnimation({
             two.height = animationRef.current.clientHeight
         })
 
+        // Initialize Grid
+        let grid = []
+        function setUpGrid() {
+            // Clear current space and grid
+            two.clear()
+            grid = []
+
+            // Row parameters
+            let yHat, k
+            for (let j = 0, y = 0; y < two.height + radius; y += 2*ry, ++j) {
+                // Init parameters
+                yHat = y
+                k = 1
+                grid[j] = []
+
+                // Go through row
+                for (let i = 0, x = 0; x < two.width + radius; x += rx, ++i) {
+                    // Create polygon
+                    let poly = two.makePolygon(x, yHat, radius, 6)
+                    poly.fill = '#00aaff'
+                    poly.linewidth = 0
+                    grid[j][i] = poly
+
+                    // Update parameters
+                    yHat += k*ry
+                    k *= -1
+                }
+            }
+
+            // Update grid
+            two.update()
+        }
+        setUpGrid()
+        two.bind('resize', setUpGrid)
+
         // Ease in and out functions
         // Credit to: https://easings.net
         // Created by: Andrey Sitnik and Ivan Solovev
         const easeIn = (x, p=2) => Math.pow(x, p)
         const easeOut = (x, p=2) => 1 - Math.pow(1 - x, p)
 
-        // Size signal power
-        const sizeSignalPower = 2
-        const rotationSignalPower = 3
-        const signalPeriod = 10
-
         // Wave patterns for size and rotation
-        const sizeSignal = (time, period) => {
-            // Get path location in period 
-            // (broken into 4 sections)
+        const sizeSignal = time => {
             let m = 4 * (time % period) / period
-            if (m < 1) { // Waiting
-                return 0
-            }
-            else if (m < 2) { // Rising
-                return easeOut(m % 1, sizeSignalPower)
-            }
-            else if (m < 3) { // Sustaining
-                return 1
-            }
-            else { // Falling
-                return 1 - easeIn(m % 1, sizeSignalPower)
-            }
+            return m < 1 ? 0                        // Waiting
+                : m < 2 ? easeOut(m % 1, sizePower) // Rising
+                : m < 3 ? 1                         // Sustaining
+                : 1 - easeIn(m % 1, sizePower)      // Falling
         }
-        const rotationSignal = (time, period) => {
-            // Get path location in period 
-            // (broken into 4 sections)
+        const rotationSignal = time => {
             let m = 4 * (time % period) / period
-            if (m < 1) { // Waiting
-                return 0
-            }
-            else if (m < 2) { // Rising
-                return easeOut(m % 1, rotationSignalPower)
-            }
-            else if (m < 3) { // Sustaining
-                return 1
-            }
-            else { // Falling
-                return 1 + easeIn(m % 1, rotationSignalPower)
-            }
+            return m < 1 ? 0                            // Waiting
+                : m < 2 ? easeOut(m % 1, rotationPower) // Rising
+                : m < 3 ? 1                             // Sustaining
+                : 1 + easeIn(m % 1, rotationPower)      // Falling
         }
 
         // Animation loop
         let t = 0
         two.bind('update', function update() {
-            two.clear()
+            for (let j = 0; j < grid.length; ++j) {
+                for (let i = 0; i < grid[j].length; ++i) {
+                    // Get width and height of grid
+                    let width = grid[j].length
+                    let height = grid.length
 
-            // Row parameters
-            let r, j
-            for (let y = 0; y < two.height + radius; y += 2*ry) {
-                // Init parameters
-                r = y
-                j = 1
+                    // Compute alpha parameter
+                    let alpha = (i/width + j/height)/2
 
-                // Go through row
-                for (let x = 0; x < two.width + radius; x += rx) {
-                    // Calculate alpha parameter
-                    let a = (y/two.height + x/two.width)/2
-
-                    // Calculate size and rotation
-                    let scale = preAlpha*sizeSignal(a + t, signalPeriod)
-                    let rotation = 2*Math.PI*rotationSignal(a + t, signalPeriod)
-
-                    // Create polygon
-                    let poly = two.makePolygon(x, r, radius, 6)
-                    poly.scale = scale
-                    poly.rotation = rotation
-                    poly.fill = '#00aaff'
-                    poly.linewidth = 0
-
-                    // Update parameters
-                    r += j*ry
-                    j *= -1
+                    // Set polygon features
+                    let polygon = grid[j][i]
+                    polygon.scale = (1 - spacing)*sizeSignal(alpha + t)
+                    polygon.rotation = rotations*Math.PI*rotationSignal(alpha + t)
                 }
             }
 
-            // Increment time
+            // Update time
             t += timeRate
         })
+
+        // Play two instance
         two.play()
     }, [])
 

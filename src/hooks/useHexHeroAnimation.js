@@ -93,7 +93,7 @@ export default function useHexHeroAnimation({
         }
 
         // Animation loop
-        let t = 0
+        let t = stableTime/2 * period/(2*stableTime + 2)
         two.bind('update', function update() {
             for (let j = 0; j < grid.length; ++j) {
                 for (let i = 0; i < grid[j].length; ++i) {

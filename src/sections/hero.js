@@ -37,7 +37,8 @@ const Subtitle = styled.h2`
 export default function Hero() {
     // Animation
     const animMountRef = useHexHeroAnimation({
-        radius: 50 
+        radius: 150,
+        spacing: 0.01
     })
 
     // Render

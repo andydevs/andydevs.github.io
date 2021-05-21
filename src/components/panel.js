@@ -53,8 +53,7 @@ Panel.Body = styled.div`
         font-weight: bold;
         margin: 4pt 0pt;
     }
-    h4 { 
-        font-style: italic;
+    h4 {
         margin: 2pt 0pt;
     }
     hr {

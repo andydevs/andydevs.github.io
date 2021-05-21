@@ -114,7 +114,7 @@ export default function About() {
     
     return (
         <section id="about">
-            <h1>About</h1>
+            <h1>About Me</h1>
             <Grid>
                 <Image alt="Profile" src={profile}/>
                 <Description>

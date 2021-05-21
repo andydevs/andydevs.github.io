@@ -1,14 +1,4 @@
 ---
-- company: Raytheon
-  jobTitle: Software Engineer
-  timeline:
-    current: true
-    start:
-      month: Dec
-      year: 2020
-  highlights:
-    - Developed internal solution for integrating SIMDIS with radar software programs.
-
 - company: Drexel IT
   jobTitle: Technical Support Intern
   timeline:
@@ -41,7 +31,7 @@
     - Communicated progress and planned completion of application features with supervisor
     - Rolled out application to production and presented it to team of 30 engineers for daily use
 
-- company: HPE
+- company: Hewlett Packard Enterprise
   jobTitle: SmartSAN Intern
   timeline:
     current: false

@@ -14,7 +14,6 @@ const HeroContainer = styled.div`
     transform: translateY(50%);
     right: 0%;
     margin: 0pt 16pt;
-    padding: 16pt;
     display: inline-block;
 `
 
@@ -22,7 +21,7 @@ const Title = styled.h1`
     margin: 0;
     padding: 0;
     font-weight: 900;
-    font-size: 44pt;
+    font-size: 50pt;
     border-bottom: 1px solid;
     color: var(--white);
     &:before { content:''; }
@@ -30,8 +29,8 @@ const Title = styled.h1`
 
 const Subtitle = styled.h2`
     margin: 0;
-    text-indent: 16pt;
-    font-weight: 700;
+    text-indent: 6pt;
+    font-weight: 500;
     font-size: 18pt;
     text-align: left;
     color: var(--white);
@@ -40,8 +39,9 @@ const Subtitle = styled.h2`
 export default function Hero() {
     // Animation
     const animMountRef = useHexHeroAnimation({
-        radius: 150,
-        spacing: 0.01
+        radius: 50,
+        spacing: 0.01,
+        period: 30
     })
 
     // Render

@@ -2,6 +2,7 @@ import { useRef, useEffect } from 'react';
 import Two from 'two.js';
 
 export default function useHexHeroAnimation({
+        hexcolor='#0088cc',
         radius=50,
         spacing=0.00,
         rotations=2,
@@ -50,7 +51,7 @@ export default function useHexHeroAnimation({
                 for (let i = 0, x = 0; x < two.width + radius; x += rx, ++i) {
                     // Create polygon
                     let poly = two.makePolygon(x, yHat, radius, 6)
-                    poly.fill = '#00aaff'
+                    poly.fill = hexcolor
                     poly.linewidth = 0
                     grid[j][i] = poly
 

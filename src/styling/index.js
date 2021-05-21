@@ -1,8 +1,6 @@
 import { createGlobalStyle } from 'styled-components';
 
 export default createGlobalStyle`
-    @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;0,500;0,700;0,900;1,300;1,400;1,500;1,700;1,900&display=swap');
-    
     :root {
         --black: #333333;
         --less-black: #404040;
@@ -12,27 +10,29 @@ export default createGlobalStyle`
     }
 
     * {
-        font-family: 'Roboto', Arial, sans-serif;
-        font-weight: 300;
+        font-family: 'Helvetica', Arial, sans-serif;
+        font-weight: 100;
+    }
+    h1,h2,h3 {
+        font-family: 'Futura'
     }
     body {
         margin: 0;
         background-color: var(--black);
         color: white;
     }
+    
+    a {
+        color: var(--blue);
+        text-decoration: none;
+        margin: 0pt 2pt;
+    }
     a::before {
         content: '>';
-        margin-right: 2pt;
     }
     a.icon-link::before {
         content: '';
         margin-right: 0;
-    }
-    a {
-        color: var(--blue);
-        text-decoration: none;
-        margin-left: 2pt;
-        margin-right: 2pt;
     }
 
     h1 {
@@ -42,7 +42,7 @@ export default createGlobalStyle`
     }
     h1:before,h2:before {
         content: '>';
-        margin-right: 4pt;
+        margin-right: 2pt;
     }
 
     ul {

@@ -20,15 +20,18 @@ const HeroContainer = styled.div`
 
 const Title = styled.h1`
     margin: 0;
-    padding-bottom: 0;
+    padding: 0;
+    font-weight: 900;
     font-size: 44pt;
-    font-style: bold;
+    border-bottom: 1px solid;
     color: var(--white);
     &:before { content:''; }
 `
 
 const Subtitle = styled.h2`
     margin: 0;
+    text-indent: 16pt;
+    font-weight: 700;
     font-size: 18pt;
     text-align: left;
     color: var(--white);

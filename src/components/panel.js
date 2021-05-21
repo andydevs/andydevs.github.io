@@ -34,7 +34,7 @@ const Title = styled.h3`
     bottom: 0pt;
     left: 0pt;
     margin: 16pt;
-    font-weight: bold;
+    font-weight: 500;
     font-size: 24pt;
 `
 

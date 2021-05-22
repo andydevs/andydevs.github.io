@@ -21,7 +21,7 @@ const Title = styled.h1`
     margin: 0;
     padding: 0;
     font-weight: 900;
-    font-size: 50pt;
+    font-size: 44pt;
     border-bottom: 1px solid;
     color: var(--white);
     &:before { content:''; }

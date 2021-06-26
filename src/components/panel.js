@@ -16,9 +16,14 @@ const Panel = styled.div`
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: auto 1fr auto;
+    grid-template-areas:
+        "image"
+        "body"
+        "footer";
 `
 
 const ImageTitleDiv = styled.div`
+    grid-area: image;
     position: static;
 `
 
@@ -54,6 +59,7 @@ Panel.ImageTitle = ({ title, base64 }) => (
 )
 
 Panel.Body = styled.div`
+    grid-area: body;
     margin: 16pt;
     h3 {
         font-weight: bold;
@@ -71,6 +77,7 @@ Panel.Body = styled.div`
 `
 
 Panel.Footer = styled.div`
+    grid-area: footer;
     margin: 8pt 16pt 16pt 16pt;
 `
 

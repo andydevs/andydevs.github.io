@@ -1,3 +1,4 @@
+import { graphql, useStaticQuery } from 'gatsby';
 import React from 'react'
 import styled from 'styled-components'
 import useHexHeroAnimation from '../hooks/useHexHeroAnimation';
@@ -37,6 +38,16 @@ const Subtitle = styled.h2`
 `
 
 export default function Hero() {
+    // Gatsby Query
+    const { contentYaml: { name, handle } } = useStaticQuery(graphql`
+        query HeroQuery {
+            contentYaml {
+                name, 
+                handle
+            }
+        }
+    `)
+
     // Animation
     const animMountRef = useHexHeroAnimation({
         radius: 50,
@@ -48,8 +59,8 @@ export default function Hero() {
     return (
         <HeroDiv ref={animMountRef}>
             <HeroContainer>
-                <Title>Anshul Kharbanda</Title>
-                <Subtitle>Andydevs</Subtitle>
+                <Title>{name}</Title>
+                <Subtitle>{handle}</Subtitle>
             </HeroContainer>
         </HeroDiv>
     )

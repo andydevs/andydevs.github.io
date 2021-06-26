@@ -17,6 +17,7 @@
   github: blockys-adventure-in-blockworld
 
 - title: Cuda Fractal
+  image: images/cudafractal.png
   description: >
     A fractal generator program written using Nvidia's
     CUDA framework

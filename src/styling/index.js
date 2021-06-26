@@ -14,7 +14,7 @@ export default createGlobalStyle`
         font-weight: 100;
     }
     h1,h2,h3 {
-        font-family: 'Futura'
+        font-family: 'Futura', 'Verdana', Arial, sans-serif;
     }
     body {
         margin: 0;

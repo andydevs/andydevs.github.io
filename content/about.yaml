@@ -1,21 +1,10 @@
 ---
 blurb: >
   Software engineer by trade. Hobbyist programmer with wide experience 
-  in programming languages and frameworks. Most experienced in Python 
-  and Javascript.
-
-education:
-  school: Drexel University
-  degree: Bachelor's in Computer Engineering
-  graduated:
-    month: June
-    year: 2020
-  GPA: 3.20
-
-skills:
-  - Python
-  - Javascript
-  - C/C++
+  in programming languages and frameworks. I graduated in 2020 from Drexel 
+  University with a Bachelor's in Computer Engineering. I'm most experienced 
+  in Python, Javascript, and C++, although I'm continuously expanding my skillset
+  and learning new things.
 
 contact:
   email: akanshul97@gmail.com

@@ -7,6 +7,7 @@ const Grid = styled.div`
     grid-template-columns: auto 1fr;
     grid-template-rows: 1fr;
     grid-template-areas: "photo description";
+    place-items: center;
     gap: 16pt;
 
     @media screen and (max-width: 900px) {
@@ -15,7 +16,6 @@ const Grid = styled.div`
         grid-template-areas:
             "photo"
             "description";
-        place-items: center;
     }
 `
 
@@ -27,7 +27,6 @@ const Image = styled.img`
     -webkit-box-shadow: 4px 4px 21px -6px rgba(0,0,0,0.37);
     -moz-box-shadow: 4px 4px 21px -6px rgba(0,0,0,0.37);
     box-shadow: 4px 4px 21px -6px rgba(0,0,0,0.37);
-
     max-width: 300px;
 
     @media screen and (max-width: 700px) {
@@ -37,72 +36,20 @@ const Image = styled.img`
 
 const Description = styled.div`
     grid-area: description;
-
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: auto 1fr;
-    grid-template-areas:
-        "blurb blurb"
-        "education skills";
-
-    @media screen and (max-width: 700px) {
-        grid-template-columns: 1fr;
-        grid-template-rows: repeat(3, auto);
-        grid-template-areas:
-            "blurb"
-            "education"
-            "skills";
-    }
+    font-size: 18pt;
 `
-
-const SubsectionTitle = styled.h3`
-    padding-bottom: 8pt;
-    border-bottom: 1pt solid;
-`
-
-const Blurb = styled.p`
-    grid-area: blurb;
-`
-
-const Education = styled.div`
-    margin: 0pt 8pt;
-    grid-area: education;
-`
-
-const Skills = styled.div`
-    margin: 0pt 8pt;
-    grid-area: skills;
-`
-
 
 export default function About() {
     // Query
     const { 
         contentYaml: { 
-            blurb,
-            education: {
-                school,
-                degree,
-                graduated,
-                GPA
-            },
-            skills
+            blurb
         },
         imageSharp: { fluid: { base64: profile } }
     } = useStaticQuery(graphql`
         query AboutQuery {
             contentYaml {
-                blurb,
-                education {
-                    school,
-                    degree,
-                    graduated {
-                        month,
-                        year
-                    },
-                    GPA
-                },
-                skills
+                blurb
             }
             imageSharp(fluid: {originalName: {eq: "profile.jpg"}}) {
                 fluid(base64Width: 600, duotone: { highlight: "#00aaff", shadow: "#000000" }) {
@@ -118,21 +65,7 @@ export default function About() {
             <Grid>
                 <Image alt="Profile" src={profile}/>
                 <Description>
-                    <Blurb>{blurb}</Blurb>
-                    <Education>
-                        <SubsectionTitle>Education</SubsectionTitle>
-                        <p>{ school }</p>
-                        <p>{ degree }</p>
-                        <p>Graduated { graduated.month } { graduated.year }</p>
-                        <p>Cumulative GPA: { GPA }</p>
-                    </Education>
-                    <Skills>
-                        <SubsectionTitle>Skills</SubsectionTitle>
-                        <ul>
-                            {skills.map((skill, index) => 
-                                <li key={index}>{skill}</li>)}
-                        </ul>
-                    </Skills>
+                    <p>{blurb}</p>
                 </Description>
             </Grid>
         </section>

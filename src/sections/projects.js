@@ -32,7 +32,7 @@ export default function Projects() {
     // Render
     return (
         <section id="projects">
-            <h1>Projects</h1>
+            <h1>Stuff I've Made</h1>
             <Grid>
                 {projects.map(({ id, title, image, description, github, main }) => 
                     <Panel key={id}>

@@ -35,7 +35,7 @@ export default function Projects() {
             <h1>Stuff I've Made</h1>
             <Grid>
                 {projects.map(({ id, title, image, description, github, main }) => 
-                    <Panel key={id}>
+                    <Panel large={image !== undefined && image !== null} key={id}>
                         { image && 
                             <Panel.ImageTitle 
                                 title={title} 

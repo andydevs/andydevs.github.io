@@ -1,11 +1,16 @@
 import React from "react";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 const Panel = styled.div`
     border-radius: 8pt;
     border-color: inherit;
     background-color: var(--less-black);
     overflow: hidden;
+
+    /* Sizing */
+    ${props => props.large && css`
+        grid-row: span 2;
+    `}
 
     /* Shadow */
     -webkit-box-shadow: 4px 4px 21px -6px rgba(0,0,0,0.37);

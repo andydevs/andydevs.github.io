@@ -15,11 +15,9 @@ export default function Footer() {
         query ContactQuery {
             contentYaml {
                 contact {
-                    email,
-                    social {
-                        linkedin,
-                        github
-                    }
+                    github,
+                    linkedin,
+                    email
                 }
             }
         }
@@ -28,9 +26,9 @@ export default function Footer() {
     return (
         <StyledFooter>
             <p>
+                <IconLink icon={faGithub} href={`https://www.github.com/${contact.github}`}/>
+                <IconLink icon={faLinkedin} href={contact.linkedin}/>
                 <IconLink icon={faEnvelope} href={`mailto://${contact.email}`}/>
-                <IconLink icon={faLinkedin} href={contact.social.linkedin}/>
-                <IconLink icon={faGithub} href={`https://www.github.com/${contact.social.github}`}/>
             </p>
             <p>
                 Site Design largely inspired by <a href='http://brittanychiang.com'>Brittany Chiang</a>

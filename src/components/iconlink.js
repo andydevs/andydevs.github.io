@@ -17,6 +17,7 @@ export default function IconLink({ icon, href }) {
 }
 
 IconLink.Group = styled.div`
+    flex: 0;
     display: flex;
     flex-direction: row-reverse;
     margin: 0pt;

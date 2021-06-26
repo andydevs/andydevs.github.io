@@ -43,11 +43,13 @@ export default function Projects() {
                         <Panel.Body>
                             { !image && <h3>{title}</h3> }
                             <p>{description}</p>
+                        </Panel.Body>
+                        <Panel.Footer>
                             <IconLink.Group>
                                 { main && <IconLink icon={faExternalLinkAlt} href={main}/> }
                                 { github && <IconLink icon={faGithub} href={`https://github.com/andydevs/${github}`}/> }
                             </IconLink.Group>
-                        </Panel.Body>
+                        </Panel.Footer>
                     </Panel>
                 )}
             </Grid>

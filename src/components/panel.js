@@ -11,6 +11,11 @@ const Panel = styled.div`
     -webkit-box-shadow: 4px 4px 21px -6px rgba(0,0,0,0.37);
     -moz-box-shadow: 4px 4px 21px -6px rgba(0,0,0,0.37);
     box-shadow: 4px 4px 21px -6px rgba(0,0,0,0.37);
+
+    /* Grid save me */
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr auto;
 `
 
 const ImageTitleDiv = styled.div`
@@ -29,6 +34,7 @@ const Image = styled.img`
 
 const Title = styled.h3`
     position: absolute;
+    display: inline-block;
     z-index: 1;
     margin: 0;
     bottom: 0pt;
@@ -48,7 +54,7 @@ Panel.ImageTitle = ({ title, base64 }) => (
 )
 
 Panel.Body = styled.div`
-    margin: 16pt;
+    margin: 8pt 16pt;
     h3 {
         font-weight: bold;
         margin: 4pt 0pt;
@@ -62,6 +68,10 @@ Panel.Body = styled.div`
     ul {
         list-style-type: circle;
     }
+`
+
+Panel.Footer = styled.div`
+    margin: 8pt 16pt 16pt 16pt;
 `
 
 export default Panel

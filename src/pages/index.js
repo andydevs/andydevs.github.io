@@ -17,7 +17,20 @@ const StyledMain = styled.main`
 `
 
 const Message = styled.p`
-    margin: 16pt 0pt;
+    margin: 8pt 0pt;
+    background-color: var(--dark-blue);
+    padding: 8pt;
+    display: inline-block;
+
+    /* Panel-like */
+    border-radius: 4pt;
+    -webkit-box-shadow: 4px 4px 21px -6px rgba(0,0,0,0.37);
+    -moz-box-shadow: 4px 4px 21px -6px rgba(0,0,0,0.37);
+    box-shadow: 4px 4px 21px -6px rgba(0,0,0,0.37);
+
+    a {
+        color: white;
+    }
 `
 
 export default function Home() {

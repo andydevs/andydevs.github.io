@@ -54,7 +54,7 @@ Panel.ImageTitle = ({ title, base64 }) => (
 )
 
 Panel.Body = styled.div`
-    margin: 8pt 16pt;
+    margin: 16pt;
     h3 {
         font-weight: bold;
         margin: 4pt 0pt;

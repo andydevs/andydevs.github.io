@@ -3,7 +3,8 @@ import { Helmet } from "react-helmet"
 import { graphql, useStaticQuery } from "gatsby"
 import styled from 'styled-components';
 import GlobalStyle from '../styling';
-import Message from '../components/message';
+import Message from '../components/message'
+import Spacer from '../components/spacer'
 import Hero from "../sections/hero"
 import About from "../sections/about";
 import Projects from "../sections/projects"
@@ -41,12 +42,17 @@ export default function Home() {
                         If you're looking for the old blog, you can find it 
                         <a href="https://andydevs.github.io/">Here</a>
                     </Message>
+                    <Spacer/>
                     <About/>
+                    <Spacer/>
                     <Projects/>
+                    <Spacer/>
                     <Work/>
+                    <Spacer/>
                 </StyledMain>
             </WidthLockContainer>
             <Footer/>
+            <Spacer/>
         </div>
     )
 }

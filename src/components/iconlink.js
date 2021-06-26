@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import styled from "styled-components";
 
 const StyledA = styled.a`
-    font-size: 20pt;
+    font-size: 28pt;
     margin: 0pt 10pt; 
     &:before { content: ''; }
 `

@@ -83,7 +83,7 @@ export default function useHexHeroAnimation({
             : 1 + (odd ? 1 : -1)*easeIn((alpha - highLow)/transitionTime)
 
         // Animation loop
-        let t = period/4
+        let t = 0.35*period
         two.bind('update', function update() {
             for (let j = 0; j < grid.length; ++j) {
                 for (let i = 0; i < grid[j].length; ++i) {

@@ -40,7 +40,7 @@ export default function Home() {
                 <StyledMain>
                     <Message>
                         If you're looking for the old blog, you can find it 
-                        <a href="https://andydevs.github.io/">Here</a>
+                        <a href="https://andydevs.github.io/blog">Here</a>
                     </Message>
                     <Spacer/>
                     <About/>

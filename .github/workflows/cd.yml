@@ -13,7 +13,7 @@ jobs:
         uses: actions/setup-node@v2.1.2
       - name: Clean Install Packages
         run: npm ci
-      - name: Build Site
+      - name: Build Gatsby Site
         run: npm run build
       - name: Upload Artifact
         uses: actions/upload-artifact@v2.2.3

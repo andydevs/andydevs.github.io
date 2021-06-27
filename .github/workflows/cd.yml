@@ -1,0 +1,37 @@
+name: Continuous Deployment
+on:
+  push:
+    branches: [main]
+jobs:
+  # Build
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v2
+      - name: Setup Node.js environment
+        uses: actions/setup-node@v2.1.2
+      - name: Clean Install Packages
+        run: npm ci
+      - name: Build Site
+        run: npm run build
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v2.2.3
+        with:
+          path: public
+          name: artifact
+  
+  # Deploy
+  deploy:
+    needs: [build]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v2
+      - name: Download Artifact
+        uses: actions/download-artifact@v2.0.9
+      - name: Deploy to GitHub Pages
+        uses: rdarida/simple-github-pages-deploy-action@v1
+        with:
+          git-base-folder: artifact
+          commit-message: Auto build static site

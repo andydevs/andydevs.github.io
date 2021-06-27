@@ -1,6 +1,8 @@
 import React from 'react'
 import { graphql, useStaticQuery } from 'gatsby'
 import styled from 'styled-components'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faGithub } from '@fortawesome/free-brands-svg-icons'
 
 const Grid = styled.div`
     display: grid;
@@ -27,7 +29,7 @@ const Image = styled.img`
     -webkit-box-shadow: 4px 4px 21px -6px rgba(0,0,0,0.37);
     -moz-box-shadow: 4px 4px 21px -6px rgba(0,0,0,0.37);
     box-shadow: 4px 4px 21px -6px rgba(0,0,0,0.37);
-    max-width: 300px;
+    max-width: 400px;
 
     @media screen and (max-width: 700px) {
         width: 70%;
@@ -39,20 +41,69 @@ const Description = styled.div`
     font-size: 18pt;
 `
 
+const Blurb = styled.p`
+    display: block;
+    margin: 16pt 0pt;
+`
+
+const StyledLink = styled.a`
+    /* Remove content */
+    &:before { content: ''; }
+
+    /* Alignment */
+    display: inline-flex;
+    align-items: center;
+
+    /* Spacing */
+    margin: 16pt 0pt;
+    padding: 8pt;
+    
+    /* Coloring */
+    border: 2pt solid var(--blue);
+    border-radius: 8pt;
+    color: white;
+
+    /* Background */
+    background: linear-gradient(40deg,
+        var(--black),
+        var(--black) 50%,
+        var(--blue) 50%,
+        var(--blue) 100%);
+    background-size: 300%;
+    background-position: 20% 0%;
+
+    /* Transition */
+    transition: 0.25s ease-in-out;
+    &:hover {
+        background-position: 85% 0%;
+    }
+
+    .icon {
+        font-size: 20pt;
+        margin-right: 8pt;
+    }
+`
+
 export default function About() {
     // Query
     const { 
         contentYaml: { 
-            blurb
+            blurb,
+            contact: {
+                github
+            }
         },
         imageSharp: { fluid: { base64: profile } }
     } = useStaticQuery(graphql`
         query AboutQuery {
             contentYaml {
-                blurb
+                blurb,
+                contact {
+                    github
+                }
             }
             imageSharp(fluid: {originalName: {eq: "profile.jpg"}}) {
-                fluid(base64Width: 600, duotone: { highlight: "#00aaff", shadow: "#000000" }) {
+                fluid(base64Width: 800, duotone: { highlight: "#00aaff", shadow: "#000000" }) {
                     base64
                 }
             }
@@ -65,7 +116,11 @@ export default function About() {
             <Grid>
                 <Image alt="Profile" src={profile}/>
                 <Description>
-                    <p>{blurb}</p>
+                    <Blurb>{blurb}</Blurb>
+                    <StyledLink href={`https://github.com/${github}`}>
+                        <FontAwesomeIcon className='icon' icon={faGithub}/>
+                        <span>Check out My GitHub</span>
+                    </StyledLink>
                 </Description>
             </Grid>
         </section>

@@ -55,12 +55,4 @@
     commands for draw lines and dots on a screen.
   github: l-system-toy
   main: https://andydevs.github.io/l-system-toy
-
-- title: Machine Learning Mushrooms
-  description: >
-    Training a neural network to classify various mushrooms
-    as poisionous or edible. It's not practical in the least
-    but I use it as a test bench for future machine learning
-    projects.
-  github: machine-learning-mushrooms
 ...

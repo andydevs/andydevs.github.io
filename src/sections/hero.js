@@ -11,11 +11,19 @@ const HeroDiv = styled.div`
 
 const HeroContainer = styled.div`
     position: absolute;
+    display: block;
     bottom: 50%;
-    transform: translateY(50%);
-    right: 0%;
-    margin: 0pt 16pt;
+    left: 50%;
+    width: 100%;
+    max-width: 1200px;
+    text-align: right;
+    transform: translate(-50%, 50%);
+`
+
+const HeroTitle = styled.div`
     display: inline-block;
+    margin: 12pt;
+    text-align: left;
 `
 
 const Title = styled.h1`
@@ -59,8 +67,10 @@ export default function Hero() {
     return (
         <HeroDiv ref={animMountRef}>
             <HeroContainer>
-                <Title>{name}</Title>
-                <Subtitle>{handle}</Subtitle>
+                <HeroTitle>
+                    <Title>{name}</Title>
+                    <Subtitle>{handle}</Subtitle>
+                </HeroTitle>
             </HeroContainer>
         </HeroDiv>
     )

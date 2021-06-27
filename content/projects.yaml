@@ -8,6 +8,26 @@
   github: andys-notebook
   main: https://andydevs.github.io/andys-notebook
 
+- title: Machine Learning Mushrooms
+  description: >
+    Training a neural network to classify various mushrooms
+    as poisionous or edible. It's not practical in the least
+    but I use it as a test bench for future machine learning
+    projects, although my machine learning is on hiatus until
+    I can get some more capable hardware.
+  github: machine-learning-mushrooms
+
+- title: OpenGL Project
+  description: >
+    My first attempt at creating an OpenGL
+    program. It just renders a cube to the
+    screen with basic lighting and animation.
+    It was a test to see if I could use OpenGL
+    to experiment with shaders and computer
+    graphics. I instead plan to use Unity to
+    do those experiments
+  github: opengl-project
+
 - title: Blocky's Adventure in Blockworld
   image: images/blockys-adventure-in-blockworld.png
   description: >
@@ -23,15 +43,6 @@
     CUDA framework
   github: cudafractal
 
-- title: Machine Learning Mushrooms
-  description: >
-    Training a neural network to classify various mushrooms
-    as poisionous or edible. It's not practical in the least
-    but I use it as a test bench for future machine learning
-    projects, although my machine learning is on hiatus until
-    I can get some more capable hardware.
-  github: machine-learning-mushrooms
-
 - title: L-System Toy
   description: >
     Generating tree-like graphics using a
@@ -40,15 +51,4 @@
     commands for draw lines and dots on a screen.
   github: l-system-toy
   main: https://andydevs.github.io/l-system-toy
-
-- title: OpenGL Project
-  description: >
-    My first attempt at creating an OpenGL
-    program. It just renders a cube to the
-    screen with basic lighting and animation.
-    It was a test to see if I could use OpenGL
-    to experiment with shaders and computer
-    graphics. I instead plan to use Unity to
-    do those experiments
-  github: opengl-project
 ...

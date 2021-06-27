@@ -26,9 +26,9 @@ export default function Footer() {
     return (
         <StyledFooter>
             <p>
-                <IconLink icon={faGithub} href={`https://www.github.com/${contact.github}`}/>
-                <IconLink icon={faLinkedin} href={contact.linkedin}/>
-                <IconLink icon={faEnvelope} href={`mailto://${contact.email}`}/>
+                <IconLink large icon={faGithub}   href={`https://www.github.com/${contact.github}`}/>
+                <IconLink large icon={faLinkedin} href={contact.linkedin}/>
+                <IconLink large icon={faEnvelope} href={`mailto://${contact.email}`}/>
             </p>
             <p>
                 Site Design largely inspired by <a href='http://brittanychiang.com'>Brittany Chiang</a>

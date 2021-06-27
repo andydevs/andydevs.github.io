@@ -1,4 +1,17 @@
 ---
+- company: Raytheon Missiles and Defense
+  jobTitle: Software Developer
+  timeline:
+    current: true
+    start:
+      month: November
+      year: 2020
+  highlights:
+    - Developed build pipelines for containerized applications which are orchestrated on a Kubernetes cluster
+    - Worked in a Scrum Team, coordinated with Jira and Confluence
+    - Worked with Jenkins, Kubernetes, OpenShift, Artifactory
+    - Developed and demoed a plugin for SIMDIS for potential use within projects
+
 - company: Drexel IT
   jobTitle: Technical Support Intern
   timeline:

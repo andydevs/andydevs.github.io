@@ -8,14 +8,15 @@
   github: andys-notebook
   main: https://andydevs.github.io/andys-notebook
 
-- title: Machine Learning Mushrooms
+- title: Auto Trump
   description: >
-    Training a neural network to classify various mushrooms
-    as poisionous or edible. It's not practical in the least
-    but I use it as a test bench for future machine learning
-    projects, although my machine learning is on hiatus until
-    I can get some more capable hardware.
-  github: machine-learning-mushrooms
+    This project trains a recurrent neural network
+    to generate new tweets from Donald Trump using
+    a dataset of archived Donald Trump tweets. I've
+    also developed a hyperparameter tuning system
+    using Bayesian optimization to optimize the network
+    for the best performance.
+  github: auto-trump
 
 - title: OpenGL Project
   description: >
@@ -54,4 +55,12 @@
     commands for draw lines and dots on a screen.
   github: l-system-toy
   main: https://andydevs.github.io/l-system-toy
+
+- title: Machine Learning Mushrooms
+  description: >
+    Training a neural network to classify various mushrooms
+    as poisionous or edible. It's not practical in the least
+    but I use it as a test bench for future machine learning
+    projects.
+  github: machine-learning-mushrooms
 ...

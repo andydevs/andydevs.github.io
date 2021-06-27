@@ -35,6 +35,7 @@
     home about. It serves as a testbench for learning 
     about different elements of game design
   github: blockys-adventure-in-blockworld
+  main: https://github.com/andydevs/blockys-adventure-in-blockworld/releases
 
 - title: Cuda Fractal
   image: images/cudafractal.png
@@ -42,6 +43,7 @@
     A fractal generator program written using Nvidia's
     CUDA framework
   github: cudafractal
+  main: https://github.com/andydevs/cudafractal/releases
 
 - title: L-System Toy
   description: >

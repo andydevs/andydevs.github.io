@@ -74,7 +74,7 @@ const StyledLink = styled.a`
 
     /* Transition */
     transition: 0.25s ease-in-out;
-    &:hover {
+    &:hover, &:focus {
         background-position: 85% 0%;
     }
 

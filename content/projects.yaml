@@ -41,7 +41,8 @@
   image: images/cudafractal.png
   description: >
     A fractal generator program written using Nvidia's
-    CUDA framework
+    CUDA framework. FYI the documentation has not been
+    entirely updated.
   github: cudafractal
   main: https://github.com/andydevs/cudafractal/releases
 

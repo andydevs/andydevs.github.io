@@ -64,18 +64,18 @@ const StyledLink = styled.a`
     color: white;
 
     /* Background */
-    background: linear-gradient(40deg,
+    background: linear-gradient(45deg,
         var(--black),
         var(--black) 50%,
         var(--blue) 50%,
         var(--blue) 100%);
     background-size: 300%;
-    background-position: 20% 0%;
+    background-position: 0% 0%;
 
     /* Transition */
-    transition: 0.25s ease-in-out;
+    transition: 0.5s ease-in-out;
     &:hover, &:focus {
-        background-position: 85% 0%;
+        background-position: 100% 0%;
     }
 
     .icon {

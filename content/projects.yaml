@@ -8,7 +8,7 @@
   github: andys-notebook
   main: https://andydevs.github.io/andys-notebook
 
-- title: Auto Trump
+- title: Robot Trump
   description: >
     This project trains a recurrent neural network
     to generate new tweets from Donald Trump using
@@ -16,7 +16,7 @@
     also developed a hyperparameter tuning system
     using Bayesian optimization to optimize the network
     for the best performance.
-  github: auto-trump
+  github: robot-trump
 
 - title: OpenGL Project
   description: >

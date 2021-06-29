@@ -10,11 +10,13 @@ export default createGlobalStyle`
     }
 
     * {
-        font-family: 'Helvetica', Arial, sans-serif;
-        font-weight: 100;
+        font-family: 'Rubik', 'Verdana', Arial, sans-serif;
     }
-    h1,h2,h3 {
-        font-family: 'Futura', 'Verdana', Arial, sans-serif;
+    p {
+        font-weight: 300;
+    }
+    h1,h2 {
+        font-weight: 600;
     }
     body {
         margin: 0;

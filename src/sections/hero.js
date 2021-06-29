@@ -29,7 +29,7 @@ const HeroTitle = styled.div`
 const Title = styled.h1`
     margin: 0;
     padding: 0;
-    font-weight: 900;
+    font-weight: 800;
     font-size: 40pt;
     border-bottom: 1px solid;
     color: var(--white);

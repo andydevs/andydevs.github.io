@@ -30,18 +30,21 @@ const Title = styled.h1`
     margin: 0;
     padding: 0;
     font-weight: 800;
-    font-size: 40pt;
-    border-bottom: 1px solid;
+    font-size: 45pt;
+    @media screen and (min-width: 1200px) {
+        font-size: 90pt;
+    }
     color: var(--white);
     &:before { content:''; }
 `
 
 const Subtitle = styled.h2`
     margin: 0;
-    text-indent: 6pt;
-    font-weight: 500;
     font-size: 18pt;
-    text-align: left;
+    @media screen and (min-width: 1200px) {
+        font-size: 36pt;
+    }
+    font-weight: 500;
     color: var(--white);
 `
 
@@ -50,7 +53,10 @@ export default function Hero() {
     const { contentYaml: { name, handle } } = useStaticQuery(graphql`
         query HeroQuery {
             contentYaml {
-                name, 
+                name {
+                    first,
+                    last
+                }, 
                 handle
             }
         }
@@ -68,7 +74,8 @@ export default function Hero() {
         <HeroDiv ref={animMountRef}>
             <HeroContainer>
                 <HeroTitle>
-                    <Title>{name}</Title>
+                    <Title>{name.first}</Title>
+                    <Title>{name.last}</Title>
                     <Subtitle>{handle}</Subtitle>
                 </HeroTitle>
             </HeroContainer>

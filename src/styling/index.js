@@ -11,8 +11,6 @@ export default createGlobalStyle`
 
     * {
         font-family: 'Rubik', 'Verdana', Arial, sans-serif;
-    }
-    p {
         font-weight: 300;
     }
     h1,h2 {

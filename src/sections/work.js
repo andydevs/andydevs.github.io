@@ -42,7 +42,7 @@ export default function Work() {
     // Render
     return (
         <section id="work-experience">
-            <h1>Work Experience</h1>
+            <h1>Where I've Worked</h1>
             <Grid>
                 {workunits.map(({ id, company, jobTitle, timeline, highlights }) =>
                     <Panel key={id}>

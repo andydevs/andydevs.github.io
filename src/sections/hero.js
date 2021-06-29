@@ -41,6 +41,7 @@ const Title = styled.h1`
 const Subtitle = styled.h2`
     margin: 0;
     font-size: 18pt;
+    text-indent: 8pt;
     @media screen and (min-width: 1200px) {
         font-size: 36pt;
     }
@@ -64,7 +65,7 @@ export default function Hero() {
 
     // Animation
     const animMountRef = useHexHeroAnimation({
-        radius: 50,
+        radius: 100,
         spacing: 0.01,
         period: 30
     })

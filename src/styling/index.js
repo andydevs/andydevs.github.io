@@ -39,12 +39,12 @@ export default createGlobalStyle`
 
     h1 {
         color: var(--blue);
-        font-size: 24pt;
+        font-size: 30pt;
         padding-bottom: 6pt;
     }
     h1:before,h2:before {
         content: '>';
-        margin-right: 2pt;
+        margin-right: 6pt;
     }
 
     ul {

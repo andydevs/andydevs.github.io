@@ -1,5 +1,5 @@
-import React from "react";
-import styled, { css } from "styled-components";
+import React from 'react'
+import styled, { css } from 'styled-components'
 
 const Panel = styled.div`
     border-radius: 8pt;
@@ -8,23 +8,25 @@ const Panel = styled.div`
     overflow: hidden;
 
     /* Sizing */
-    ${props => props.large && css`
-        grid-row: span 2;
-    `}
+    ${props =>
+        props.large &&
+        css`
+            grid-row: span 2;
+        `}
 
     /* Shadow */
     -webkit-box-shadow: 4px 4px 21px -6px rgba(0,0,0,0.37);
-    -moz-box-shadow: 4px 4px 21px -6px rgba(0,0,0,0.37);
-    box-shadow: 4px 4px 21px -6px rgba(0,0,0,0.37);
+    -moz-box-shadow: 4px 4px 21px -6px rgba(0, 0, 0, 0.37);
+    box-shadow: 4px 4px 21px -6px rgba(0, 0, 0, 0.37);
 
     /* Grid save me */
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: auto 1fr auto;
     grid-template-areas:
-        "image"
-        "body"
-        "footer";
+        'image'
+        'body'
+        'footer';
 `
 
 const ImageTitleDiv = styled.div`
@@ -57,7 +59,7 @@ const Title = styled.h3`
 Panel.ImageTitle = ({ title, base64 }) => (
     <ImageTitleDiv>
         <ImageTitleContainer>
-            <Image alt={title} src={base64}/>
+            <Image alt={title} src={base64} />
             <Title>{title}</Title>
         </ImageTitleContainer>
     </ImageTitleDiv>

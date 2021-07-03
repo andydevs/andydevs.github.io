@@ -1,7 +1,7 @@
-import { graphql, useStaticQuery } from 'gatsby';
+import { graphql, useStaticQuery } from 'gatsby'
 import React from 'react'
 import styled from 'styled-components'
-import useHexHeroAnimation from '../hooks/useHexHeroAnimation';
+import useHexHeroAnimation from '../hooks/useHexHeroAnimation'
 
 const HeroDiv = styled.div`
     position: relative;
@@ -35,7 +35,9 @@ const Title = styled.h1`
         font-size: 90pt;
     }
     color: var(--white);
-    &:before { content:''; }
+    &:before {
+        content: '';
+    }
 `
 
 const Subtitle = styled.h2`
@@ -51,13 +53,15 @@ const Subtitle = styled.h2`
 
 export default function Hero() {
     // Gatsby Query
-    const { contentYaml: { name, handle } } = useStaticQuery(graphql`
+    const {
+        contentYaml: { name, handle }
+    } = useStaticQuery(graphql`
         query HeroQuery {
             contentYaml {
                 name {
-                    first,
+                    first
                     last
-                }, 
+                }
                 handle
             }
         }

@@ -1,15 +1,14 @@
-import React from "react"
-import { Helmet } from "react-helmet"
-import { graphql, useStaticQuery } from "gatsby"
-import styled from 'styled-components';
-import GlobalStyle from '../styling';
-import Message from '../components/message'
+import React from 'react'
+import { Helmet } from 'react-helmet'
+import { graphql, useStaticQuery } from 'gatsby'
+import styled from 'styled-components'
+import GlobalStyle from '../styling'
 import Spacer from '../components/spacer'
-import Hero from "../sections/hero"
-import About from "../sections/about";
-import Projects from "../sections/projects"
-import Work from "../sections/work"
-import Footer from "../sections/footer"
+import Hero from '../sections/hero'
+import About from '../sections/about'
+import Projects from '../sections/projects'
+import Work from '../sections/work'
+import Footer from '../sections/footer'
 
 const StyledMain = styled.main`
     margin: 12pt;
@@ -33,22 +32,22 @@ export default function Home() {
 
     return (
         <div>
-            <Helmet title={site.siteMetadata.title}/>
-            <GlobalStyle/>
-            <Hero/>
+            <Helmet title={site.siteMetadata.title} />
+            <GlobalStyle />
+            <Hero />
             <WidthLockContainer>
                 <StyledMain>
-                    <Spacer/>
-                    <About/>
-                    <Spacer/>
-                    <Projects/>
-                    <Spacer/>
-                    <Work/>
-                    <Spacer/>
+                    <Spacer />
+                    <About />
+                    <Spacer />
+                    <Projects />
+                    <Spacer />
+                    <Work />
+                    <Spacer />
                 </StyledMain>
             </WidthLockContainer>
-            <Footer/>
-            <Spacer/>
+            <Footer />
+            <Spacer />
         </div>
     )
 }

@@ -17,15 +17,13 @@ module.exports = {
         {
             resolve: 'gatsby-source-filesystem',
             options: {
-                path: `${__dirname}/content/`,
+                path: `${__dirname}/content/`
             }
         },
         {
             resolve: 'gatsby-plugin-google-fonts',
             options: {
-                fonts: [
-                    'rubik\:300,300i,500,600,800'
-                ],
+                fonts: ['rubik:300,300i,500,600,800'],
                 display: 'swap'
             }
         }

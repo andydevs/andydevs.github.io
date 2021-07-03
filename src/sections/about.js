@@ -8,7 +8,7 @@ const Grid = styled.div`
     display: grid;
     grid-template-columns: auto 1fr;
     grid-template-rows: 1fr;
-    grid-template-areas: "photo description";
+    grid-template-areas: 'photo description';
     place-items: center;
     gap: 16pt;
 
@@ -16,8 +16,8 @@ const Grid = styled.div`
         grid-template-columns: auto;
         grid-template-rows: auto auto;
         grid-template-areas:
-            "photo"
-            "description";
+            'photo'
+            'description';
     }
 `
 
@@ -26,9 +26,9 @@ const Image = styled.img`
 
     // Styling
     border-radius: 8pt;
-    -webkit-box-shadow: 4px 4px 21px -6px rgba(0,0,0,0.37);
-    -moz-box-shadow: 4px 4px 21px -6px rgba(0,0,0,0.37);
-    box-shadow: 4px 4px 21px -6px rgba(0,0,0,0.37);
+    -webkit-box-shadow: 4px 4px 21px -6px rgba(0, 0, 0, 0.37);
+    -moz-box-shadow: 4px 4px 21px -6px rgba(0, 0, 0, 0.37);
+    box-shadow: 4px 4px 21px -6px rgba(0, 0, 0, 0.37);
     max-width: 400px;
 
     @media screen and (max-width: 700px) {
@@ -48,7 +48,9 @@ const Blurb = styled.p`
 
 const StyledLink = styled.a`
     /* Remove content */
-    &:before { content: ''; }
+    &:before {
+        content: '';
+    }
 
     /* Alignment */
     display: inline-flex;
@@ -57,24 +59,27 @@ const StyledLink = styled.a`
     /* Spacing */
     margin: 16pt 0pt;
     padding: 8pt;
-    
+
     /* Coloring */
     border: 2pt solid var(--blue);
     border-radius: 8pt;
     color: white;
 
     /* Background */
-    background: linear-gradient(45deg,
+    background: linear-gradient(
+        45deg,
         var(--black),
         var(--black) 50%,
         var(--blue) 50%,
-        var(--blue) 100%);
+        var(--blue) 100%
+    );
     background-size: 300%;
     background-position: 0% 0%;
 
     /* Transition */
     transition: 0.5s ease-in-out;
-    &:hover, &:focus {
+    &:hover,
+    &:focus {
         background-position: 100% 0%;
     }
 
@@ -86,39 +91,42 @@ const StyledLink = styled.a`
 
 export default function About() {
     // Query
-    const { 
-        contentYaml: { 
+    const {
+        contentYaml: {
             blurb,
-            contact: {
-                github
-            }
+            contact: { github }
         },
-        imageSharp: { fluid: { base64: profile } }
+        imageSharp: {
+            fluid: { base64: profile }
+        }
     } = useStaticQuery(graphql`
         query AboutQuery {
             contentYaml {
-                blurb,
+                blurb
                 contact {
                     github
                 }
             }
-            imageSharp(fluid: {originalName: {eq: "profile.jpg"}}) {
-                fluid(base64Width: 800, duotone: { highlight: "#00aaff", shadow: "#000000" }) {
+            imageSharp(fluid: { originalName: { eq: "profile.jpg" } }) {
+                fluid(
+                    base64Width: 800
+                    duotone: { highlight: "#00aaff", shadow: "#000000" }
+                ) {
                     base64
                 }
             }
         }
     `)
-    
+
     return (
         <section id="about">
             <h1>About Me</h1>
             <Grid>
-                <Image alt="Profile" src={profile}/>
+                <Image alt="Profile" src={profile} />
                 <Description>
                     <Blurb>{blurb}</Blurb>
                     <StyledLink href={`https://github.com/${github}`}>
-                        <FontAwesomeIcon className='icon' icon={faGithub}/>
+                        <FontAwesomeIcon className="icon" icon={faGithub} />
                         <span>Check out My GitHub</span>
                     </StyledLink>
                 </Description>

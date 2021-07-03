@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components'
 
 // Styled message thing
 export default styled.p`
@@ -9,9 +9,9 @@ export default styled.p`
 
     /* Panel-like */
     border-radius: 4pt;
-    -webkit-box-shadow: 4px 4px 21px -6px rgba(0,0,0,0.37);
-    -moz-box-shadow: 4px 4px 21px -6px rgba(0,0,0,0.37);
-    box-shadow: 4px 4px 21px -6px rgba(0,0,0,0.37);
+    -webkit-box-shadow: 4px 4px 21px -6px rgba(0, 0, 0, 0.37);
+    -moz-box-shadow: 4px 4px 21px -6px rgba(0, 0, 0, 0.37);
+    box-shadow: 4px 4px 21px -6px rgba(0, 0, 0, 0.37);
 
     a {
         color: white;

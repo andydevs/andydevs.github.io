@@ -1,21 +1,26 @@
-import React from "react"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import styled, { css } from "styled-components";
+import React from 'react'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import styled, { css } from 'styled-components'
 
 const StyledA = styled.a`
-    ${props => 
+    ${props =>
         props.large
-            ? css`font-size: 28pt;`
-            : css`font-size: 20pt;`
+            ? css`
+                  font-size: 28pt;
+              `
+            : css`
+                  font-size: 20pt;
+              `}
+    margin: 0pt 10pt;
+    &:before {
+        content: '';
     }
-    margin: 0pt 10pt; 
-    &:before { content: ''; }
 `
 
-export default function IconLink({ large=false, icon, href }) {
+export default function IconLink({ large = false, icon, href }) {
     return (
         <StyledA href={href} large={large}>
-            <FontAwesomeIcon icon={icon}/>
+            <FontAwesomeIcon icon={icon} />
         </StyledA>
     )
 }

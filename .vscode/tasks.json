@@ -16,6 +16,13 @@
             "detail": "Build project"
         },
         {
+            "dependsOn": ["install"],
+            "type": "npm",
+            "script": "format",
+            "label": "format",
+            "detail": "Format code using prettier"
+        },
+        {
             "type": "npm",
             "script": "install",
             "label": "install",

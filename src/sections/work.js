@@ -14,14 +14,14 @@ const Subtitle = styled.h4`
 `
 
 const WorkunitTable = styled.table`
-    border-spacing: 16pt 32pt;
+    border-spacing: 16pt;
     td {
         vertical-align: top;
         display: table-cell;
     }
 
     @media screen and (max-width: 700px) {
-        border-spacing: 0pt 32pt;
+        border-spacing: 0pt 16pt;
         td {
             display: block;
         }

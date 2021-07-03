@@ -11,33 +11,27 @@ const Subtitle = styled.h4`
     font-style: italic;
 `
 
-const WorkunitTable = styled.table`
-    border-spacing: 16pt;
-    td {
-        vertical-align: top;
-        display: table-cell;
-    }
-
-    @media screen and (max-width: 800px) {
-        border-spacing: 0pt 16pt;
-        td {
-            display: block;
-        }
+const WorkGrid = styled.div`
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: auto;
+    @media screen and (max-width: 700px) {
+        grid-template-columns: auto;
     }
 `
 
-const TitleCell = styled.td`
-    width: fit-content;
-    * { margin: 4pt 0; }
+const WorkHeader = styled.div`
+    * { margin: 0pt; }
+    margin-bottom: 16pt;
+    @media screen and (max-width: 700px) {
+        margin-bottom: 8pt;
+    }
 `
 
-const HighlightCell = styled.td`
-    ul {
-        margin-top: 0;
-    }
-    ul > li {
-        margin: 4pt 0;
-    }
+const WorkHighlights = styled.div`
+    ul { margin-top: 0pt; }
+    li { margin: 4pt 0pt; }
+    margin-bottom: 32pt;
 `
 
 export default function Work() {
@@ -72,34 +66,32 @@ export default function Work() {
     return (
         <section id="work-experience">
             <h1>Where I've Worked</h1>
-            <WorkunitTable>
-                <tbody>
-                    {workunits.map(
-                        ({ id, company, jobTitle, timeline, highlights }) => (
-                            <tr key={id}>
-                                <TitleCell>
-                                    <Title>{company}</Title>
-                                    <Subtitle>{jobTitle}</Subtitle>
-                                    <Subtitle>
-                                        {timeline.start.month} {timeline.start.year}
-                                        &nbsp; &mdash; &nbsp;
-                                        {timeline.current
-                                            ? 'Present'
-                                            : `${timeline.end.month} ${timeline.end.year}`}
-                                    </Subtitle>
-                                </TitleCell>
-                                <HighlightCell>
-                                    <ul>
-                                        {highlights.map((highlight, index) => (
-                                            <li key={index}>{highlight}</li>
-                                        ))}
-                                    </ul>
-                                </HighlightCell>
-                            </tr>
-                        )
-                    )}
-                </tbody>
-            </WorkunitTable>
+            <WorkGrid>
+                {workunits.map(
+                    ({ id, company, jobTitle, timeline, highlights }) => (
+                        <>
+                            <WorkHeader key={id}>
+                                <Title>{company}</Title>
+                                <Subtitle>{jobTitle}</Subtitle>
+                                <Subtitle>
+                                    {timeline.start.month} {timeline.start.year}
+                                    &nbsp; &mdash; &nbsp;
+                                    {timeline.current
+                                        ? 'Present'
+                                        : `${timeline.end.month} ${timeline.end.year}`}
+                                </Subtitle>
+                            </WorkHeader>
+                            <WorkHighlights key={id}>
+                                <ul>
+                                    {highlights.map((highlight, index) => (
+                                        <li key={index}>{highlight}</li>
+                                    ))}
+                                </ul>
+                            </WorkHighlights>
+                        </>
+                    )
+                )}
+            </WorkGrid>
         </section>
     )
 }

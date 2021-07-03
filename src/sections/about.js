@@ -52,37 +52,35 @@ const StyledLink = styled.a`
         content: '';
     }
 
+    /* Panel */
+    border-radius: 8pt;
+    -webkit-box-shadow: 4px 4px 21px -6px rgba(0,0,0,0.37);
+    -moz-box-shadow: 4px 4px 21px -6px rgba(0, 0, 0, 0.37);
+    box-shadow: 4px 4px 21px -6px rgba(0, 0, 0, 0.37);
+
     /* Alignment */
     display: inline-flex;
     align-items: center;
 
     /* Spacing */
     margin: 16pt 0pt;
-    padding: 8pt;
+    padding: 8pt 12pt;
 
     /* Coloring */
-    border: 2pt solid var(--blue);
-    border-radius: 8pt;
     color: white;
+    background-color: var(--dark-blue);
 
-    /* Background */
-    background: linear-gradient(
-        45deg,
-        var(--black),
-        var(--black) 50%,
-        var(--blue) 50%,
-        var(--blue) 100%
-    );
-    background-size: 300%;
-    background-position: 0% 0%;
-
-    /* Transition */
-    transition: 0.5s ease-in-out;
-    &:hover,
-    &:focus {
-        background-position: 100% 0%;
+    transition: 0.25s ease-in-out;
+    &:hover {
+        -webkit-box-shadow: 4px 4px 18px 0px rgba(0,0,0,0.50);
+        -moz-box-shadow: 4px 4px 18px 0px rgba(0, 0, 0, 0.50);
+        box-shadow: 4px 4px 18px 0px rgba(0, 0, 0, 0.50);
     }
 
+    /* Font and icon */
+    .text {
+        font-weight: 500;
+    }
     .icon {
         font-size: 20pt;
         margin-right: 8pt;
@@ -127,7 +125,7 @@ export default function About() {
                     <Blurb>{blurb}</Blurb>
                     <StyledLink href={`https://github.com/${github}`}>
                         <FontAwesomeIcon className="icon" icon={faGithub} />
-                        <span>Check out My GitHub</span>
+                        <span className='text'>Check out my GitHub</span>
                     </StyledLink>
                 </Description>
             </Grid>

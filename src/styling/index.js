@@ -36,9 +36,11 @@ export default createGlobalStyle`
     }
 
     h1 {
-        color: var(--blue);
-        font-size: 30pt;
+        font-size: 40pt;
         padding-bottom: 6pt;
+    }
+    h1:before {
+        color: var(--blue);
     }
     h1:before,h2:before {
         content: '>';

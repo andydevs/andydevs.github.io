@@ -1,6 +1,4 @@
 import React from 'react'
-import Panel from '../components/panel'
-import Grid from '../components/grid'
 import { useStaticQuery, graphql } from 'gatsby'
 import styled from 'styled-components'
 
@@ -20,7 +18,7 @@ const WorkunitTable = styled.table`
         display: table-cell;
     }
 
-    @media screen and (max-width: 700px) {
+    @media screen and (max-width: 800px) {
         border-spacing: 0pt 16pt;
         td {
             display: block;

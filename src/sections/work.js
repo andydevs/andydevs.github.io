@@ -14,9 +14,9 @@ const WorkTable = styled.table`
     margin-top: -32pt;
     border-spacing: 0pt 32pt;
 
-    td { 
+    td {
         display: table-cell;
-        vertical-align: top;   
+        vertical-align: top;
     }
 
     @media screen and (max-width: 700px) {
@@ -29,7 +29,9 @@ const WorkTable = styled.table`
 `
 
 const WorkHeader = styled.td`
-    * { margin: 0pt; }
+    * {
+        margin: 0pt;
+    }
     width: auto;
     margin-bottom: 16pt;
     @media screen and (max-width: 700px) {
@@ -38,8 +40,12 @@ const WorkHeader = styled.td`
 `
 
 const WorkHighlights = styled.td`
-    ul { margin-top: 0pt; }
-    li { margin: 2pt 0pt; }
+    ul {
+        margin-top: 0pt;
+    }
+    li {
+        margin: 2pt 0pt;
+    }
     margin-bottom: 32pt;
 `
 
@@ -84,7 +90,8 @@ export default function Work() {
                 <tbody>
                     {workunits.map(
                         ({ id, company, jobTitle, timeline, highlights }) => (
-                            <tr key={id}
+                            <tr
+                                key={id}
                                 data-sal="slide-up"
                                 data-sal-duration="500"
                                 data-sal-easing="ease">
@@ -92,7 +99,8 @@ export default function Work() {
                                     <Title>{company}</Title>
                                     <Subtitle>{jobTitle}</Subtitle>
                                     <Subtitle>
-                                        {timeline.start.month} {timeline.start.year}
+                                        {timeline.start.month}{' '}
+                                        {timeline.start.year}
                                         &nbsp; &mdash; &nbsp;
                                         {timeline.current
                                             ? 'Present'

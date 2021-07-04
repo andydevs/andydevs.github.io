@@ -48,7 +48,10 @@ export default function Projects() {
             </h1>
             <Grid>
                 {projects.map(
-                    ({ id, title, image, description, github, main }, index) => (
+                    (
+                        { id, title, image, description, github, main },
+                        index
+                    ) => (
                         <Panel
                             key={id}
                             large={image !== undefined && image !== null}

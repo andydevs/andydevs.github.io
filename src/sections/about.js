@@ -54,7 +54,7 @@ const StyledLink = styled.a`
 
     /* Panel */
     border-radius: 8pt;
-    -webkit-box-shadow: 4px 4px 21px -6px rgba(0,0,0,0.37);
+    -webkit-box-shadow: 4px 4px 21px -6px rgba(0, 0, 0, 0.37);
     -moz-box-shadow: 4px 4px 21px -6px rgba(0, 0, 0, 0.37);
     box-shadow: 4px 4px 21px -6px rgba(0, 0, 0, 0.37);
 
@@ -72,9 +72,9 @@ const StyledLink = styled.a`
 
     transition: 0.25s ease-in-out;
     &:hover {
-        -webkit-box-shadow: 4px 4px 18px 0px rgba(0,0,0,0.50);
-        -moz-box-shadow: 4px 4px 18px 0px rgba(0, 0, 0, 0.50);
-        box-shadow: 4px 4px 18px 0px rgba(0, 0, 0, 0.50);
+        -webkit-box-shadow: 4px 4px 18px 0px rgba(0, 0, 0, 0.5);
+        -moz-box-shadow: 4px 4px 18px 0px rgba(0, 0, 0, 0.5);
+        box-shadow: 4px 4px 18px 0px rgba(0, 0, 0, 0.5);
     }
 
     /* Font and icon */
@@ -129,10 +129,13 @@ export default function About() {
                 About Me
             </h1>
             <Grid>
-                <Image alt="Profile" src={profile} 
+                <Image
+                    alt="Profile"
+                    src={profile}
                     data-sal="slide-up"
                     data-sal-duration="500"
-                    data-sal-easing="ease"/>
+                    data-sal-easing="ease"
+                />
                 <Description>
                     <Blurb
                         data-sal="slide-up"
@@ -141,13 +144,14 @@ export default function About() {
                         data-sal-easing="ease">
                         {description}
                     </Blurb>
-                    <StyledLink href={`https://github.com/${github}`}
+                    <StyledLink
+                        href={`https://github.com/${github}`}
                         data-sal="slide-up"
                         data-sal-delay="300"
                         data-sal-duration="500"
                         data-sal-easing="ease">
                         <FontAwesomeIcon className="icon" icon={faGithub} />
-                        <span className='text'>Check out my GitHub</span>
+                        <span className="text">Check out my GitHub</span>
                     </StyledLink>
                 </Description>
             </Grid>

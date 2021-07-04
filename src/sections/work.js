@@ -65,12 +65,20 @@ export default function Work() {
     // Render
     return (
         <section id="work-experience">
-            <h1>Where I've Worked</h1>
+            <h1
+                data-sal="slide-up"
+                data-sal-duration="500"
+                data-sal-easing="ease">
+                Where I've Worked
+            </h1>
             <WorkGrid>
                 {workunits.map(
                     ({ id, company, jobTitle, timeline, highlights }) => (
-                        <>
-                            <WorkHeader key={id}>
+                        <React.Fragment key={id}>
+                            <WorkHeader
+                                data-sal="slide-up"
+                                data-sal-duration="500"
+                                data-sal-easing="ease">
                                 <Title>{company}</Title>
                                 <Subtitle>{jobTitle}</Subtitle>
                                 <Subtitle>
@@ -81,14 +89,17 @@ export default function Work() {
                                         : `${timeline.end.month} ${timeline.end.year}`}
                                 </Subtitle>
                             </WorkHeader>
-                            <WorkHighlights key={id}>
+                            <WorkHighlights
+                                data-sal="slide-up"
+                                data-sal-duration="500"
+                                data-sal-easing="ease">
                                 <ul>
                                     {highlights.map((highlight, index) => (
                                         <li key={index}>{highlight}</li>
                                     ))}
                                 </ul>
                             </WorkHighlights>
-                        </>
+                        </React.Fragment>
                     )
                 )}
             </WorkGrid>

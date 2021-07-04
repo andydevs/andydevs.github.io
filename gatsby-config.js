@@ -30,19 +30,20 @@ module.exports = {
         'gatsby-plugin-styled-components',
         'gatsby-plugin-sharp',
         'gatsby-plugin-react-helmet',
+        'gatsby-plugin-scroll-reveal',
+        {
+            resolve: 'gatsby-plugin-google-fonts',
+            options: {
+                fonts: ['rubik:300,300i,500,600,800'],
+                display: 'swap'
+            }
+        },
         'gatsby-transformer-yaml',
         'gatsby-transformer-sharp',
         {
             resolve: 'gatsby-source-filesystem',
             options: {
                 path: `${__dirname}/content/`
-            }
-        },
-        {
-            resolve: 'gatsby-plugin-google-fonts',
-            options: {
-                fonts: ['rubik:300,300i,500,600,800'],
-                display: 'swap'
             }
         }
     ]

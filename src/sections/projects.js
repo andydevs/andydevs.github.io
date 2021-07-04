@@ -40,13 +40,21 @@ export default function Projects() {
     // Render
     return (
         <section id="projects">
-            <h1>Stuff I've Made</h1>
+            <h1
+                data-sal="slide-up"
+                data-sal-duration="500"
+                data-sal-easing="ease">
+                Stuff I've Made
+            </h1>
             <Grid>
                 {projects.map(
-                    ({ id, title, image, description, github, main }) => (
+                    ({ id, title, image, description, github, main }, index) => (
                         <Panel
+                            key={id}
                             large={image !== undefined && image !== null}
-                            key={id}>
+                            data-sal="slide-up"
+                            data-sal-duration="500"
+                            data-sal-easing="ease">
                             {image && (
                                 <Panel.ImageTitle
                                     title={title}

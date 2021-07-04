@@ -22,6 +22,7 @@
     "gatsby": "^3.5.0",
     "gatsby-plugin-google-fonts": "^1.0.1",
     "gatsby-plugin-react-helmet": "^4.2.0",
+    "gatsby-plugin-scroll-reveal": "0.0.7",
     "gatsby-plugin-sharp": "^3.3.1",
     "gatsby-plugin-styled-components": "^4.3.0",
     "gatsby-source-filesystem": "^3.2.0",

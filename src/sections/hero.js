@@ -82,7 +82,10 @@ export default function Hero() {
     return (
         <HeroDiv ref={animMountRef}>
             <HeroContainer>
-                <HeroTitle>
+                <HeroTitle
+                    data-sal="slide-up"
+                    data-sal-duration="500"
+                    data-sal-easing="ease">
                     <Title>{name.first}</Title>
                     <Title>{name.last}</Title>
                     <Subtitle>{title}</Subtitle>

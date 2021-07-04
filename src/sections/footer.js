@@ -32,26 +32,28 @@ export default function Footer() {
 
     return (
         <StyledFooter>
-            <p>
-                <IconLink
-                    large
-                    icon={faGithub}
-                    href={`https://www.github.com/${contact.github}`}
-                />
-                <IconLink large icon={faLinkedin} href={contact.linkedin} />
-                <IconLink
-                    large
-                    icon={faItchIo}
-                    href={`https://${contact.itch}.itch.io`}/>
-                <IconLink
-                    large
-                    icon={faEnvelope}
-                    href={`mailto://${contact.email}`}
-                />
+            <h3
+                data-sal="slide-up"
+                data-sal-duration="500"
+                data-sal-easing="ease">
+                Get in Touch
+            </h3>
+            <p
+                data-sal="slide-up"
+                data-sal-delay="100"
+                data-sal-duration="500"
+                data-sal-easing="ease">
+                <IconLink large icon={faGithub} href={`https://www.github.com/${contact.github}`}/>
+                <IconLink large icon={faItchIo} href={`https://${contact.itch}.itch.io`}/>
+                <IconLink large icon={faLinkedin} href={contact.linkedin}/>
+                <IconLink large icon={faEnvelope} href={`mailto://${contact.email}`}/>
             </p>
-            <p>
-                Site Design largely inspired by{' '}
-                <a href="http://brittanychiang.com">Brittany Chiang</a>
+            <p
+                data-sal="slide-up"
+                data-sal-delay="200"
+                data-sal-duration="500"
+                data-sal-easing="ease">
+                Site design largely inspired by <a href="http://brittanychiang.com">Brittany Chiang</a>
             </p>
         </StyledFooter>
     )

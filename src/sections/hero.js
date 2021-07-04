@@ -20,7 +20,7 @@ const HeroContainer = styled.div`
     transform: translate(-50%, 50%);
 `
 
-const HeroTitle = styled.div`
+const HeroHeader = styled.header`
     display: inline-block;
     margin: 12pt;
     text-align: left;
@@ -82,14 +82,14 @@ export default function Hero() {
     return (
         <HeroDiv ref={animMountRef}>
             <HeroContainer>
-                <HeroTitle
+                <HeroHeader
                     data-sal="slide-up"
                     data-sal-duration="500"
                     data-sal-easing="ease">
                     <Title>{name.first}</Title>
                     <Title>{name.last}</Title>
                     <Subtitle>{title}</Subtitle>
-                </HeroTitle>
+                </HeroHeader>
             </HeroContainer>
         </HeroDiv>
     )

@@ -23,6 +23,13 @@
             "detail": "Format code using prettier"
         },
         {
+            "dependsOn": ["install"],
+            "type": "npm",
+            "script": "clean",
+            "label": "clean",
+            "detail": "Clean gatsby build files"
+        },
+        {
             "type": "npm",
             "script": "install",
             "label": "install",

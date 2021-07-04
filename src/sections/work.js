@@ -8,29 +8,38 @@ const Title = styled.h3`
 
 const Subtitle = styled.h4`
     font-weight: 300;
-    font-style: italic;
 `
 
-const WorkGrid = styled.div`
-    display: grid;
-    grid-template-columns: auto auto;
-    grid-template-rows: auto;
+const WorkTable = styled.table`
+    margin-top: -32pt;
+    border-spacing: 0pt 32pt;
+
+    td { 
+        display: table-cell;
+        vertical-align: top;   
+    }
+
     @media screen and (max-width: 700px) {
-        grid-template-columns: auto;
+        margin-top: 0pt;
+        border-spacing: 0pt 16pt;
+        td {
+            display: block;
+        }
     }
 `
 
-const WorkHeader = styled.div`
+const WorkHeader = styled.td`
     * { margin: 0pt; }
+    width: auto;
     margin-bottom: 16pt;
     @media screen and (max-width: 700px) {
         margin-bottom: 8pt;
     }
 `
 
-const WorkHighlights = styled.div`
+const WorkHighlights = styled.td`
     ul { margin-top: 0pt; }
-    li { margin: 4pt 0pt; }
+    li { margin: 2pt 0pt; }
     margin-bottom: 32pt;
 `
 
@@ -71,38 +80,37 @@ export default function Work() {
                 data-sal-easing="ease">
                 Where I've Worked
             </h1>
-            <WorkGrid>
-                {workunits.map(
-                    ({ id, company, jobTitle, timeline, highlights }) => (
-                        <React.Fragment key={id}>
-                            <WorkHeader
+            <WorkTable>
+                <tbody>
+                    {workunits.map(
+                        ({ id, company, jobTitle, timeline, highlights }) => (
+                            <tr key={id}
                                 data-sal="slide-up"
                                 data-sal-duration="500"
                                 data-sal-easing="ease">
-                                <Title>{company}</Title>
-                                <Subtitle>{jobTitle}</Subtitle>
-                                <Subtitle>
-                                    {timeline.start.month} {timeline.start.year}
-                                    &nbsp; &mdash; &nbsp;
-                                    {timeline.current
-                                        ? 'Present'
-                                        : `${timeline.end.month} ${timeline.end.year}`}
-                                </Subtitle>
-                            </WorkHeader>
-                            <WorkHighlights
-                                data-sal="slide-up"
-                                data-sal-duration="500"
-                                data-sal-easing="ease">
-                                <ul>
-                                    {highlights.map((highlight, index) => (
-                                        <li key={index}>{highlight}</li>
-                                    ))}
-                                </ul>
-                            </WorkHighlights>
-                        </React.Fragment>
-                    )
-                )}
-            </WorkGrid>
+                                <WorkHeader>
+                                    <Title>{company}</Title>
+                                    <Subtitle>{jobTitle}</Subtitle>
+                                    <Subtitle>
+                                        {timeline.start.month} {timeline.start.year}
+                                        &nbsp; &mdash; &nbsp;
+                                        {timeline.current
+                                            ? 'Present'
+                                            : `${timeline.end.month} ${timeline.end.year}`}
+                                    </Subtitle>
+                                </WorkHeader>
+                                <WorkHighlights>
+                                    <ul>
+                                        {highlights.map((highlight, index) => (
+                                            <li key={index}>{highlight}</li>
+                                        ))}
+                                    </ul>
+                                </WorkHighlights>
+                            </tr>
+                        )
+                    )}
+                </tbody>
+            </WorkTable>
         </section>
     )
 }

@@ -22,7 +22,8 @@ export default function Footer() {
                     contact {
                         github
                         linkedin
-                        email
+                        email,
+                        itch
                     }
                 }
             }
@@ -41,7 +42,7 @@ export default function Footer() {
                 <IconLink
                     large
                     icon={faItchIo}
-                    href={`${contact.itch}.itch.io`}/>
+                    href={`https://${contact.itch}.itch.io`}/>
                 <IconLink
                     large
                     icon={faEnvelope}

@@ -12,14 +12,18 @@ const StyledFooter = styled.footer`
 
 export default function Footer() {
     const {
-        contentYaml: { contact }
+        site: {
+            siteMetadata: { contact }
+        }
     } = useStaticQuery(graphql`
         query ContactQuery {
-            contentYaml {
-                contact {
-                    github
-                    linkedin
-                    email
+            site {
+                siteMetadata {
+                    contact {
+                        github
+                        linkedin
+                        email
+                    }
                 }
             }
         }

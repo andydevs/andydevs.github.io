@@ -54,15 +54,19 @@ const Subtitle = styled.h2`
 export default function Hero() {
     // Gatsby Query
     const {
-        contentYaml: { name, handle }
+        site: {
+            siteMetadata: { name, title }
+        }
     } = useStaticQuery(graphql`
         query HeroQuery {
-            contentYaml {
-                name {
-                    first
-                    last
+            site {
+                siteMetadata {
+                    name {
+                        first
+                        last
+                    }
+                    title
                 }
-                handle
             }
         }
     `)
@@ -81,7 +85,7 @@ export default function Hero() {
                 <HeroTitle>
                     <Title>{name.first}</Title>
                     <Title>{name.last}</Title>
-                    <Subtitle>{handle}</Subtitle>
+                    <Subtitle>{title}</Subtitle>
                 </HeroTitle>
             </HeroContainer>
         </HeroDiv>

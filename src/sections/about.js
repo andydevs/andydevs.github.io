@@ -90,19 +90,23 @@ const StyledLink = styled.a`
 export default function About() {
     // Query
     const {
-        contentYaml: {
-            blurb,
-            contact: { github }
+        site: {
+            siteMetadata: {
+                description,
+                contact: { github }
+            }
         },
         imageSharp: {
             fluid: { base64: profile }
         }
     } = useStaticQuery(graphql`
         query AboutQuery {
-            contentYaml {
-                blurb
-                contact {
-                    github
+            site {
+                siteMetadata {
+                    description
+                    contact {
+                        github
+                    }
                 }
             }
             imageSharp(fluid: { originalName: { eq: "profile.jpg" } }) {
@@ -122,7 +126,7 @@ export default function About() {
             <Grid>
                 <Image alt="Profile" src={profile} />
                 <Description>
-                    <Blurb>{blurb}</Blurb>
+                    <Blurb>{description}</Blurb>
                     <StyledLink href={`https://github.com/${github}`}>
                         <FontAwesomeIcon className="icon" icon={faGithub} />
                         <span className='text'>Check out my GitHub</span>

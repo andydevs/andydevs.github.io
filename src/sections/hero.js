@@ -1,7 +1,6 @@
 import { graphql, useStaticQuery } from 'gatsby'
 import React from 'react'
 import styled from 'styled-components'
-import useHexHeroAnimation from '../hooks/useHexHeroAnimation'
 
 const HeroDiv = styled.div`
     position: relative;
@@ -31,10 +30,10 @@ const Title = styled.h1`
     padding: 0;
     font-weight: 800;
     font-size: 47pt;
-    @media screen and (min-width: 1200px) {
+    @media screen and (min-width: 700px) {
         font-size: 90pt;
     }
-    color: var(--white);
+    color: var(--blue);
     &:before {
         content: '';
     }
@@ -49,6 +48,9 @@ const Subtitle = styled.h2`
     }
     font-weight: 500;
     color: var(--white);
+    &:before {
+        color: var(--blue);
+    }
 `
 
 export default function Hero() {

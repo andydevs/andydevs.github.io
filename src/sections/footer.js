@@ -14,6 +14,11 @@ const StyledFooter = styled.footer`
     text-align: center;
 `
 
+const Small = styled.div`
+    font-size: 10pt;
+    p { margin: 4pt 0pt; }
+`
+
 export default function Footer() {
     const {
         site: {
@@ -40,7 +45,7 @@ export default function Footer() {
                 data-sal="slide-up"
                 data-sal-duration="500"
                 data-sal-easing="ease">
-                Get in Touch
+                View my <a href="resume.pdf">Resume</a>
             </h3>
             <p
                 data-sal="slide-up"
@@ -64,14 +69,14 @@ export default function Footer() {
                     href={`mailto://${contact.email}`}
                 />
             </p>
-            <p
+            <Small
                 data-sal="slide-up"
                 data-sal-delay="200"
                 data-sal-duration="500"
                 data-sal-easing="ease">
-                Site design largely inspired by{' '}
-                <a href="http://brittanychiang.com">Brittany Chiang</a>
-            </p>
+                <p>Powered by <a href="http://gatsbyjs.com">Gatsby</a></p>
+                <p>Site design largely inspired by <a href="http://brittanychiang.com">Brittany Chiang</a></p>
+            </Small>
         </StyledFooter>
     )
 }

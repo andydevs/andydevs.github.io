@@ -71,16 +71,9 @@ export default function Hero() {
         }
     `)
 
-    // Animation
-    const animMountRef = useHexHeroAnimation({
-        radius: 100,
-        spacing: 0.01,
-        period: 30
-    })
-
     // Render
     return (
-        <HeroDiv ref={animMountRef}>
+        <HeroDiv>
             <HeroContainer>
                 <HeroHeader
                     data-sal="slide-up"

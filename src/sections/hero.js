@@ -30,7 +30,7 @@ const Title = styled.h1`
     margin: 0;
     padding: 0;
     font-weight: 800;
-    font-size: 45pt;
+    font-size: 47pt;
     @media screen and (min-width: 1200px) {
         font-size: 90pt;
     }

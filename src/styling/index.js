@@ -13,9 +13,6 @@ export default createGlobalStyle`
         font-family: 'Rubik', 'Verdana', Arial, sans-serif;
         font-weight: 300;
     }
-    h1,h2 {
-        font-weight: 600;
-    }
     body {
         margin: 0;
         background-color: var(--black);
@@ -27,14 +24,17 @@ export default createGlobalStyle`
         text-decoration: none;
         margin: 0pt 2pt;
     }
-    a::before {
+    a:before {
         content: '>';
     }
-    a.icon-link::before {
+    a.icon-link:before {
         content: '';
         margin-right: 0;
     }
 
+    h1, h2 {
+        font-weight: 600;
+    }
     h1 {
         font-size: 40pt;
         padding-bottom: 6pt;
@@ -50,7 +50,6 @@ export default createGlobalStyle`
     ul {
         padding-left: 24pt;
     }
-
     ul > li {
         margin: 8pt 0pt;
     }

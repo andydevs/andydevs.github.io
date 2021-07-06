@@ -27,10 +27,14 @@ module.exports = {
         }
     },
     plugins: [
-        'gatsby-plugin-styled-components',
-        'gatsby-plugin-sharp',
-        'gatsby-plugin-react-helmet',
-        'gatsby-plugin-scroll-reveal',
+        {
+            resolve: 'gatsby-plugin-manifest',
+            options: {
+                name: 'Andydevs',
+                short_name: 'Andydevs',
+                icon: 'src/assets/graphics/logo.svg'
+            }
+        },
         {
             resolve: 'gatsby-plugin-google-fonts',
             options: {
@@ -38,6 +42,10 @@ module.exports = {
                 display: 'swap'
             }
         },
+        'gatsby-plugin-styled-components',
+        'gatsby-plugin-sharp',
+        'gatsby-plugin-react-helmet',
+        'gatsby-plugin-scroll-reveal',
         'gatsby-transformer-yaml',
         'gatsby-transformer-sharp',
         {

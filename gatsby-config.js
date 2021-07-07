@@ -7,10 +7,6 @@
 module.exports = {
     siteMetadata: {
         title: 'Andydevs',
-        name: {
-            first: 'Anshul',
-            last: 'Kharbanda'
-        },
         description: `
         Software engineer by trade. Hobbyist programmer with wide experience 
         in programming languages and frameworks. I graduated in 2020 from Drexel 

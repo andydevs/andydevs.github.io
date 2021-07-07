@@ -13,6 +13,8 @@ jobs:
         uses: actions/setup-node@v2.1.2
       - name: Clean Install Packages
         run: npm ci
+      - name: Clean Gatsby Cache
+        run: npm run clean
       - name: Build Gatsby Site
         run: npm run build
       - name: Upload Artifact

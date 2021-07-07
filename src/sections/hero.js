@@ -25,26 +25,6 @@ const HeroBanner = styled(Banner)`
 `
 
 export default function Hero() {
-    // Gatsby Query
-    const {
-        site: {
-            siteMetadata: { name, title }
-        }
-    } = useStaticQuery(graphql`
-        query HeroQuery {
-            site {
-                siteMetadata {
-                    name {
-                        first
-                        last
-                    }
-                    title
-                }
-            }
-        }
-    `)
-
-    // Render
     return (
         <HeroDiv>
             <HeroContainer>

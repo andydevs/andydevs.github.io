@@ -1,4 +1,3 @@
-import { graphql, useStaticQuery } from 'gatsby'
 import React from 'react'
 import styled from 'styled-components'
 import Banner from '../assets/graphics/banner.svg'
@@ -9,14 +8,14 @@ const HeroDiv = styled.div`
     overflow: hidden;
 `
 
-const HeroContainer = styled.div`
+const HeroBannerContainer = styled.div`
     position: absolute;
-    display: block;
-    width: 100%;
     top: 50%;
     right: 10%;
+    @media screen and (max-width: 1400px) {
+        right: 0%;
+    }
     transform: translateY(-50%);
-    max-width: 1200px;
 `
 
 const HeroBanner = styled(Banner)`
@@ -27,12 +26,12 @@ const HeroBanner = styled(Banner)`
 export default function Hero() {
     return (
         <HeroDiv>
-            <HeroContainer>
+            <HeroBannerContainer>
                 <HeroBanner
                     data-sal="slide-up"
                     data-sal-duration="500"
                     data-sal-easing="ease"/>
-            </HeroContainer>
+            </HeroBannerContainer>
         </HeroDiv>
     )
 }

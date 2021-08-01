@@ -21,6 +21,7 @@ const HeroBannerContainer = styled.div`
 const HeroBanner = styled(Banner)`
     width: 100%;
     max-width: 1200px;
+    max-height: 100%;
 `
 
 export default function Hero() {

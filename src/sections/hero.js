@@ -16,12 +16,16 @@ const HeroBannerContainer = styled.div`
         right: 0%;
     }
     transform: translateY(-50%);
+    text-align: right;
+    height: 100%;
+    width: 100%;
 `
 
 const HeroBanner = styled(Banner)`
     width: 100%;
-    max-width: 1200px;
+    text-align: right;
     max-height: 100%;
+    max-width: 1280px;
 `
 
 export default function Hero() {

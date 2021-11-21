@@ -46,7 +46,10 @@ const HeroSubtitle = styled.h2`
 export default function Hero() {
     return (
         <HeroDiv>
-            <HeroContainer>
+            <HeroContainer
+                data-sal="slide-up"
+                data-sal-duration="500"
+                data-sal-easing="ease">
                 <HeroTitle>Anshul Kharbanda</HeroTitle>
                 <HeroSubtitle>Andydevs</HeroSubtitle>
             </HeroContainer>

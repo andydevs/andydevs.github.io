@@ -26,6 +26,9 @@ const HeroTitle = styled.h1`
 
     font-size: 80pt;
     @media screen and (max-width: 1400px) {
+        font-size: 46pt;
+    }
+    @media screen and (max-width: 700px) {
         font-size: 40pt;
     }
 `
@@ -46,12 +49,20 @@ const HeroSubtitle = styled.h2`
 export default function Hero() {
     return (
         <HeroDiv>
-            <HeroContainer
-                data-sal="slide-up"
-                data-sal-duration="500"
-                data-sal-easing="ease">
-                <HeroTitle>Anshul Kharbanda</HeroTitle>
-                <HeroSubtitle>Andydevs</HeroSubtitle>
+            <HeroContainer>
+                <HeroTitle
+                    data-sal="slide-up"
+                    data-sal-duration="500"
+                    data-sal-easing="ease">
+                        Anshul Kharbanda
+                </HeroTitle>
+                <HeroSubtitle
+                    data-sal="slide-up"
+                    data-sal-duration="500"
+                    data-sal-easing="ease"
+                    data-sal-delay="100">
+                        Andydevs
+                </HeroSubtitle>
             </HeroContainer>
         </HeroDiv>
     )

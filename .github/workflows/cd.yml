@@ -2,6 +2,7 @@ name: Continuous Deployment
 on:
   push:
     branches: [master]
+  workflow_dispatch:
 jobs:
   # Build
   build:

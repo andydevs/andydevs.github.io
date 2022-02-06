@@ -19,6 +19,7 @@
   github: robot-trump
 
 - title: OpenGL Project
+  image: images/opengl-project.png
   description: >
     My first attempt at creating an OpenGL
     program. It just renders a cube to the
@@ -39,7 +40,6 @@
   main: https://andydevs.itch.io/blockys-adventure-in-blockworld
 
 - title: Cuda Fractal
-  image: images/cudafractal.png
   description: >
     A fractal generator program written using Nvidia's
     CUDA framework. FYI the documentation has not been

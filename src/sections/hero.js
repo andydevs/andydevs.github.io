@@ -55,8 +55,10 @@ const HeroTitle = styled.h1`
     margin: 0;
     padding: 0;
     font-size: 80pt;
+    margin-bottom: -8pt;
     @media screen and (max-width: 1400px) {
         font-size: 46pt;
+        margin-bottom: -6pt;
     }
     @media screen and (max-width: 700px) {
         font-size: 40pt;
@@ -70,8 +72,12 @@ const HeroTitle = styled.h1`
 const HeroSubtitle = styled.h2`
     margin: 0;
     font-size: 40pt;
+    font-weight: 300 !important;
+    color: var(--less-white);
+    margin-top: -8pt;
     @media screen and (max-width: 1400px) {
         font-size: 20pt;
+        margin-top: -6pt;
     }
     &:before {
         content: '';
@@ -102,7 +108,7 @@ export default function Hero() {
                         data-sal-duration="500"
                         data-sal-easing="ease"
                         data-sal-delay="300">
-                            Andydevs
+                            andydevs
                     </HeroSubtitle>
                 </HeroText>
             </HeroContainer>

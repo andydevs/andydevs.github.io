@@ -1,8 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
-import Logo from '../assets/graphics/logo.svg';
+import Logo from '../assets/graphics/logo.svg'
 
-const HeroDiv = styled.div`
+const HeroBackground = styled.div`
     position: relative;
     height: 100vh;
     width: 100vw;
@@ -80,7 +80,7 @@ const HeroSubtitle = styled.h2`
 
 export default function Hero() {
     return (
-        <HeroDiv>
+        <HeroBackground>
             <HeroContainer>
                 <HeroLogoContainer>
                     <Logo
@@ -106,6 +106,6 @@ export default function Hero() {
                     </HeroSubtitle>
                 </HeroText>
             </HeroContainer>
-        </HeroDiv>
+        </HeroBackground>
     )
 }

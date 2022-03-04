@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import Logo from '../assets/graphics/logo.svg'
+import Logo from '../assets/graphics/logo-banner.svg'
 
 const HeroBackground = styled.div`
     position: relative;

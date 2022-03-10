@@ -13,11 +13,11 @@ jobs:
       - name: Setup Node.js environment
         uses: actions/setup-node@v2.1.2
       - name: Clean Install Packages
-        run: npm ci
+        run: yarn cache clean && yarn install
       - name: Clean Gatsby Cache
-        run: npm run clean
+        run: yarn clean
       - name: Build Gatsby Site
-        run: npm run build
+        run: yarn build
       - name: Upload Artifact
         uses: actions/upload-artifact@v2.2.3
         with:

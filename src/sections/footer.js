@@ -12,7 +12,7 @@ import styled from 'styled-components'
 const StyledFooter = styled.footer`
     padding: 12pt 0pt;
     text-align: center;
-    color: var(--less-white);
+    color: var(--faded);
 `
 
 const Small = styled.div`

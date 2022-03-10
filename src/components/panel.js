@@ -4,7 +4,7 @@ import styled, { css } from 'styled-components'
 const Panel = styled.div`
     border-radius: 8pt;
     border-color: inherit;
-    background-color: var(--less-black);
+    background-color: var(--panel);
     overflow: hidden;
 
     /* Sizing */

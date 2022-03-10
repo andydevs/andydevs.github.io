@@ -73,7 +73,7 @@ const HeroSubtitle = styled.h2`
     margin: 0;
     font-size: 40pt;
     font-weight: 300 !important;
-    color: var(--less-white);
+    color: var(--faded);
     margin-top: -8pt;
     @media screen and (max-width: 1400px) {
         font-size: 20pt;

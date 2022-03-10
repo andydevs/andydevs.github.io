@@ -8,7 +8,7 @@ const Title = styled.h3`
 
 const Subtitle = styled.h4`
     font-weight: 300;
-    color: var(--less-white)
+    color: var(--faded)
 `
 
 const WorkTable = styled.table`

@@ -2,12 +2,12 @@ import { createGlobalStyle } from 'styled-components'
 
 export default createGlobalStyle`
     :root {
-        --black: #333333;
-        --less-black: #404040;
-        --blue: #00aaff;
-        --dark-blue: #0088cc;
-        --white: white;
-        --less-white: #bbbbbb;
+        --background: #333333;
+        --panel: #404040;
+        --primary: #00aaff;
+        --dark-primary: #0088cc;
+        --text: white;
+        --faded: #bbbbbb;
     }
 
     * {
@@ -16,12 +16,12 @@ export default createGlobalStyle`
     }
     body {
         margin: 0;
-        background-color: var(--black);
-        color: var(--white);
+        background-color: var(--background);
+        color: var(--text);
     }
     
     a {
-        color: var(--blue);
+        color: var(--primary);
         text-decoration: none;
         margin: 0pt 2pt;
     }
@@ -41,7 +41,7 @@ export default createGlobalStyle`
         padding-bottom: 6pt;
     }
     h1:before {
-        color: var(--blue);
+        color: var(--primary);
     }
     h1:before,h2:before {
         content: '>';

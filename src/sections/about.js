@@ -68,7 +68,7 @@ const StyledLink = styled.a`
 
     /* Coloring */
     color: white;
-    background-color: var(--dark-blue);
+    background-color: var(--dark-primary);
 
     transition: 0.25s ease-in-out;
     &:hover {

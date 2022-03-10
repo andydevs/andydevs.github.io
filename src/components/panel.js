@@ -69,7 +69,7 @@ Panel.Body = styled.div`
     grid-area: body;
     margin: 16pt;
     h3 {
-        font-weight: bold;
+        font-weight: 500;
         margin: 4pt 0pt;
     }
     h4 {

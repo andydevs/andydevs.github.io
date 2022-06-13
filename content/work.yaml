@@ -2,10 +2,12 @@
 - company: Raytheon Missiles and Defense
   jobTitle: Software Developer
   timeline:
-    current: true
     start:
       month: November
       year: 2020
+    end:
+      month: June
+      year: 2022
   highlights:
     - Developed build pipelines for containerized applications which are orchestrated on a Kubernetes cluster
     - Worked in a Scrum Team, coordinated with Jira and Confluence

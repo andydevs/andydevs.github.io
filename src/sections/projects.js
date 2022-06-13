@@ -22,7 +22,7 @@ export default function Projects() {
                                 base64Width: 600
                                 duotone: {
                                     highlight: "#0088ff"
-                                    shadow: "#333333"
+                                    shadow: "#000000"
                                 }
                             ) {
                                 base64
@@ -48,10 +48,7 @@ export default function Projects() {
             </h1>
             <Grid>
                 {projects.map(
-                    (
-                        { id, title, image, description, github, main },
-                        index
-                    ) => (
+                    ({ id, title, image, description, github, main }) => (
                         <Panel
                             key={id}
                             large={image !== undefined && image !== null}

@@ -53,7 +53,7 @@ const Title = styled.h3`
     left: 0pt;
     margin: 16pt;
     font-weight: 500;
-    font-size: 24pt;
+    font-size: 28pt;
 `
 
 Panel.ImageTitle = ({ title, base64 }) => (

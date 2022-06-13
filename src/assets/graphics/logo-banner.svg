@@ -7,72 +7,72 @@
    xmlns="http://www.w3.org/2000/svg"
    xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
    xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
-   width="75%"
-   height="75%"
-   viewBox="0 0 12.7 12.7"
-   preserveAspectRatio="xMidYMid meet"
-   version="1.1"
-   id="svg8"
+   inkscape:version="1.0 (4035a4fb49, 2020-05-01)"
    sodipodi:docname="logo.svg"
-   inkscape:version="1.0 (4035a4fb49, 2020-05-01)">
+   id="svg8"
+   version="1.1"
+   preserveAspectRatio="xMidYMid meet"
+   viewBox="0 0 12.7 12.7"
+   height="75%"
+   width="75%">
   <defs
      id="defs2">
     <inkscape:path-effect
-       effect="fillet_chamfer"
-       id="path-effect851"
-       is_visible="true"
-       lpeversion="1"
+       hide_knots="false"
+       only_selected="false"
+       apply_with_radius="true"
+       apply_no_radius="true"
+       use_knot_distance="true"
+       flexible="false"
+       chamfer_steps="1"
+       radius="2"
+       mode="F"
+       method="auto"
+       unit="px"
        satellites_param="F,0,0,1,0,0.52916667,0,1 @ F,0,0,1,0,0.52916667,0,1 @ F,0,0,1,0,0.52916667,0,1 @ F,0,0,1,0,0.52916667,0,1 @ F,0,0,1,0,0.26225166,0,1 @ F,0,0,1,0,0.52916667,0,1 @ F,0,0,1,0,0.33438798,0,1"
-       unit="px"
-       method="auto"
-       mode="F"
-       radius="2"
-       chamfer_steps="1"
-       flexible="false"
-       use_knot_distance="true"
-       apply_no_radius="true"
-       apply_with_radius="true"
-       only_selected="false"
-       hide_knots="false" />
-    <inkscape:path-effect
-       effect="fillet_chamfer"
-       id="path-effect24"
-       is_visible="true"
        lpeversion="1"
-       satellites_param="F,0,0,1,0,0.52916667,0,1 @ F,0,0,1,0,0.52916667,0,1 @ F,0,0,1,0,0.52916667,0,1 @ F,0,0,1,0,0.52916667,0,1 @ F,0,0,1,0,0.52916667,0,1 @ F,0,0,1,0,0.52916667,0,1"
-       unit="px"
-       method="auto"
-       mode="F"
-       radius="2"
-       chamfer_steps="1"
-       flexible="false"
-       use_knot_distance="true"
-       apply_no_radius="true"
-       apply_with_radius="true"
+       is_visible="true"
+       id="path-effect851"
+       effect="fillet_chamfer" />
+    <inkscape:path-effect
+       hide_knots="false"
        only_selected="false"
-       hide_knots="false" />
+       apply_with_radius="true"
+       apply_no_radius="true"
+       use_knot_distance="true"
+       flexible="false"
+       chamfer_steps="1"
+       radius="2"
+       mode="F"
+       method="auto"
+       unit="px"
+       satellites_param="F,0,0,1,0,0.52916667,0,1 @ F,0,0,1,0,0.52916667,0,1 @ F,0,0,1,0,0.52916667,0,1 @ F,0,0,1,0,0.52916667,0,1 @ F,0,0,1,0,0.52916667,0,1 @ F,0,0,1,0,0.52916667,0,1"
+       lpeversion="1"
+       is_visible="true"
+       id="path-effect24"
+       effect="fillet_chamfer" />
   </defs>
   <sodipodi:namedview
-     id="base"
-     pagecolor="#ffffff"
-     bordercolor="#666666"
-     borderopacity="1.0"
-     inkscape:pageopacity="0.0"
-     inkscape:pageshadow="2"
-     inkscape:zoom="10.903908"
-     inkscape:cx="20.850163"
-     inkscape:cy="31.459912"
-     inkscape:document-units="mm"
-     inkscape:current-layer="text30"
-     inkscape:document-rotation="0"
-     showgrid="false"
-     inkscape:window-width="1920"
-     inkscape:window-height="1017"
-     inkscape:window-x="-8"
-     inkscape:window-y="-8"
-     inkscape:window-maximized="1"
+     inkscape:showpageshadow="false"
      units="px"
-     inkscape:showpageshadow="false" />
+     inkscape:window-maximized="1"
+     inkscape:window-y="-8"
+     inkscape:window-x="1912"
+     inkscape:window-height="1017"
+     inkscape:window-width="1920"
+     showgrid="false"
+     inkscape:document-rotation="0"
+     inkscape:current-layer="layer1"
+     inkscape:document-units="mm"
+     inkscape:cy="23.923864"
+     inkscape:cx="18.77775"
+     inkscape:zoom="10.061777"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     borderopacity="1.0"
+     bordercolor="#666666"
+     pagecolor="#ffffff"
+     id="base" />
   <metadata
      id="metadata5">
     <rdf:RDF>
@@ -86,33 +86,33 @@
     </rdf:RDF>
   </metadata>
   <g
-     inkscape:label="Layer 1"
+     id="layer1"
      inkscape:groupmode="layer"
-     id="layer1">
+     inkscape:label="Layer 1">
     <path
-       sodipodi:type="star"
-       style="fill:#0088cc;fill-opacity:1;stroke-width:2.98719;stroke-linecap:round;stroke-linejoin:round"
-       id="path20"
-       sodipodi:sides="6"
-       sodipodi:cx="6.35"
-       sodipodi:cy="6.3499999"
-       sodipodi:r1="5.7474813"
-       sodipodi:r2="4.9774656"
-       sodipodi:arg1="1.0471976"
-       sodipodi:arg2="1.5707963"
-       inkscape:flatsided="true"
-       inkscape:rounded="-3.1225e-17"
-       inkscape:randomized="0"
+       inkscape:path-effect="#path-effect24"
        d="m 8.6945737,11.327465 -4.689148,0 a 0.91654356,0.91654356 30.000003 0 1 -0.79375,-0.458272 L 0.86710187,6.8082714 a 0.91654356,0.91654356 90.000003 0 1 5e-8,-0.9165435 L 3.2116761,1.8308067 a 0.91654356,0.91654356 150 0 1 0.79375,-0.4582718 l 4.6891481,3e-7 A 0.91654356,0.91654356 30.000003 0 1 9.4883241,1.830807 l 2.3445739,4.0609214 a 0.91654356,0.91654356 90.000003 0 1 0,0.9165436 l -2.3445743,4.060921 a 0.91654356,0.91654356 150 0 1 -0.79375,0.458272 z"
-       inkscape:path-effect="#path-effect24" />
+       inkscape:randomized="0"
+       inkscape:rounded="-3.1225e-17"
+       inkscape:flatsided="true"
+       sodipodi:arg2="1.5707963"
+       sodipodi:arg1="1.0471976"
+       sodipodi:r2="4.9774656"
+       sodipodi:r1="5.7474813"
+       sodipodi:cy="6.3499999"
+       sodipodi:cx="6.35"
+       sodipodi:sides="6"
+       id="path20"
+       style="fill:#0077ff;fill-opacity:1;stroke-width:2.98719;stroke-linecap:round;stroke-linejoin:round"
+       sodipodi:type="star" />
     <g
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:8.96531px;line-height:1.25;font-family:Rubik;-inkscape-font-specification:'Rubik, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:center;text-anchor:middle;fill:#ffffff;fill-opacity:1;stroke-width:0.224133"
+       aria-label="&gt;"
        id="text30"
-       aria-label="&gt;">
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:8.96531px;line-height:1.25;font-family:Rubik;-inkscape-font-specification:'Rubik, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;text-align:center;text-anchor:middle;fill:#ffdd00;fill-opacity:1;stroke-width:0.224133">
       <path
-         id="path843"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:8.96531px;font-family:Rubik;-inkscape-font-specification:'Rubik, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#ffffff;fill-opacity:1;stroke-width:0.224133"
-         d="m 4.9753331,8.7828645 q -0.071722,0 -0.1255144,-0.044827 -0.053792,-0.044827 -0.053792,-0.1344797 V 8.2090847 q 0,-0.1075837 0.044827,-0.1703409 0.053792,-0.062757 0.1613756,-0.1255143 L 7.3959668,6.2725777 5.002229,4.631926 Q 4.8946453,4.5602035 4.8408534,4.4974463 4.7960268,4.4346891 4.7960268,4.3271054 V 3.9326318 q 0,-0.089653 0.053792,-0.1344797 0.053792,-0.044826 0.1255144,-0.044826 0.053792,0 0.116549,0.035861 0.062757,0.026896 0.098618,0.053792 l 2.8151074,1.936507 q 0.1434449,0.098618 0.1972368,0.1882715 0.062757,0.089653 0.062757,0.2241327 v 0.1524103 q 0,0.1255143 -0.062757,0.2241327 -0.053792,0.089653 -0.1972368,0.1882716 L 5.1905005,8.6932114 q -0.035861,0.026896 -0.098618,0.062757 -0.062757,0.026896 -0.116549,0.026896 z" />
+         d="m 4.9753331,8.7828645 q -0.071722,0 -0.1255144,-0.044827 -0.053792,-0.044827 -0.053792,-0.1344797 V 8.2090847 q 0,-0.1075837 0.044827,-0.1703409 0.053792,-0.062757 0.1613756,-0.1255143 L 7.3959668,6.2725777 5.002229,4.631926 Q 4.8946453,4.5602035 4.8408534,4.4974463 4.7960268,4.4346891 4.7960268,4.3271054 V 3.9326318 q 0,-0.089653 0.053792,-0.1344797 0.053792,-0.044826 0.1255144,-0.044826 0.053792,0 0.116549,0.035861 0.062757,0.026896 0.098618,0.053792 l 2.8151074,1.936507 q 0.1434449,0.098618 0.1972368,0.1882715 0.062757,0.089653 0.062757,0.2241327 v 0.1524103 q 0,0.1255143 -0.062757,0.2241327 -0.053792,0.089653 -0.1972368,0.1882716 L 5.1905005,8.6932114 q -0.035861,0.026896 -0.098618,0.062757 -0.062757,0.026896 -0.116549,0.026896 z"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:8.96531px;font-family:Rubik;-inkscape-font-specification:'Rubik, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#ffdd00;fill-opacity:1;stroke-width:0.224133"
+         id="path843" />
     </g>
   </g>
 </svg>

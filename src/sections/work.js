@@ -4,11 +4,19 @@ import styled from 'styled-components'
 
 const Title = styled.h3`
     font-weight: 600;
+    padding-left: 11pt;
+    text-indent: -11pt;
+    &:before {
+        content: '>';
+        margin-right: 4pt;
+        color: var(--primary);
+    }
 `
 
 const Subtitle = styled.h4`
     font-weight: 300;
-    color: var(--faded)
+    color: var(--faded);
+    padding-left: 11pt;
 `
 
 const WorkTable = styled.table`

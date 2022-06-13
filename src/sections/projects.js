@@ -21,7 +21,7 @@ export default function Projects() {
                             fluid(
                                 base64Width: 600
                                 duotone: {
-                                    highlight: "#00aaff"
+                                    highlight: "#0088ff"
                                     shadow: "#333333"
                                 }
                             ) {

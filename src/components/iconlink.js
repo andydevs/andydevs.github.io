@@ -9,7 +9,7 @@ const StyledA = styled.a`
                   font-size: 28pt;
               `
             : css`
-                  font-size: 20pt;
+                  font-size: 22pt;
               `}
     margin: 0pt 10pt;
     &:before {

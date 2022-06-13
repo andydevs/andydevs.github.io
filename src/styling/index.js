@@ -5,8 +5,10 @@ export default createGlobalStyle`
         --background: #333333;
         --panel: #404040;
         --primary: #00aaff;
-        --dark-primary: #0088cc;
+        --dark-primary: #0033ee;
+        --secondary: #ffdd00;
         --text: white;
+        --secondary-text: black;
         --faded: #bbbbbb;
     }
 
@@ -21,7 +23,7 @@ export default createGlobalStyle`
     }
     
     a {
-        color: var(--primary);
+        color: var(--secondary);
         text-decoration: none;
         margin: 0pt 2pt;
     }

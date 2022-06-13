@@ -67,8 +67,8 @@ const StyledLink = styled.a`
     padding: 8pt 12pt;
 
     /* Coloring */
-    color: white;
-    background-color: var(--dark-primary);
+    background-color: var(--secondary);
+    color: var(--secondary-text);
 
     transition: 0.25s ease-in-out;
     &:hover {
@@ -112,7 +112,7 @@ export default function About() {
             imageSharp(fluid: { originalName: { eq: "profile.jpg" } }) {
                 fluid(
                     base64Width: 800
-                    duotone: { highlight: "#00aaff", shadow: "#000000" }
+                    duotone: { highlight: "#0088ff", shadow: "#000000" }
                 ) {
                     base64
                 }

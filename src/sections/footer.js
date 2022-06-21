@@ -17,7 +17,9 @@ const StyledFooter = styled.footer`
 
 const Small = styled.div`
     font-size: 10pt;
-    p { margin: 4pt 0pt; }
+    p {
+        margin: 4pt 0pt;
+    }
 `
 
 export default function Footer() {
@@ -75,8 +77,13 @@ export default function Footer() {
                 data-sal-delay="200"
                 data-sal-duration="500"
                 data-sal-easing="ease">
-                <p>Powered by <a href="http://gatsbyjs.com">Gatsby</a></p>
-                <p>Site design largely inspired by <a href="http://brittanychiang.com">Brittany Chiang</a></p>
+                <p>
+                    Powered by <a href="http://gatsbyjs.com">Gatsby</a>
+                </p>
+                <p>
+                    Site design largely inspired by{' '}
+                    <a href="http://brittanychiang.com">Brittany Chiang</a>
+                </p>
             </Small>
         </StyledFooter>
     )

@@ -5,7 +5,7 @@ import Logo from '../assets/graphics/logo-banner.svg'
 const HeroBackground = styled.div`
     position: relative;
     height: 100vh;
-    width: 100vw;
+    width: 100%;
     overflow: hidden;
 `
 
@@ -93,7 +93,8 @@ export default function Hero() {
                         data-sal="slide-up"
                         data-sal-duration="500"
                         data-sal-easing="ease"
-                        data-sal-delay="100"/>
+                        data-sal-delay="100"
+                    />
                 </HeroLogoContainer>
                 <HeroText>
                     <HeroTitle
@@ -101,14 +102,14 @@ export default function Hero() {
                         data-sal-duration="500"
                         data-sal-easing="ease"
                         data-sal-delay="200">
-                            Anshul Kharbanda
+                        Anshul Kharbanda
                     </HeroTitle>
                     <HeroSubtitle
                         data-sal="slide-up"
                         data-sal-duration="500"
                         data-sal-easing="ease"
                         data-sal-delay="300">
-                            andydevs
+                        andydevs
                     </HeroSubtitle>
                 </HeroText>
             </HeroContainer>

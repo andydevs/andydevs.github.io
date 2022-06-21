@@ -40,7 +40,8 @@ module.exports = {
         {
             resolve: 'gatsby-plugin-react-svg',
             options: {
-                include: /assets\/graphics/
+                include: /assets\/graphics/,
+                omitKeys: ['xmlnsSodipodi', 'xmlnsInkscape']
             }
         },
         'gatsby-plugin-styled-components',

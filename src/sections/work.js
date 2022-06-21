@@ -49,13 +49,23 @@ const WorkHeader = styled.td`
 `
 
 const WorkHighlights = styled.td`
-    ul {
-        margin-top: 0pt;
-    }
-    li {
-        margin: 2pt 0pt;
-    }
     margin-bottom: 32pt;
+`
+
+const WorkHighlightsList = styled.ul`
+    list-style: none;
+    margin-top: 0pt;
+`
+
+const WorkHighlight = styled.li`
+    margin: 2pt 0pt;
+    padding-left: 15.5pt;
+    text-indent: -15.5pt;
+    &:before {
+        content: "‒";
+        margin-right: 8pt;
+        color: var(--secondary);
+    }
 `
 
 export default function Work() {
@@ -108,8 +118,7 @@ export default function Work() {
                                     <Title>{company}</Title>
                                     <Subtitle>{jobTitle}</Subtitle>
                                     <Subtitle>
-                                        {timeline.start.month}{' '}
-                                        {timeline.start.year}
+                                        {timeline.start.month} {timeline.start.year}
                                         &nbsp; &mdash; &nbsp;
                                         {timeline.current
                                             ? 'Present'
@@ -117,11 +126,11 @@ export default function Work() {
                                     </Subtitle>
                                 </WorkHeader>
                                 <WorkHighlights>
-                                    <ul>
+                                    <WorkHighlightsList>
                                         {highlights.map((highlight, index) => (
-                                            <li key={index}>{highlight}</li>
+                                            <WorkHighlight key={index}>{highlight}</WorkHighlight>
                                         ))}
-                                    </ul>
+                                    </WorkHighlightsList>
                                 </WorkHighlights>
                             </tr>
                         )

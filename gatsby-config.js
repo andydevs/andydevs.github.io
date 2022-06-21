@@ -10,7 +10,7 @@ module.exports = {
         description: `Software engineer by trade. Hobbyist programmer with wide 
         experience in programming languages and frameworks. I graduated in 2020 
         from Drexel University with a Bachelor's in Computer Engineering and I'm 
-        currently working as a software developer for Raytheon. I'm also an A+ 
+        currently working as a software developer for HPE. I'm also a CompTIA A+ 
         certified computer technician. I'm most experienced in Python, Javascript, 
         and C++, although I'm continuously expanding my skillset and learning new 
         things.`,

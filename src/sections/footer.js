@@ -65,7 +65,10 @@ export default function Footer() {
                     icon={faItchIo}
                     href={`https://${contact.itch}.itch.io`}
                 />
-                <IconLink large icon={faLinkedin} href={contact.linkedin} />
+                <IconLink 
+                    large 
+                    icon={faLinkedin} 
+                    href={contact.linkedin} />
                 <IconLink
                     large
                     icon={faEnvelope}

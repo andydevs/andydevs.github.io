@@ -8,16 +8,6 @@
   github: andys-notebook
   main: https://mybinder.org/v2/gh/andydevs/andys-notebook/HEAD
 
-- title: Robot Trump
-  description: >
-    This project trains a recurrent neural network
-    to generate new tweets from Donald Trump using
-    a dataset of archived Donald Trump tweets. I've
-    also developed a hyperparameter tuning system
-    using Bayesian optimization to optimize the 
-    network for the best performance.
-  github: robot-trump
-
 - title: OpenGL Project
   image: images/opengl-project.png
   description: >

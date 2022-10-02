@@ -1,4 +1,16 @@
 ---
+- company: Hewlett Packard Enterprise
+  jobTitle: Software Engineer (QA)
+  timeline:
+    current: true
+    start:
+      month: June
+      year: 2020
+    end:
+  highlights:
+    - Developed system for automated browser end-to-end testing of a hybrid-cloud application
+    - Worked with JavaScript and Cypress
+  
 - company: Raytheon Missiles and Defense
   jobTitle: Software Developer
   timeline:

@@ -1,6 +1,6 @@
 ---
 - company: Hewlett Packard Enterprise
-  jobTitle: Software Engineer (QA)
+  jobTitle: Software Developer
   timeline:
     current: true
     start:
@@ -12,7 +12,7 @@
     - Worked with JavaScript and Cypress
   
 - company: Raytheon Missiles and Defense
-  jobTitle: Software Developer
+  jobTitle: Software Engineer I
   timeline:
     start:
       month: November

@@ -87,6 +87,8 @@ const StyledLink = styled.a`
     }
 `
 
+const article = (subject) => (/^[aeiouAEIOU]/.test(subject) ? 'an' : 'a')
+
 export default function About() {
     // Query
     const {
@@ -98,6 +100,10 @@ export default function About() {
         },
         imageSharp: {
             fluid: { base64: profile }
+        },
+        workYaml: {
+            jobTitle,
+            company
         }
     } = useStaticQuery(graphql`
         query AboutQuery {
@@ -116,6 +122,10 @@ export default function About() {
                 ) {
                     base64
                 }
+            }
+            workYaml(timeline: { current: { eq: true } }) {
+                jobTitle
+                company
             }
         }
     `)
@@ -142,7 +152,9 @@ export default function About() {
                         data-sal-delay="200"
                         data-sal-duration="500"
                         data-sal-easing="ease">
-                        {description}
+                        {description
+                            .replace('#jobTitle', `${article(jobTitle)} ${jobTitle}`)
+                            .replace('#company', company)}
                     </Blurb>
                     <StyledLink
                         href={`https://github.com/${github}`}

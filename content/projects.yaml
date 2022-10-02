@@ -8,6 +8,15 @@
   github: andys-notebook
   main: https://mybinder.org/v2/gh/andydevs/andys-notebook/HEAD
 
+- title: Resume Builder
+  description: >
+    I'm working on this project with a friend of mine Raymond Yung.
+    This would take a corpus of personal career information and auto 
+    generate a resume based on parameters provided by a job listing,
+    tailoring it to best fit emphasize the skills and experience 
+    relevant to the job requirements
+  github: rayyungdev/resume_builder
+
 - title: OpenGL Project
   image: images/opengl-project.png
   description: >

@@ -6,6 +6,11 @@ import { faExternalLinkAlt } from '@fortawesome/free-solid-svg-icons'
 import { faGithub } from '@fortawesome/free-brands-svg-icons'
 import IconLink from '../components/iconlink'
 
+const githubLink = github => {
+    let path = github.split('/')
+    return `http:`
+}
+
 export default function Projects() {
     // Query
     const {
@@ -76,7 +81,7 @@ export default function Projects() {
                                     {github && (
                                         <IconLink
                                             icon={faGithub}
-                                            href={`https://github.com/andydevs/${github}`}
+                                            href={`https://github.com/${github.includes('/') ? github : 'andydevs/' + github}`}
                                         />
                                     )}
                                 </IconLink.Group>

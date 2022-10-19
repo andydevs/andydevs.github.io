@@ -5,7 +5,7 @@
     current: true
     start:
       month: June
-      year: 2020
+      year: 2022
     end:
   highlights:
     - Developed system for automated browser end-to-end testing of a hybrid-cloud application

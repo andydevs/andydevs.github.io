@@ -8,14 +8,15 @@
   github: andys-notebook
   main: https://mybinder.org/v2/gh/andydevs/andys-notebook/HEAD
 
-- title: Resume Builder
+- title: Gravity Golf
+  image: images/gravity-golf.png
   description: >
-    I'm working on this project with a friend of mine Raymond Yung.
-    This would take a corpus of personal career information and auto 
-    generate a resume based on parameters provided by a job listing,
-    tailoring it to best fit emphasize the skills and experience 
-    relevant to the job requirements
-  github: rayyungdev/resume_builder
+    A golfing videogame set in space using sphere
+    gravity. This game is a work in progress and I
+    will be adding to and updating this game to make
+    it a more full game.
+  github: gravity-golf
+  main: https://andydevs.itch.io/gravity-golf
 
 - title: OpenGL Project
   image: images/opengl-project.png
@@ -29,29 +30,19 @@
     do those experiments
   github: opengl-project
 
-- title: Blocky's Adventure in Blockworld
-  image: images/blockys-adventure-in-blockworld.png
+- title: Resume Builder
   description: >
-    My first videogame... it's not anything to write 
-    home about. It serves as a testbench for learning 
-    about different elements of game design
-  github: blockys-adventure-in-blockworld
-  main: https://andydevs.itch.io/blockys-adventure-in-blockworld
+    I'm working on this project with a friend of mine Raymond Yung.
+    This would take a corpus of personal career information and auto 
+    generate a resume based on parameters provided by a job listing,
+    tailoring it to best fit emphasize the skills and experience 
+    relevant to the job requirements
+  github: rayyungdev/resume_builder
 
 - title: Cuda Fractal
   description: >
     A fractal generator program written using Nvidia's
-    CUDA framework. FYI the documentation has not been
-    entirely updated.
+    CUDA framework.
   github: cudafractal
   main: https://github.com/andydevs/cudafractal/releases
-
-- title: L-System Toy
-  description: >
-    Generating tree-like graphics using a
-    generative-algorithm known as an L-system.
-    Here, an L-system generates a series of 
-    commands for draw lines and dots on a screen.
-  github: l-system-toy
-  main: https://andydevs.github.io/l-system-toy
 ...

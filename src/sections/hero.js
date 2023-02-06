@@ -13,16 +13,16 @@ const HeroContainer = styled.div`
     position: absolute;
     top: 50%;
     right: 10%;
-    @media screen and (max-width: 700px) {
-        right: 0%;
-    }
     transform: translateY(-50%);
     text-align: left;
     padding: 0pt 16pt;
     display: flex;
     flex-direction: row;
     align-items: center;
-    @media screen and (max-width: 700px) {
+
+    @media screen and (max-width: 800px) {
+        right: 50%;
+        transform: translate(50%, -50%);
         flex-direction: column;
         align-items: center;
     }
@@ -39,14 +39,14 @@ const HeroLogoContainer = styled.div`
         height: 100px;
         width: 100px;
     }
-    @media screen and (max-width: 700px) {
+    @media screen and (max-width: 800px) {
         height: 150px;
         width: 150px;
     }
 `
 
 const HeroText = styled.div`
-    @media screen and (max-width: 700px) {
+    @media screen and (max-width: 800px) {
         text-align: center;
     }
 `
@@ -60,7 +60,7 @@ const HeroTitle = styled.h1`
         font-size: 46pt;
         margin-bottom: -6pt;
     }
-    @media screen and (max-width: 700px) {
+    @media screen and (max-width: 800px) {
         font-size: 40pt;
         margin-bottom: 10pt;
     }

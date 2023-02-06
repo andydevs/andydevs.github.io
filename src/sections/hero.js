@@ -9,7 +9,7 @@ const HeroBackground = styled.div`
     overflow: hidden;
 `
 
-const HeroContainer = styled.div`
+const HeroHeaderContainer = styled.div`
     position: absolute;
     top: 50%;
     right: 10%;
@@ -87,7 +87,7 @@ const HeroSubtitle = styled.h2`
 export default function Hero() {
     return (
         <HeroBackground>
-            <HeroContainer>
+            <HeroHeaderContainer>
                 <HeroLogoContainer>
                     <Logo
                         data-sal="slide-up"
@@ -112,7 +112,7 @@ export default function Hero() {
                         andydevs
                     </HeroSubtitle>
                 </HeroText>
-            </HeroContainer>
+            </HeroHeaderContainer>
         </HeroBackground>
     )
 }

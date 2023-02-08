@@ -34,7 +34,7 @@ export default function Home() {
         <div>
             <Helmet title={site.siteMetadata.title} />
             <GlobalStyle />
-            <Hero />
+            <Hero animDisabled/>
             <WidthLockContainer>
                 <StyledMain>
                     <Spacer />

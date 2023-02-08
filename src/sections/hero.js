@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import Logo from '../assets/graphics/logo-banner.svg'
+import HeroAnimation from '../special/anim'
 
 const HeroBackground = styled.div`
     position: relative;
@@ -19,6 +20,7 @@ const HeroHeaderContainer = styled.div`
     display: flex;
     flex-direction: row;
     align-items: center;
+    background: transparent;
 
     @media screen and (max-width: 800px) {
         right: 50%;
@@ -84,17 +86,17 @@ const HeroSubtitle = styled.h2`
     }
 `
 
-export default function Hero() {
+export default function Hero({ animDisabled }) {
     return (
         <HeroBackground>
+            { !animDisabled && <HeroAnimation/> }
             <HeroHeaderContainer>
                 <HeroLogoContainer>
                     <Logo
                         data-sal="slide-up"
                         data-sal-duration="500"
                         data-sal-easing="ease"
-                        data-sal-delay="100"
-                    />
+                        data-sal-delay="100"/>
                 </HeroLogoContainer>
                 <HeroText>
                     <HeroTitle

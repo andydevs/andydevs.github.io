@@ -11281,11 +11281,6 @@ tunnel-agent@^0.6.0:
   dependencies:
     safe-buffer "^5.0.1"
 
-two.js@^0.7.5:
-  version "0.7.13"
-  resolved "https://registry.yarnpkg.com/two.js/-/two.js-0.7.13.tgz#b4dbd89fd5889b17758a4dbe3281df5c3c767b3b"
-  integrity sha512-UP2MkH7gm4p8WQrLGoYnEo8ZztHKijoZzBz0h/ehdOUh93/6p8LvI0gtZZ3+n5Mndks2jVxJRgPYKSwpk7jrrw==
-
 type-check@^0.4.0, type-check@~0.4.0:
   version "0.4.0"
   resolved "https://registry.yarnpkg.com/type-check/-/type-check-0.4.0.tgz#07b8203bfa7056c0657050e3ccd2c37730bab8f1"

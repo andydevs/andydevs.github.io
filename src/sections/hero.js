@@ -1,7 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
 import Logo from '../assets/graphics/logo-banner.svg'
-import HeroAnimation from '../special/anim'
 
 const HeroBackground = styled.div`
     position: relative;
@@ -89,7 +88,6 @@ const HeroSubtitle = styled.h2`
 export default function Hero({ animDisabled }) {
     return (
         <HeroBackground>
-            { !animDisabled && <HeroAnimation/> }
             <HeroHeaderContainer>
                 <HeroLogoContainer>
                     <Logo

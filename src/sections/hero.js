@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
 import Logo from '../assets/graphics/logo-banner.svg'
 import fracDsk from '../assets/images/fractal-desktop.png'
@@ -11,9 +11,26 @@ const HeroBackground = styled.div`
     overflow: hidden;
 `
 
+const HeroImageContainer = styled.div`
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    width: 100%;
+    height: 100%;
+`
+
 const HeroImage = styled.img`
     position: absolute;
     z-index: -1;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    height: 100%;
+    width: auto;
+    @media screen and (max-width: 1080px) {
+        height: auto;
+        width: 100%;
+    }
 `
 
 const HeroHeaderContainer = styled.div`
@@ -91,10 +108,23 @@ const HeroSubtitle = styled.h2`
     }
 `
 
-export default function Hero({ animDisabled }) {
+export default function Hero() {
+    let [onMobile, setOnMobile] = useState(false);
+    useEffect(() => {
+        let resize = () => {
+            let om = window.matchMedia('(max-width: 1080px)').matches
+            console.log(om)
+            setOnMobile(om)
+        }
+        window.addEventListener('resize', resize)
+        resize()
+    })
+
     return (
         <HeroBackground>
-            <HeroImage src={fracDsk}/>
+            <HeroImageContainer>
+                <HeroImage src={onMobile ? fracMob : fracDsk}/>
+            </HeroImageContainer>
             <HeroHeaderContainer>
                 <HeroLogoContainer>
                     <Logo

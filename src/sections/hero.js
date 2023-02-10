@@ -126,13 +126,6 @@ export default function Hero() {
                 <HeroImage src={onMobile ? fracMob : fracDsk}/>
             </HeroImageContainer>
             <HeroHeaderContainer>
-                <HeroLogoContainer>
-                    <Logo
-                        data-sal="slide-up"
-                        data-sal-duration="500"
-                        data-sal-easing="ease"
-                        data-sal-delay="100"/>
-                </HeroLogoContainer>
                 <HeroText>
                     <HeroTitle
                         data-sal="slide-up"

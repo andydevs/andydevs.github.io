@@ -1,14 +1,19 @@
 import React from 'react'
 import styled from 'styled-components'
 import Logo from '../assets/graphics/logo-banner.svg'
-import heroImage from '../assets/images/fractal.png'
+import fracDsk from '../assets/images/fractal-desktop.png'
+import fracMob from '../assets/images/fractal-mobile.png'
 
 const HeroBackground = styled.div`
     position: relative;
     height: 100vh;
     width: 100%;
     overflow: hidden;
-    background-image: url(${heroImage});
+`
+
+const HeroImage = styled.img`
+    position: absolute;
+    z-index: -1;
 `
 
 const HeroHeaderContainer = styled.div`
@@ -35,8 +40,8 @@ const HeroLogoContainer = styled.div`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 200px;
-    width: 200px;
+    height: 150px;
+    width: 150px;
     @media screen and (max-width: 1400px) {
         height: 100px;
         width: 100px;
@@ -56,7 +61,7 @@ const HeroText = styled.div`
 const HeroTitle = styled.h1`
     margin: 0;
     padding: 0;
-    font-size: 80pt;
+    font-size: 50pt;
     margin-bottom: -8pt;
     @media screen and (max-width: 1400px) {
         font-size: 46pt;
@@ -73,7 +78,7 @@ const HeroTitle = styled.h1`
 
 const HeroSubtitle = styled.h2`
     margin: 0;
-    font-size: 40pt;
+    font-size: 30pt;
     font-weight: 300 !important;
     color: var(--faded);
     margin-top: -8pt;
@@ -89,6 +94,7 @@ const HeroSubtitle = styled.h2`
 export default function Hero({ animDisabled }) {
     return (
         <HeroBackground>
+            <HeroImage src={fracDsk}/>
             <HeroHeaderContainer>
                 <HeroLogoContainer>
                     <Logo

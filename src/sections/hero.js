@@ -1,19 +1,20 @@
 import React from 'react'
 import styled from 'styled-components'
 import Logo from '../assets/graphics/logo-banner.svg'
+import heroImage from '../assets/images/fractal.png'
 
 const HeroBackground = styled.div`
     position: relative;
     height: 100vh;
     width: 100%;
     overflow: hidden;
+    background-image: url(${heroImage});
 `
 
 const HeroHeaderContainer = styled.div`
     position: absolute;
-    top: 50%;
-    right: 10%;
-    transform: translateY(-50%);
+    bottom: 2%;
+    right: 2%;
     text-align: left;
     padding: 0pt 16pt;
     display: flex;
@@ -23,7 +24,7 @@ const HeroHeaderContainer = styled.div`
 
     @media screen and (max-width: 800px) {
         right: 50%;
-        transform: translate(50%, -50%);
+        transform: translateX(50%);
         flex-direction: column;
         align-items: center;
     }

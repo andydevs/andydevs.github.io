@@ -25,11 +25,21 @@ const HeroImage = styled.img`
     transform: translate(-50%, -50%);
     top: 50%;
     left: 50%;
-    height: 100%;
-    width: auto;
+
+    // Responsive
+    width: 100%;
+    @media screen and (max-width: 1920px) {
+        width: auto;
+        height: 100%;
+    }
     @media screen and (max-width: 1080px) {
-        height: auto;
         width: 100%;
+        height: auto;
+        filter: blur(5px);
+    }
+    @media screen and (max-width: 520px) {
+        height: 100%;
+        width: auto;
     }
 `
 
@@ -44,9 +54,10 @@ const HeroHeaderContainer = styled.div`
     align-items: center;
     background: transparent;
 
-    @media screen and (max-width: 800px) {
+    @media screen and (max-width: 1080px) {
+        bottom: 50%;
         right: 50%;
-        transform: translateX(50%);
+        transform: translate(50%, 50%);
         flex-direction: column;
         align-items: center;
     }
@@ -63,14 +74,14 @@ const HeroLogoContainer = styled.div`
         height: 100px;
         width: 100px;
     }
-    @media screen and (max-width: 800px) {
+    @media screen and (max-width: 1080px) {
         height: 150px;
         width: 150px;
     }
 `
 
 const HeroText = styled.div`
-    @media screen and (max-width: 800px) {
+    @media screen and (max-width: 1080px) {
         text-align: center;
     }
 `
@@ -84,7 +95,7 @@ const HeroTitle = styled.h1`
         font-size: 46pt;
         margin-bottom: -6pt;
     }
-    @media screen and (max-width: 800px) {
+    @media screen and (max-width: 1080px) {
         font-size: 40pt;
         margin-bottom: 10pt;
     }

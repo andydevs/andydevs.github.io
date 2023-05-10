@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import fracDsk from '../assets/images/fractal-desktop.png'
 import fracMob from '../assets/images/fractal-mobile.png'
 
-const HeroBackground = styled.div`
+const HeroWindow = styled.div`
     position: relative;
     height: 100vh;
     width: 100%;
@@ -42,27 +42,21 @@ const HeroImage = styled.img`
     }
 `
 
-const HeroHeaderContainer = styled.div`
+const HeroTextContainer = styled.div`
     position: absolute;
     bottom: 2%;
     right: 2%;
-    text-align: left;
+
     padding: 0pt 16pt;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    background: transparent;
+    display: flex;    
+    flex-direction: column;
+    align-items: left;
 
     @media screen and (max-width: 1080px) {
-        right: 50%;
-        transform: translateX(50%);
-        flex-direction: column;
+        right: 0%;
+        left: 0%;
+        padding: 0pt 16pt;
         align-items: center;
-    }
-`
-
-const HeroText = styled.div`
-    @media screen and (max-width: 1080px) {
         text-align: center;
     }
 `
@@ -71,10 +65,8 @@ const HeroTitle = styled.h1`
     margin: 0;
     padding: 0;
     font-size: 50pt;
-    margin-bottom: -8pt;
     @media screen and (max-width: 1400px) {
         font-size: 46pt;
-        margin-bottom: -6pt;
     }
     @media screen and (max-width: 1080px) {
         font-size: 40pt;
@@ -113,28 +105,26 @@ export default function Hero() {
     })
 
     return (
-        <HeroBackground>
+        <HeroWindow>
             <HeroImageContainer>
                 <HeroImage src={onMobile ? fracMob : fracDsk}/>
             </HeroImageContainer>
-            <HeroHeaderContainer>
-                <HeroText>
-                    <HeroTitle
-                        data-sal="slide-up"
-                        data-sal-duration="500"
-                        data-sal-easing="ease"
-                        data-sal-delay="200">
-                        Anshul Kharbanda
-                    </HeroTitle>
-                    <HeroSubtitle
-                        data-sal="slide-up"
-                        data-sal-duration="500"
-                        data-sal-easing="ease"
-                        data-sal-delay="300">
-                        andydevs
-                    </HeroSubtitle>
-                </HeroText>
-            </HeroHeaderContainer>
-        </HeroBackground>
+            <HeroTextContainer>
+                <HeroTitle
+                    data-sal="slide-up"
+                    data-sal-duration="500"
+                    data-sal-easing="ease"
+                    data-sal-delay="200">
+                    Anshul Kharbanda
+                </HeroTitle>
+                <HeroSubtitle
+                    data-sal="slide-up"
+                    data-sal-duration="500"
+                    data-sal-easing="ease"
+                    data-sal-delay="300">
+                    andydevs
+                </HeroSubtitle>
+            </HeroTextContainer>
+        </HeroWindow>
     )
 }

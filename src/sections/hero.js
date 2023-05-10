@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
-import Logo from '../assets/graphics/logo-banner.svg'
 import fracDsk from '../assets/images/fractal-desktop.png'
 import fracMob from '../assets/images/fractal-mobile.png'
 
@@ -27,19 +26,19 @@ const HeroImage = styled.img`
     left: 50%;
 
     // Responsive
-    width: 100%;
-    @media screen and (max-width: 1920px) {
-        width: auto;
-        height: 100%;
-    }
-    @media screen and (max-width: 1080px) {
+    width: auto;
+    height: 100%;
+    @media screen and (min-aspect-ratio: 16/9) {
         width: 100%;
         height: auto;
-        filter: blur(5px);
     }
-    @media screen and (max-width: 520px) {
-        height: 100%;
+    @media screen and (max-aspect-ratio: 1/1) {
+        width: 100%;
+        height: auto;
+    }
+    @media screen and (max-aspect-ratio: 9/16) {
         width: auto;
+        height: 100%;
     }
 `
 
@@ -55,28 +54,10 @@ const HeroHeaderContainer = styled.div`
     background: transparent;
 
     @media screen and (max-width: 1080px) {
-        bottom: 50%;
         right: 50%;
-        transform: translate(50%, 50%);
+        transform: translateX(50%);
         flex-direction: column;
         align-items: center;
-    }
-`
-
-const HeroLogoContainer = styled.div`
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    height: 150px;
-    width: 150px;
-    @media screen and (max-width: 1400px) {
-        height: 100px;
-        width: 100px;
-    }
-    @media screen and (max-width: 1080px) {
-        height: 150px;
-        width: 150px;
     }
 `
 
@@ -123,7 +104,7 @@ export default function Hero() {
     let [onMobile, setOnMobile] = useState(false);
     useEffect(() => {
         let resize = () => {
-            let om = window.matchMedia('(max-width: 1080px)').matches
+            let om = window.matchMedia('(max-aspect-ratio: 1/1)').matches
             console.log(om)
             setOnMobile(om)
         }

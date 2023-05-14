@@ -21,6 +21,7 @@ export default createGlobalStyle`
         font-weight: 300;
     }
     body {
+        padding: 0;
         margin: 0;
         background-color: var(--background);
         color: var(--text);

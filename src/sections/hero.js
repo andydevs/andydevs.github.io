@@ -4,6 +4,7 @@ import fracDsk from '../assets/images/fractal-desktop.png'
 import fracMob from '../assets/images/fractal-mobile.png'
 
 const HeroWindow = styled.div`
+    margin: 0;
     position: relative;
     height: 100vh;
     width: 100%;
@@ -24,6 +25,8 @@ const HeroImage = styled.img`
     transform: translate(-50%, -50%);
     top: 50%;
     left: 50%;
+    margin: 0;
+    padding: 0;
 
     // Responsive
     width: auto;
@@ -55,6 +58,7 @@ const HeroTextContainer = styled.div`
     @media screen and (max-width: 1080px) {
         right: 0%;
         left: 0%;
+        bottom: 15%;
         padding: 0pt 16pt;
         align-items: center;
         text-align: center;

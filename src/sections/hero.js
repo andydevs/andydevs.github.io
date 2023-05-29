@@ -4,27 +4,13 @@ import fracDsk from '../assets/images/fractal-desktop.png'
 import fracMob from '../assets/images/fractal-mobile.png'
 
 const HeroWindow = styled.div`
-    margin: 0;
-    position: relative;
-    height: 100vh;
-    width: 100%;
+    margin: 0; 
     overflow: hidden;
-`
-
-const HeroImageContainer = styled.div`
-    position: absolute;
-    top: 0%;
-    left: 0%;
-    width: 100%;
-    height: 100%;
+    position: relative;
 `
 
 const HeroImage = styled.img`
-    position: absolute;
     z-index: -1;
-    transform: translate(-50%, -50%);
-    top: 50%;
-    left: 50%;
     margin: 0;
     padding: 0;
 
@@ -47,7 +33,7 @@ const HeroImage = styled.img`
 
 const HeroTextContainer = styled.div`
     position: absolute;
-    bottom: 2%;
+    bottom: 12%;
     right: 2%;
 
     padding: 0pt 16pt;
@@ -97,6 +83,8 @@ const HeroSubtitle = styled.h2`
 `
 
 export default function Hero() {
+
+    // Handle which image to use
     let [onMobile, setOnMobile] = useState(false);
     useEffect(() => {
         let resize = () => {
@@ -110,9 +98,7 @@ export default function Hero() {
 
     return (
         <HeroWindow>
-            <HeroImageContainer>
-                <HeroImage src={onMobile ? fracMob : fracDsk}/>
-            </HeroImageContainer>
+            <HeroImage src={onMobile ? fracMob : fracDsk}/>
             <HeroTextContainer>
                 <HeroTitle
                     data-sal="slide-up"

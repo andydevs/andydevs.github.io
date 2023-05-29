@@ -44,7 +44,7 @@ const HeroTextContainer = styled.div`
     @media screen and (max-width: 1080px) {
         right: 0%;
         left: 0%;
-        bottom: 15%;
+        bottom: 12%;
         padding: 0pt 16pt;
         align-items: center;
         text-align: center;

@@ -18,18 +18,26 @@ const HeroText = styled.div`
     display: flex;
     flex-direction: column;
     align-items: left;
+
+    @media screen and (max-aspect-ratio: 1/1) {
+        justify-self: center;
+        margin: 5% auto;
+        align-items: center;
+    }
 `
 
 const HeroTitle = styled.h1`
     margin: 0;
     padding: 0;
     font-size: 50pt;
+    @media screen and (max-aspect-ratio: 1/1) {
+        text-align: center;
+    }
     @media screen and (max-width: 1400px) {
         font-size: 46pt;
     }
     @media screen and (max-width: 1080px) {
         font-size: 40pt;
-        margin-bottom: 10pt;
     }
     &:before {
         content: '';

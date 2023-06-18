@@ -17,17 +17,9 @@ const HeroImage = styled.img`
     // Responsive
     width: auto;
     height: 100%;
-    @media screen and (min-aspect-ratio: 16/9) {
-        width: 100%;
-        height: auto;
-    }
     @media screen and (max-aspect-ratio: 1/1) {
         width: 100%;
         height: auto;
-    }
-    @media screen and (max-aspect-ratio: 9/16) {
-        width: auto;
-        height: 100%;
     }
 `
 
@@ -85,7 +77,7 @@ const HeroSubtitle = styled.h2`
 export default function Hero() {
 
     // Handle which image to use
-    let [onMobile, setOnMobile] = useState(false);
+    let [onMobile, setOnMobile] = useState(false)
     useEffect(() => {
         let resize = () => {
             let om = window.matchMedia('(max-aspect-ratio: 1/1)').matches

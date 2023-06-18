@@ -1,7 +1,7 @@
 import { graphql, useStaticQuery } from 'gatsby'
 import React from 'react'
 import styled from 'styled-components'
-import { GatsbyImage } from 'gatsby-plugin-image'
+import { GatsbyImage, getImage, withArtDirection } from 'gatsby-plugin-image'
 
 const HeroContainer = styled.div`
     margin: 0;
@@ -62,6 +62,15 @@ const HeroSubtitle = styled.h2`
 export default function Hero() {
     const hero = useStaticQuery(graphql`
         query HeroImageQuery {
+            mobile: file(relativePath: {eq: "images/fractal-mobile.png"}) {
+                childImageSharp {
+                    gatsbyImageData(
+                        layout: FULL_WIDTH,
+                        placeholder: DOMINANT_COLOR,
+                        quality: 100
+                    )
+                }
+            }
             desktop: file(relativePath: {eq: "images/fractal-desktop.png"}) {
                 childImageSharp {
                     gatsbyImageData(
@@ -73,11 +82,21 @@ export default function Hero() {
             }
         }
     `)
+    const responsiveImages = withArtDirection(getImage(hero.desktop), [
+        {
+            media: `(min-aspect-ratio: 1/1)`,
+            image: getImage(hero.desktop)
+        },
+        {
+            media: `(max-aspect-ratio: 1/1)`,
+            image: getImage(hero.mobile)
+        }
+    ])
 
     return (
         <HeroContainer>
             <GatsbyImage 
-                image={hero.desktop.childImageSharp.gatsbyImageData}
+                image={responsiveImages}
                 style={{ 
                     gridArea: '1/1',
                     zIndex: -1

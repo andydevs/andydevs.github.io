@@ -3,7 +3,7 @@ import { graphql, useStaticQuery } from 'gatsby'
 import styled from 'styled-components'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faGithub } from '@fortawesome/free-brands-svg-icons'
-import { GatsbyImage } from 'gatsby-plugin-image'
+import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 
 const Grid = styled.div`
     display: grid;
@@ -116,7 +116,7 @@ export default function About() {
             </h1>
             <Grid>
                 <GatsbyImage
-                    image={about.profile.childImageSharp.gatsbyImageData}
+                    image={getImage(about.profile)}
                     style={{
                         gridArea: 'photo',
                         borderRadius: '8pt',

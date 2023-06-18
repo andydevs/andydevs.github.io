@@ -5,7 +5,7 @@ import { graphql, useStaticQuery } from 'gatsby'
 import { faExternalLinkAlt } from '@fortawesome/free-solid-svg-icons'
 import { faGithub } from '@fortawesome/free-brands-svg-icons'
 import IconLink from '../components/iconlink'
-import { GatsbyImage } from 'gatsby-plugin-image'
+import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 const githubLink = github => {
     let path = github.split('/')
     return `http:`
@@ -60,7 +60,7 @@ export default function Projects() {
                             {image 
                                 && ( <Panel.ImageTitle
                                         title={title}
-                                        imageData={image.childImageSharp.gatsbyImageData}
+                                        imageData={getImage(image)}
                                     /> )
                                 || <Panel.Title title={title}/>
                             }

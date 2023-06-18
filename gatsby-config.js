@@ -21,13 +21,16 @@ module.exports = {
             itch: 'andydevs'
         }
     },
+    flags: {
+        DEV_SSR: false
+    },
     plugins: [
         {
             resolve: 'gatsby-plugin-manifest',
             options: {
                 name: 'Andydevs',
                 short_name: 'Andydevs',
-                icon: 'src/assets/graphics/logo.svg'
+                icon: 'assets/graphics/logo.svg'
             }
         },
         {
@@ -35,13 +38,6 @@ module.exports = {
             options: {
                 fonts: ['rubik:300,300i,500,600,800'],
                 display: 'swap'
-            }
-        },
-        {
-            resolve: 'gatsby-plugin-react-svg',
-            options: {
-                include: /assets\/graphics/,
-                omitKeys: ['xmlnsSodipodi', 'xmlnsInkscape']
             }
         },
         'gatsby-plugin-styled-components',

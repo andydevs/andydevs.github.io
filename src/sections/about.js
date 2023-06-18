@@ -22,21 +22,6 @@ const Grid = styled.div`
     }
 `
 
-const Image = styled.img`
-    grid-area: photo;
-
-    // Styling
-    border-radius: 8pt;
-    -webkit-box-shadow: 4px 4px 21px -6px rgba(0, 0, 0, 0.37);
-    -moz-box-shadow: 4px 4px 21px -6px rgba(0, 0, 0, 0.37);
-    box-shadow: 4px 4px 21px -6px rgba(0, 0, 0, 0.37);
-    max-width: 400px;
-
-    @media screen and (max-width: 700px) {
-        width: 70%;
-    }
-`
-
 const Description = styled.div`
     grid-area: description;
     font-size: 18pt;
@@ -102,9 +87,16 @@ export default function About() {
                     }
                 }
             }
-            file(relativePath: {eq: "images/profile.jpg"}) {
+            profile: file(relativePath: {eq: "images/profile.jpg"}) {
                 childImageSharp {
-                    gatsbyImageData(layout: FIXED, width: 800)
+                    gatsbyImageData(
+                        layout: FIXED, 
+                        width: 300, 
+                        aspectRatio: 1,
+                        placeholder: DOMINANT_COLOR,
+                        quality: 100,
+                        transformOptions: {duotone: {highlight: "#0088ff", shadow: "#000000"}}
+                    )
                 }
             }
             workYaml(timeline: { current: { eq: true } }) {
@@ -123,13 +115,21 @@ export default function About() {
                 About Me
             </h1>
             <Grid>
+                <GatsbyImage
+                    image={about.profile.childImageSharp.gatsbyImageData}
+                    style={{
+                        gridArea: 'photo',
+                        borderRadius: '8pt',
+                        boxShadow: '4px 4px 21px -6px rgba(0, 0, 0, 0.37)'
+                    }}
+                />
                 <Description>
                     <Blurb
                         data-sal="slide-up"
                         data-sal-delay="200"
                         data-sal-duration="500"
                         data-sal-easing="ease">
-                        {about.site.description
+                        {about.site.siteMetadata.description
                             .replace('#jobTitle', `${article(about.workYaml.jobTitle)} ${about.workYaml.jobTitle}`)
                             .replace('#company', about.workYaml.company)}
                     </Blurb>

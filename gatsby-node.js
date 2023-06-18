@@ -1,5 +1,3 @@
-const { graphql } = require('gatsby')
-
 exports.createSchemaCustomization = ({ actions }) => {
     const { createTypes } = actions
     const typeDefs = `

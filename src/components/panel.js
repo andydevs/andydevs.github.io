@@ -1,5 +1,6 @@
 import React from 'react'
 import styled, { css } from 'styled-components'
+import { GatsbyImage } from 'gatsby-plugin-image'
 
 const Panel = styled.div`
     border-radius: 8pt;
@@ -24,13 +25,13 @@ const Panel = styled.div`
     grid-template-columns: 1fr;
     grid-template-rows: auto 1fr auto;
     grid-template-areas:
-        'image'
+        'header'
         'body'
         'footer';
 `
 
-const ImageTitleDiv = styled.div`
-    grid-area: image;
+const ImageTitleHeader = styled.div`
+    grid-area: header;
     position: static;
 `
 
@@ -38,13 +39,7 @@ const ImageTitleContainer = styled.div`
     position: relative;
 `
 
-const Image = styled.img`
-    position: relative;
-    z-index: 0;
-    width: 100%;
-`
-
-const Title = styled.h3`
+const ImageTitle = styled.h3`
     position: absolute;
     display: inline-block;
     z-index: 1;
@@ -56,13 +51,32 @@ const Title = styled.h3`
     font-size: 28pt;
 `
 
-Panel.ImageTitle = ({ title, base64 }) => (
-    <ImageTitleDiv>
+const TitleHeader = styled.div`
+    grid-area: header;
+    position: static;
+    background-color: var(--dark-primary);
+`
+
+const RegularTitle = styled.h3`
+    margin: 12pt 16pt;
+    font-weight: 500;
+    font-size: 18pt;
+    color: var(--white);
+`
+
+Panel.Title = ({ title }) => (
+    <TitleHeader>
+        <RegularTitle>{title}</RegularTitle>
+    </TitleHeader>
+)
+
+Panel.ImageTitle = ({ title, imageData }) => (
+    <ImageTitleHeader>
         <ImageTitleContainer>
-            <Image alt={title} src={base64} />
-            <Title>{title}</Title>
+            <GatsbyImage image={imageData}/>
+            <ImageTitle>{title}</ImageTitle>
         </ImageTitleContainer>
-    </ImageTitleDiv>
+    </ImageTitleHeader>
 )
 
 Panel.Body = styled.div`
@@ -80,6 +94,9 @@ Panel.Body = styled.div`
     }
     ul {
         list-style-type: circle;
+    }
+    p:first-child {
+        margin-top: 0pt;
     }
 `
 

@@ -5,7 +5,7 @@ import { graphql, useStaticQuery } from 'gatsby'
 import { faExternalLinkAlt } from '@fortawesome/free-solid-svg-icons'
 import { faGithub } from '@fortawesome/free-brands-svg-icons'
 import IconLink from '../components/iconlink'
-
+import { GatsbyImage } from 'gatsby-plugin-image'
 const githubLink = github => {
     let path = github.split('/')
     return `http:`
@@ -23,15 +23,12 @@ export default function Projects() {
                     title
                     image {
                         childImageSharp {
-                            fluid(
-                                base64Width: 600
-                                duotone: {
-                                    highlight: "#0088ff"
-                                    shadow: "#000000"
-                                }
-                            ) {
-                                base64
-                            }
+                            gatsbyImageData(
+                                layout: CONSTRAINED, 
+                                placeholder: DOMINANT_COLOR,
+                                quality: 100,
+                                transformOptions: {duotone: {highlight: "#0088ff", shadow: "#000000"}}
+                            )
                         }
                     }
                     description
@@ -60,14 +57,14 @@ export default function Projects() {
                             data-sal="slide-up"
                             data-sal-duration="500"
                             data-sal-easing="ease">
-                            {image && (
-                                <Panel.ImageTitle
-                                    title={title}
-                                    base64={image.childImageSharp.fluid.base64}
-                                />
-                            )}
+                            {image 
+                                && ( <Panel.ImageTitle
+                                        title={title}
+                                        imageData={image.childImageSharp.gatsbyImageData}
+                                    /> )
+                                || <Panel.Title title={title}/>
+                            }
                             <Panel.Body>
-                                {!image && <h3>{title}</h3>}
                                 <p>{description}</p>
                             </Panel.Body>
                             <Panel.Footer>

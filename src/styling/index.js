@@ -9,7 +9,7 @@ export default createGlobalStyle`
         --background: #333333;
         --panel: #404040;
         --primary: #00aaff;
-        --dark-primary: #0033ee;
+        --dark-primary: #005580;
         --secondary: #ffdd00;
         --text: white;
         --secondary-text: black;

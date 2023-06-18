@@ -14,7 +14,7 @@ const HeroImage = styled.img`
     margin: 0;
     padding: 0;
 
-    // Responsive
+    // Responsive width
     width: auto;
     height: 100%;
     @media screen and (max-aspect-ratio: 1/1) {
@@ -81,12 +81,12 @@ export default function Hero() {
     useEffect(() => {
         let resize = () => {
             let om = window.matchMedia('(max-aspect-ratio: 1/1)').matches
-            console.log(om)
             setOnMobile(om)
         }
         window.addEventListener('resize', resize)
         resize()
-    })
+        return () => window.removeEventListener('resize', resize)
+    }, [])
 
     return (
         <HeroWindow>

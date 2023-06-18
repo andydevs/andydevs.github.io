@@ -1,44 +1,23 @@
-import React, { useEffect, useState } from 'react'
+import { graphql, useStaticQuery } from 'gatsby'
+import React from 'react'
 import styled from 'styled-components'
+import { GatsbyImage } from 'gatsby-plugin-image'
 
-const HeroWindow = styled.div`
-    margin: 0; 
-    overflow: hidden;
-    position: relative;
-`
-
-const HeroImage = styled.img`
-    z-index: -1;
+const HeroContainer = styled.div`
     margin: 0;
-    padding: 0;
-
-    // Responsive width
-    width: auto;
-    height: 100%;
-    @media screen and (max-aspect-ratio: 1/1) {
-        width: 100%;
-        height: auto;
-    }
+    display: grid;
 `
 
-const HeroTextContainer = styled.div`
-    position: absolute;
-    bottom: 12%;
-    right: 2%;
+const HeroText = styled.div`
+    grid-area: 1/1;
+    justify-self: right;
+    align-self: end;
+    margin-right: 5%;
+    margin-bottom: 5%;
 
-    padding: 0pt 16pt;
-    display: flex;    
+    display: flex;
     flex-direction: column;
     align-items: left;
-
-    @media screen and (max-width: 1080px) {
-        right: 0%;
-        left: 0%;
-        bottom: 12%;
-        padding: 0pt 16pt;
-        align-items: center;
-        text-align: center;
-    }
 `
 
 const HeroTitle = styled.h1`
@@ -73,9 +52,30 @@ const HeroSubtitle = styled.h2`
 `
 
 export default function Hero() {
+    const hero = useStaticQuery(graphql`
+        query HeroImageQuery {
+            desktop: file(relativePath: {eq: "images/fractal-desktop.png"}) {
+                childImageSharp {
+                    gatsbyImageData(
+                        layout: FULL_WIDTH,
+                        placeholder: DOMINANT_COLOR,
+                        quality: 100
+                    )
+                }
+            }
+        }
+    `)
+
     return (
-        <HeroWindow>
-            <HeroTextContainer>
+        <HeroContainer>
+            <GatsbyImage 
+                image={hero.desktop.childImageSharp.gatsbyImageData}
+                style={{ 
+                    gridArea: '1/1',
+                    zIndex: -1
+                }}
+            />
+            <HeroText>
                 <HeroTitle
                     data-sal="slide-up"
                     data-sal-duration="500"
@@ -90,7 +90,7 @@ export default function Hero() {
                     data-sal-delay="300">
                     andydevs
                 </HeroSubtitle>
-            </HeroTextContainer>
-        </HeroWindow>
+            </HeroText>
+        </HeroContainer>
     )
 }

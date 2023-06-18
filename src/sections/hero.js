@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
-import fracDsk from '../assets/images/fractal-desktop.png'
-import fracMob from '../assets/images/fractal-mobile.png'
 
 const HeroWindow = styled.div`
     margin: 0; 
@@ -75,22 +73,8 @@ const HeroSubtitle = styled.h2`
 `
 
 export default function Hero() {
-
-    // Handle which image to use
-    let [onMobile, setOnMobile] = useState(false)
-    useEffect(() => {
-        let resize = () => {
-            let om = window.matchMedia('(max-aspect-ratio: 1/1)').matches
-            setOnMobile(om)
-        }
-        window.addEventListener('resize', resize)
-        resize()
-        return () => window.removeEventListener('resize', resize)
-    }, [])
-
     return (
         <HeroWindow>
-            <HeroImage src={onMobile ? fracMob : fracDsk}/>
             <HeroTextContainer>
                 <HeroTitle
                     data-sal="slide-up"

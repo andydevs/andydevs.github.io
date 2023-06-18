@@ -3,6 +3,7 @@ import { graphql, useStaticQuery } from 'gatsby'
 import styled from 'styled-components'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faGithub } from '@fortawesome/free-brands-svg-icons'
+import { GatsbyImage } from 'gatsby-plugin-image'
 
 const Grid = styled.div`
     display: grid;
@@ -91,21 +92,7 @@ const article = (subject) => (/^[aeiouAEIOU]/.test(subject) ? 'an' : 'a')
 
 export default function About() {
     // Query
-    const {
-        site: {
-            siteMetadata: {
-                description,
-                contact: { github }
-            }
-        },
-        imageSharp: {
-            fluid: { base64: profile }
-        },
-        workYaml: {
-            jobTitle,
-            company
-        }
-    } = useStaticQuery(graphql`
+    const about = useStaticQuery(graphql`
         query AboutQuery {
             site {
                 siteMetadata {
@@ -115,12 +102,9 @@ export default function About() {
                     }
                 }
             }
-            imageSharp(fluid: { originalName: { eq: "profile.jpg" } }) {
-                fluid(
-                    base64Width: 800
-                    duotone: { highlight: "#0088ff", shadow: "#000000" }
-                ) {
-                    base64
+            file(relativePath: {eq: "images/profile.jpg"}) {
+                childImageSharp {
+                    gatsbyImageData(layout: FIXED, width: 800)
                 }
             }
             workYaml(timeline: { current: { eq: true } }) {
@@ -139,25 +123,18 @@ export default function About() {
                 About Me
             </h1>
             <Grid>
-                <Image
-                    alt="Profile"
-                    src={profile}
-                    data-sal="slide-up"
-                    data-sal-duration="500"
-                    data-sal-easing="ease"
-                />
                 <Description>
                     <Blurb
                         data-sal="slide-up"
                         data-sal-delay="200"
                         data-sal-duration="500"
                         data-sal-easing="ease">
-                        {description
-                            .replace('#jobTitle', `${article(jobTitle)} ${jobTitle}`)
-                            .replace('#company', company)}
+                        {about.site.description
+                            .replace('#jobTitle', `${article(about.workYaml.jobTitle)} ${about.workYaml.jobTitle}`)
+                            .replace('#company', about.workYaml.company)}
                     </Blurb>
                     <StyledLink
-                        href={`https://github.com/${github}`}
+                        href={`https://github.com/${about.site.siteMetadata.contact.github}`}
                         data-sal="slide-up"
                         data-sal-delay="300"
                         data-sal-duration="500"

@@ -83,10 +83,6 @@ export default function Footer() {
                 <p>
                     Powered by <a href="http://gatsbyjs.com">Gatsby</a>
                 </p>
-                <p>
-                    Site design largely inspired by{' '}
-                    <a href="http://brittanychiang.com">Brittany Chiang</a>
-                </p>
             </Small>
         </StyledFooter>
     )

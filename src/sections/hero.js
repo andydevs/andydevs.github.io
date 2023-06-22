@@ -26,7 +26,7 @@ const HeroText = styled.div`
 
     @media screen and (max-aspect-ratio: 1/1) {
         justify-self: center;
-        margin: 5% auto;
+        margin: 25% auto;
         align-items: center;
     }
 `

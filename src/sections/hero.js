@@ -35,6 +35,7 @@ const HeroTitle = styled.h1`
     margin: 0;
     padding: 0;
     font-size: 50pt;
+    text-indent: -4pt;
     @media screen and (max-aspect-ratio: 1/1) {
         text-align: center;
     }
@@ -60,7 +61,8 @@ const HeroSubtitle = styled.h2`
         margin-top: -6pt;
     }
     &:before {
-        content: '';
+        content: '>';
+        font-weight: 500;
     }
 `
 

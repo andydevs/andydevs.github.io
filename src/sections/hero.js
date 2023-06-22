@@ -4,6 +4,11 @@ import styled from 'styled-components'
 import { GatsbyImage, getImage, withArtDirection } from 'gatsby-plugin-image'
 
 const HeroContainer = styled.div`
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
     margin: 0;
     display: grid;
 `

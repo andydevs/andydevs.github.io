@@ -89,6 +89,11 @@ export default function Hero() {
             }
         }
     `)
+    console.log(hero.desktop)
+    console.log(getImage(hero.desktop))
+    console.log(hero.mobile)
+    console.log(getImage(hero.mobile))
+
     const responsiveImages = withArtDirection(getImage(hero.desktop), [
         {
             media: `(min-aspect-ratio: 1/1)`,

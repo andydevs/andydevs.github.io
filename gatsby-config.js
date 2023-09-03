@@ -25,6 +25,10 @@ module.exports = {
         DEV_SSR: false
     },
     plugins: [
+        'gatsby-plugin-sharp',
+        'gatsby-transformer-yaml',
+        'gatsby-transformer-sharp',
+        'gatsby-plugin-image',
         {
             resolve: 'gatsby-plugin-manifest',
             options: {
@@ -41,11 +45,8 @@ module.exports = {
             }
         },
         'gatsby-plugin-styled-components',
-        'gatsby-plugin-sharp',
         'gatsby-plugin-react-helmet',
         'gatsby-plugin-scroll-reveal',
-        'gatsby-transformer-yaml',
-        'gatsby-transformer-sharp',
         {
             resolve: 'gatsby-source-filesystem',
             options: {

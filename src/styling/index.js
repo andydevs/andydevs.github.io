@@ -1,7 +1,7 @@
 import { createGlobalStyle } from 'styled-components'
 
 export const primary = '#00aaff'
-export const darkPrimary = '#00a33ee'
+export const darkPrimary = '#005580'
 export const secondary = '#ffdd00'
 
 export default createGlobalStyle`

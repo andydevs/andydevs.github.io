@@ -24,9 +24,7 @@ export default function Projects() {
                     image {
                         childImageSharp {
                             gatsbyImageData(
-                                layout: CONSTRAINED, 
-                                placeholder: DOMINANT_COLOR,
-                                quality: 100,
+                                layout: CONSTRAINED,
                                 transformOptions: {duotone: {highlight: "#0088ff", shadow: "#000000"}}
                             )
                         }

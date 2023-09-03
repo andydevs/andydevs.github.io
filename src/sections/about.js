@@ -93,8 +93,6 @@ export default function About() {
                         layout: FIXED, 
                         width: 300, 
                         aspectRatio: 1,
-                        placeholder: DOMINANT_COLOR,
-                        quality: 100,
                         transformOptions: {duotone: {highlight: "#0088ff", shadow: "#000000"}}
                     )
                 }

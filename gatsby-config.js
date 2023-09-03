@@ -25,8 +25,16 @@ module.exports = {
         DEV_SSR: false
     },
     plugins: [
-        'gatsby-plugin-sharp',
-        'gatsby-transformer-yaml',
+        {
+            resolve: 'gatsby-plugin-sharp',
+            options: {
+                defaults: {
+                    placeholder: 'none',
+                    backgroundColor: '#005580',
+                    quality: 100
+                }
+            }
+        },
         'gatsby-transformer-sharp',
         'gatsby-plugin-image',
         {
@@ -47,6 +55,7 @@ module.exports = {
         'gatsby-plugin-styled-components',
         'gatsby-plugin-react-helmet',
         'gatsby-plugin-scroll-reveal',
+        'gatsby-transformer-yaml',
         {
             resolve: 'gatsby-source-filesystem',
             options: {

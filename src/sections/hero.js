@@ -73,8 +73,7 @@ export default function Hero() {
                 childImageSharp {
                     gatsbyImageData(
                         layout: FULL_WIDTH,
-                        placeholder: DOMINANT_COLOR,
-                        quality: 100
+                        placeholder: DOMINANT_COLOR
                     )
                 }
             }
@@ -82,15 +81,12 @@ export default function Hero() {
                 childImageSharp {
                     gatsbyImageData(
                         layout: FULL_WIDTH,
-                        placeholder: DOMINANT_COLOR,
-                        quality: 100
+                        placeholder: DOMINANT_COLOR
                     )
                 }
             }
         }
     `)
-    console.log(getImage(hero.desktop))
-    console.log(getImage(hero.mobile))
 
     const responsiveImages = withArtDirection(getImage(hero.desktop), [
         {

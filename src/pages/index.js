@@ -3,7 +3,6 @@ import { Helmet } from 'react-helmet'
 import { graphql, useStaticQuery } from 'gatsby'
 import styled from 'styled-components'
 import GlobalStyle from '../styling'
-import Spacer from '../components/spacer'
 import Hero from '../sections/hero'
 import About from '../sections/about'
 import Projects from '../sections/projects'
@@ -11,13 +10,9 @@ import Work from '../sections/work'
 import Footer from '../sections/footer'
 
 const StyledMain = styled.main`
-    margin: 12pt;
-`
-
-const WidthLockContainer = styled.div`
     margin: 0pt auto;
-    padding-left: env(safe-area-inset-left, 0px);
-    padding-right: env(safe-area-inset-right, 0pt);
+    padding-left: calc(12pt + env(safe-area-inset-left, 0px));
+    padding-right: calc(12pt + env(safe-area-inset-right, 0pt));
     max-width: 1200px;
 `
 
@@ -43,19 +38,12 @@ export default function Home() {
             </Helmet>
             <GlobalStyle />
             <Hero/>
-            <WidthLockContainer>
-                <StyledMain>
-                    <Spacer />
-                    <About />
-                    <Spacer />
-                    <Projects />
-                    <Spacer />
-                    <Work />
-                    <Spacer />
-                </StyledMain>
-            </WidthLockContainer>
+            <StyledMain>
+                <About />
+                <Projects />
+                <Work />
+            </StyledMain>
             <Footer />
-            <Spacer />
         </div>
     )
 }

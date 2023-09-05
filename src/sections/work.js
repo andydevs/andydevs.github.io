@@ -1,6 +1,7 @@
 import React from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
 import styled from 'styled-components'
+import Section from '../components/section'
 
 const Title = styled.h3`
     font-weight: 600;
@@ -98,7 +99,7 @@ export default function Work() {
 
     // Render
     return (
-        <section id="work-experience">
+        <Section id="work-experience">
             <h1
                 data-sal="slide-up"
                 data-sal-duration="500"
@@ -137,6 +138,6 @@ export default function Work() {
                     )}
                 </tbody>
             </WorkTable>
-        </section>
+        </Section>
     )
 }

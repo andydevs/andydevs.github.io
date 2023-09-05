@@ -10,6 +10,7 @@ import {
 import styled from 'styled-components'
 
 const StyledFooter = styled.footer`
+    margin: 35vh 0px;
     padding: 12pt 0pt;
     text-align: center;
     color: var(--faded);

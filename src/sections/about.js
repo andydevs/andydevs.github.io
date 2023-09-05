@@ -4,6 +4,7 @@ import styled from 'styled-components'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faGithub } from '@fortawesome/free-brands-svg-icons'
 import { GatsbyImage, getImage } from 'gatsby-plugin-image'
+import Section from '../components/section'
 
 const Grid = styled.div`
     display: grid;
@@ -105,7 +106,7 @@ export default function About() {
     `)
 
     return (
-        <section id="about">
+        <Section id="about">
             <h1
                 data-sal="slide-up"
                 data-sal-duration="500"
@@ -142,6 +143,6 @@ export default function About() {
                     </StyledLink>
                 </Description>
             </Grid>
-        </section>
+        </Section>
     )
 }

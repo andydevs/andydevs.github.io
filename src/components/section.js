@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
 // Spacer component
-export default styled.div`
-    height: 35vh;
+export default styled.section`
+    margin: 35vh 0pt;
 `

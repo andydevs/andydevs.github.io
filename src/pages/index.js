@@ -16,6 +16,8 @@ const StyledMain = styled.main`
 
 const WidthLockContainer = styled.div`
     margin: 0pt auto;
+    padding-left: env(safe-area-inset-left, 0px);
+    padding-right: env(safe-area-inset-right, 0pt);
     max-width: 1200px;
 `
 

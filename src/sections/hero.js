@@ -1,7 +1,10 @@
 import { graphql, useStaticQuery } from 'gatsby'
-import React from 'react'
+import React, { useState, useEffect, useMemo } from 'react'
 import styled from 'styled-components'
 import { GatsbyImage, getImage, withArtDirection } from 'gatsby-plugin-image'
+import Particles, { initParticlesEngine } from '@tsparticles/react'
+import { loadSlim } from '@tsparticles/slim'
+import { starbound } from '../styling'
 
 const HeroContainer = styled.div`
     position: relative;
@@ -66,7 +69,7 @@ const HeroSubtitle = styled.h2`
     }
 `
 
-export default function Hero() {
+function _HeroFractalImage() {
     const hero = useStaticQuery(graphql`
         query HeroImageQuery {
             mobile: file(relativePath: { eq: "images/fractal-mobile.png" }) {
@@ -100,14 +103,82 @@ export default function Hero() {
     ])
 
     return (
+        <GatsbyImage
+            image={responsiveImages}
+            style={{
+                gridArea: '1/1',
+                zIndex: -1
+            }}
+        />
+    )
+}
+
+function HeroParticles() {
+    const [init, setInit] = useState(false);
+
+    useEffect(() => {
+        initParticlesEngine(async (engine) => {
+            console.log(engine)
+            await loadSlim(engine)
+        })
+        .then(() => setInit(true))
+    }, [])
+
+    const options = useMemo(() => ({
+        fpsLimit: 60,
+        detectRetina: true,
+        pauseOnOutsideViewport: true,
+        fullScreen: false,
+        particles: {
+            color: {
+                value: [
+                    starbound.lightBlue,
+                    starbound.orange,
+                    starbound.yellow,
+                    starbound.white
+                ],
+            },
+            links: {
+                enable: true,
+                opacity: 0.5,
+                color: starbound.white,
+                triangles: {
+                    enable: true,
+                    opacity: 0.01
+                }
+            },
+            number: {
+                value: 70,
+                limit: 100,
+                density: { enable: true }
+            },
+            move: {
+                enable: true,
+                speed: 1,
+                random: true,
+                gravity: { acceleration: 0.1 }
+            },
+            opacity: {
+                value: { min: 0.2, max: 1.0 },
+                animation: {
+                    enable: true,
+                    speed: 0.01
+                }
+            }
+        }
+    }), [])
+    
+    return <div style={{ gridArea: '1/1', zIndex: -1 }}>
+        { init && <Particles style={{
+            position: 'inherit !important'
+            }} options={options}/> }
+    </div>
+}
+
+export default function Hero() {
+    return (
         <HeroContainer>
-            <GatsbyImage
-                image={responsiveImages}
-                style={{
-                    gridArea: '1/1',
-                    zIndex: -1
-                }}
-            />
+            <HeroParticles/>
             <HeroText>
                 <HeroTitle
                     data-sal="slide-up"

@@ -4,6 +4,17 @@ export const primary = '#00b6e8'
 export const darkPrimary = '#154bb2'
 export const secondary = '#ea9300'
 
+export const starbound = {
+    darkPurple: '#12101c',
+    purple: '#4d15b2',
+    blue: '#154bb2',
+    lightBlue: '#00b6e8',
+    red: '#ea3900',
+    orange: '#ea9300',
+    yellow: '#e8e200',
+    white: '#e3dad3'
+}
+
 export default createGlobalStyle`
     :root {
         --black: #000000;
@@ -16,7 +27,7 @@ export default createGlobalStyle`
         --orange: #ea9300;
         --yellow: #e8e200;
         --white: #e3dad3;
-
+        
         --star-gradient: linear-gradient(45deg, var(--red) 0%, var(--orange) 20%, var(--yellow) 80%, var(--white));
         --sky-gradient: linear-gradient(45deg, var(--purple) 0%, var(--blue) 50%, var(--light-blue));
         --space-gradient: linear-gradient(45deg, var(--less-black), var(--dark-purple));
@@ -76,5 +87,11 @@ export default createGlobalStyle`
     }
     ul > li {
         margin: 8pt 0pt;
+    }
+
+    #tsparticles {
+        position: absolute !important;
+        width: 100%;
+        height: 100%;
     }
 `

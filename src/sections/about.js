@@ -54,7 +54,7 @@ const StyledLink = styled.a`
     padding: 8pt 12pt;
 
     /* Coloring */
-    background-color: var(--secondary);
+    background: var(--star-gradient);
     color: var(--secondary-text);
 
     transition: 0.25s ease-in-out;
@@ -74,7 +74,7 @@ const StyledLink = styled.a`
     }
 `
 
-const article = (subject) => (/^[aeiouAEIOU]/.test(subject) ? 'an' : 'a')
+const article = subject => (/^[aeiouAEIOU]/.test(subject) ? 'an' : 'a')
 
 export default function About() {
     // Query
@@ -88,13 +88,15 @@ export default function About() {
                     }
                 }
             }
-            profile: file(relativePath: {eq: "images/profile.jpg"}) {
+            profile: file(relativePath: { eq: "images/profile.jpg" }) {
                 childImageSharp {
                     gatsbyImageData(
-                        layout: FIXED, 
-                        width: 300, 
-                        aspectRatio: 1,
-                        transformOptions: {duotone: {highlight: "#0088ff", shadow: "#000000"}}
+                        layout: FIXED
+                        width: 300
+                        aspectRatio: 1
+                        transformOptions: {
+                            duotone: { highlight: "#0088ff", shadow: "#000000" }
+                        }
                     )
                 }
             }
@@ -110,7 +112,8 @@ export default function About() {
             <h1
                 data-sal="slide-up"
                 data-sal-duration="500"
-                data-sal-easing="ease">
+                data-sal-easing="ease"
+            >
                 About Me
             </h1>
             <Grid>
@@ -127,9 +130,15 @@ export default function About() {
                         data-sal="slide-up"
                         data-sal-delay="200"
                         data-sal-duration="500"
-                        data-sal-easing="ease">
+                        data-sal-easing="ease"
+                    >
                         {about.site.siteMetadata.description
-                            .replace('#jobTitle', `${article(about.workYaml.jobTitle)} ${about.workYaml.jobTitle}`)
+                            .replace(
+                                '#jobTitle',
+                                `${article(about.workYaml.jobTitle)} ${
+                                    about.workYaml.jobTitle
+                                }`
+                            )
                             .replace('#company', about.workYaml.company)}
                     </Blurb>
                     <StyledLink
@@ -137,7 +146,8 @@ export default function About() {
                         data-sal="slide-up"
                         data-sal-delay="300"
                         data-sal-duration="500"
-                        data-sal-easing="ease">
+                        data-sal-easing="ease"
+                    >
                         <FontAwesomeIcon className="icon" icon={faGithub} />
                         <span className="text">Check out my GitHub</span>
                     </StyledLink>

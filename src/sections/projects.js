@@ -25,8 +25,13 @@ export default function Projects() {
                     image {
                         childImageSharp {
                             gatsbyImageData(
-                                layout: CONSTRAINED,
-                                transformOptions: {duotone: {highlight: "#0088ff", shadow: "#000000"}}
+                                layout: CONSTRAINED
+                                transformOptions: {
+                                    duotone: {
+                                        highlight: "#0088ff"
+                                        shadow: "#000000"
+                                    }
+                                }
                             )
                         }
                     }
@@ -44,7 +49,8 @@ export default function Projects() {
             <h1
                 data-sal="slide-up"
                 data-sal-duration="500"
-                data-sal-easing="ease">
+                data-sal-easing="ease"
+            >
                 Stuff I've Made
             </h1>
             <Grid>
@@ -55,14 +61,14 @@ export default function Projects() {
                             large={image !== undefined && image !== null}
                             data-sal="slide-up"
                             data-sal-duration="500"
-                            data-sal-easing="ease">
-                            {image 
-                                && ( <Panel.ImageTitle
-                                        title={title}
-                                        imageData={getImage(image)}
-                                    /> )
-                                || <Panel.Title title={title}/>
-                            }
+                            data-sal-easing="ease"
+                        >
+                            {(image && (
+                                <Panel.ImageTitle
+                                    title={title}
+                                    imageData={getImage(image)}
+                                />
+                            )) || <Panel.Title title={title} />}
                             <Panel.Body>
                                 <p>{description}</p>
                             </Panel.Body>
@@ -77,7 +83,11 @@ export default function Projects() {
                                     {github && (
                                         <IconLink
                                             icon={faGithub}
-                                            href={`https://github.com/${github.includes('/') ? github : 'andydevs/' + github}`}
+                                            href={`https://github.com/${
+                                                github.includes('/')
+                                                    ? github
+                                                    : 'andydevs/' + github
+                                            }`}
                                         />
                                     )}
                                 </IconLink.Group>

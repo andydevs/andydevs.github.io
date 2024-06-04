@@ -63,7 +63,7 @@ const WorkHighlight = styled.li`
     padding-left: 15.5pt;
     text-indent: -15.5pt;
     &:before {
-        content: "‒";
+        content: '‒';
         margin-right: 8pt;
         color: var(--secondary);
     }
@@ -103,7 +103,8 @@ export default function Work() {
             <h1
                 data-sal="slide-up"
                 data-sal-duration="500"
-                data-sal-easing="ease">
+                data-sal-easing="ease"
+            >
                 Where I've Worked
             </h1>
             <WorkTable>
@@ -114,12 +115,14 @@ export default function Work() {
                                 key={id}
                                 data-sal="slide-up"
                                 data-sal-duration="500"
-                                data-sal-easing="ease">
+                                data-sal-easing="ease"
+                            >
                                 <WorkHeader>
                                     <Title>{company}</Title>
                                     <Subtitle>{jobTitle}</Subtitle>
                                     <Subtitle>
-                                        {timeline.start.month} {timeline.start.year}
+                                        {timeline.start.month}{' '}
+                                        {timeline.start.year}
                                         &nbsp; &mdash; &nbsp;
                                         {timeline.current
                                             ? 'Present'
@@ -129,7 +132,9 @@ export default function Work() {
                                 <WorkHighlights>
                                     <WorkHighlightsList>
                                         {highlights.map((highlight, index) => (
-                                            <WorkHighlight key={index}>{highlight}</WorkHighlight>
+                                            <WorkHighlight key={index}>
+                                                {highlight}
+                                            </WorkHighlight>
                                         ))}
                                     </WorkHighlightsList>
                                 </WorkHighlights>

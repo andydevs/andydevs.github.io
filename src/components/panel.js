@@ -5,7 +5,7 @@ import { GatsbyImage } from 'gatsby-plugin-image'
 const Panel = styled.div`
     border-radius: 8pt;
     border-color: inherit;
-    background-color: var(--panel);
+    background: var(--space-gradient);
     overflow: hidden;
 
     /* Sizing */
@@ -54,7 +54,7 @@ const ImageTitle = styled.h3`
 const TitleHeader = styled.div`
     grid-area: header;
     position: static;
-    background-color: var(--dark-primary);
+    background: var(--sky-gradient);
 `
 
 const RegularTitle = styled.h3`
@@ -73,7 +73,7 @@ Panel.Title = ({ title }) => (
 Panel.ImageTitle = ({ title, imageData }) => (
     <ImageTitleHeader>
         <ImageTitleContainer>
-            <GatsbyImage image={imageData}/>
+            <GatsbyImage image={imageData} />
             <ImageTitle>{title}</ImageTitle>
         </ImageTitleContainer>
     </ImageTitleHeader>

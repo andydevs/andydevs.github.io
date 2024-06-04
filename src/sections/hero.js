@@ -69,18 +69,18 @@ const HeroSubtitle = styled.h2`
 export default function Hero() {
     const hero = useStaticQuery(graphql`
         query HeroImageQuery {
-            mobile: file(relativePath: {eq: "images/fractal-mobile.png"}) {
+            mobile: file(relativePath: { eq: "images/fractal-mobile.png" }) {
                 childImageSharp {
                     gatsbyImageData(
-                        layout: FULL_WIDTH,
+                        layout: FULL_WIDTH
                         placeholder: DOMINANT_COLOR
                     )
                 }
             }
-            desktop: file(relativePath: {eq: "images/fractal-desktop.png"}) {
+            desktop: file(relativePath: { eq: "images/fractal-desktop.png" }) {
                 childImageSharp {
                     gatsbyImageData(
-                        layout: FULL_WIDTH,
+                        layout: FULL_WIDTH
                         placeholder: DOMINANT_COLOR
                     )
                 }
@@ -101,9 +101,9 @@ export default function Hero() {
 
     return (
         <HeroContainer>
-            <GatsbyImage 
+            <GatsbyImage
                 image={responsiveImages}
-                style={{ 
+                style={{
                     gridArea: '1/1',
                     zIndex: -1
                 }}
@@ -113,14 +113,16 @@ export default function Hero() {
                     data-sal="slide-up"
                     data-sal-duration="500"
                     data-sal-easing="ease"
-                    data-sal-delay="200">
+                    data-sal-delay="200"
+                >
                     Anshul Kharbanda
                 </HeroTitle>
                 <HeroSubtitle
                     data-sal="slide-up"
                     data-sal-duration="500"
                     data-sal-easing="ease"
-                    data-sal-delay="300">
+                    data-sal-delay="300"
+                >
                     andydevs
                 </HeroSubtitle>
             </HeroText>

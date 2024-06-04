@@ -48,14 +48,16 @@ export default function Footer() {
             <h3
                 data-sal="slide-up"
                 data-sal-duration="500"
-                data-sal-easing="ease">
+                data-sal-easing="ease"
+            >
                 View my <a href="resume.pdf">Resume</a>
             </h3>
             <p
                 data-sal="slide-up"
                 data-sal-delay="100"
                 data-sal-duration="500"
-                data-sal-easing="ease">
+                data-sal-easing="ease"
+            >
                 <IconLink
                     large
                     icon={faGithub}
@@ -66,10 +68,7 @@ export default function Footer() {
                     icon={faItchIo}
                     href={`https://${contact.itch}.itch.io`}
                 />
-                <IconLink 
-                    large 
-                    icon={faLinkedin} 
-                    href={contact.linkedin} />
+                <IconLink large icon={faLinkedin} href={contact.linkedin} />
                 <IconLink
                     large
                     icon={faEnvelope}
@@ -80,7 +79,8 @@ export default function Footer() {
                 data-sal="slide-up"
                 data-sal-delay="200"
                 data-sal-duration="500"
-                data-sal-easing="ease">
+                data-sal-easing="ease"
+            >
                 <p>
                     Powered by <a href="http://gatsbyjs.com">Gatsby</a>
                 </p>

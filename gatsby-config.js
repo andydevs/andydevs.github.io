@@ -10,10 +10,9 @@ module.exports = {
         description: `Software engineer by trade. Hobbyist programmer with wide 
         experience in programming languages and frameworks. I graduated in 2020 
         from Drexel University with a Bachelor's in Computer Engineering and I'm 
-        currently working as #jobTitle for #company. I'm also a CompTIA A+ 
-        certified computer technician. I'm most experienced in Python, JavaScript, 
-        and C++, although I'm continuously expanding my skillset and learning new 
-        things.`,
+        currently working as #jobTitle for #company. I'm most experienced in 
+        Python and JavaScript, although I'm continuously expanding my skillset 
+        and learning new things.`,
         contact: {
             email: 'akanshul97@gmail.com',
             linkedin: 'https://www.linkedin.com/in/anshul-kharbanda-03433712b/',
@@ -64,6 +63,13 @@ module.exports = {
         'gatsby-plugin-react-helmet',
         'gatsby-plugin-scroll-reveal',
         'gatsby-transformer-yaml',
+        {
+            resolve: 'gatsby-source-contentful',
+            options: {
+                spaceId: 'ki8v6ao5nutn',
+                accessToken: process.env.CONTENTFUL_ACCESS_TOKEN
+            }
+        },
         {
             resolve: 'gatsby-source-filesystem',
             options: {

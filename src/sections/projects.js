@@ -10,30 +10,20 @@ import Section from '../components/section'
 
 export default function Projects() {
     // Query
-    const {
-        allProjectsYaml: { nodes: projects }
-    } = useStaticQuery(graphql`
+    const projects = useStaticQuery(graphql`
         query ProjectsQuery {
-            allProjectsYaml {
+            allContentfulProject {
                 nodes {
                     id
                     title
-                    image {
-                        childImageSharp {
-                            gatsbyImageData(
-                                layout: CONSTRAINED
-                                transformOptions: {
-                                    duotone: {
-                                        highlight: "#0088ff"
-                                        shadow: "#000000"
-                                    }
-                                }
-                            )
-                        }
+                    screenshot {
+                        gatsbyImageData(layout: CONSTRAINED)
                     }
-                    description
-                    main
+                    description {
+                        description
+                    }
                     github
+                    link
                 }
             }
         }
@@ -50,40 +40,36 @@ export default function Projects() {
                 Stuff I've Made
             </h1>
             <Grid>
-                {projects.map(
-                    ({ id, title, image, description, github, main }) => (
+                {projects.allContentfulProject.nodes.map(
+                    ({ id, title, screenshot, description, github, link }) => (
                         <Panel
                             key={id}
-                            large={image !== undefined && image !== null}
+                            large={screenshot !== undefined && screenshot !== null}
                             data-sal="slide-up"
                             data-sal-duration="500"
                             data-sal-easing="ease"
                         >
-                            {(image && (
+                            {(screenshot && (
                                 <Panel.ImageTitle
                                     title={title}
-                                    imageData={getImage(image)}
+                                    imageData={getImage(screenshot)}
                                 />
                             )) || <Panel.Title title={title} />}
                             <Panel.Body>
-                                <p>{description}</p>
+                                <p>{description.description}</p>
                             </Panel.Body>
                             <Panel.Footer>
                                 <IconLink.Group>
-                                    {main && (
+                                    {link && (
                                         <IconLink
                                             icon={faExternalLinkAlt}
-                                            href={main}
+                                            href={link}
                                         />
                                     )}
                                     {github && (
                                         <IconLink
                                             icon={faGithub}
-                                            href={`https://github.com/${
-                                                github.includes('/')
-                                                    ? github
-                                                    : 'andydevs/' + github
-                                            }`}
+                                            href={github}
                                         />
                                     )}
                                 </IconLink.Group>

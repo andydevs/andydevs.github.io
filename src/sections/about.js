@@ -88,21 +88,16 @@ export default function About() {
                     }
                 }
             }
-            profile: file(relativePath: { eq: "images/profile.jpg" }) {
-                childImageSharp {
-                    gatsbyImageData(
-                        layout: FIXED
-                        width: 300
-                        aspectRatio: 1
-                        transformOptions: {
-                            duotone: { highlight: "#0088ff", shadow: "#000000" }
-                        }
-                    )
-                }
+            profile: contentfulAsset(title: { glob: "Profile Photo" }) {
+                gatsbyImageData(
+                    layout: FIXED
+                    width: 300
+                    aspectRatio: 1
+                )
             }
-            workYaml(timeline: { current: { eq: true } }) {
+            currentJob: contentfulWorkExperience(currentlyWorking: {eq: true}) {
                 jobTitle
-                company
+                companyName
             }
         }
     `)
@@ -111,6 +106,7 @@ export default function About() {
         <Section id="about">
             <h1
                 data-sal="slide-up"
+                data-sal-delay="300"
                 data-sal-duration="500"
                 data-sal-easing="ease"
             >
@@ -133,13 +129,8 @@ export default function About() {
                         data-sal-easing="ease"
                     >
                         {about.site.siteMetadata.description
-                            .replace(
-                                '#jobTitle',
-                                `${article(about.workYaml.jobTitle)} ${
-                                    about.workYaml.jobTitle
-                                }`
-                            )
-                            .replace('#company', about.workYaml.company)}
+                            .replace('#jobTitle', `${article(about.currentJob.jobTitle)} ${about.currentJob.jobTitle}`)
+                            .replace('#company', about.currentJob.companyName)}
                     </Blurb>
                     <StyledLink
                         href={`https://github.com/${about.site.siteMetadata.contact.github}`}

@@ -1,7 +1,5 @@
-import { graphql, useStaticQuery } from 'gatsby'
 import React, { useState, useEffect, useMemo } from 'react'
 import styled from 'styled-components'
-import { GatsbyImage, getImage, withArtDirection } from 'gatsby-plugin-image'
 import Particles, { initParticlesEngine } from '@tsparticles/react'
 import { loadSlim } from '@tsparticles/slim'
 import { starbound } from '../styling'

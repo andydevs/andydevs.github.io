@@ -5,6 +5,7 @@ import { GatsbyImage, getImage, withArtDirection } from 'gatsby-plugin-image'
 import Particles, { initParticlesEngine } from '@tsparticles/react'
 import { loadSlim } from '@tsparticles/slim'
 import { starbound } from '../styling'
+import Logo from '../../assets/graphics/logo.svg'
 
 const HeroContainer = styled.div`
     position: relative;
@@ -16,7 +17,7 @@ const HeroContainer = styled.div`
     display: grid;
 `
 
-const HeroText = styled.div`
+const HeroTextContainer = styled.div`
     grid-area: 1/1;
     justify-self: right;
     align-self: end;
@@ -24,13 +25,30 @@ const HeroText = styled.div`
     margin-bottom: 5%;
 
     display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    @media screen and (max-aspect-ratio: 1/1) {
+        flex-direction: column;
+        justify-self: center;
+        margin: 30% auto;
+        align-items: center;
+    }
+`
+
+const HeroLogo = styled(Logo)`
+
+`
+
+const HeroText = styled.div`
+    display: flex;
     flex-direction: column;
     align-items: left;
 
     @media screen and (max-aspect-ratio: 1/1) {
         justify-self: center;
-        margin: 25% auto;
         align-items: center;
+        margin: auto 16pt;
     }
 `
 
@@ -59,59 +77,15 @@ const HeroSubtitle = styled.h2`
     font-weight: 300 !important;
     color: var(--faded);
     margin-top: -8pt;
+    margin-left: -6pt;
     @media screen and (max-width: 1400px) {
         font-size: 20pt;
         margin-top: -6pt;
     }
     &:before {
-        content: '>';
-        font-weight: 500;
+        content: '';
     }
 `
-
-function _HeroFractalImage() {
-    const hero = useStaticQuery(graphql`
-        query HeroImageQuery {
-            mobile: file(relativePath: { eq: "images/fractal-mobile.png" }) {
-                childImageSharp {
-                    gatsbyImageData(
-                        layout: FULL_WIDTH
-                        placeholder: DOMINANT_COLOR
-                    )
-                }
-            }
-            desktop: file(relativePath: { eq: "images/fractal-desktop.png" }) {
-                childImageSharp {
-                    gatsbyImageData(
-                        layout: FULL_WIDTH
-                        placeholder: DOMINANT_COLOR
-                    )
-                }
-            }
-        }
-    `)
-
-    const responsiveImages = withArtDirection(getImage(hero.desktop), [
-        {
-            media: `(min-aspect-ratio: 1/1)`,
-            image: getImage(hero.desktop)
-        },
-        {
-            media: `(max-aspect-ratio: 1/1)`,
-            image: getImage(hero.mobile)
-        }
-    ])
-
-    return (
-        <GatsbyImage
-            image={responsiveImages}
-            style={{
-                gridArea: '1/1',
-                zIndex: -1
-            }}
-        />
-    )
-}
 
 function HeroParticles() {
     const [init, setInit] = useState(false);
@@ -179,24 +153,17 @@ export default function Hero() {
     return (
         <HeroContainer>
             <HeroParticles/>
-            <HeroText>
-                <HeroTitle
-                    data-sal="slide-up"
-                    data-sal-duration="500"
-                    data-sal-easing="ease"
-                    data-sal-delay="200"
-                >
-                    Anshul Kharbanda
-                </HeroTitle>
-                <HeroSubtitle
-                    data-sal="slide-up"
-                    data-sal-duration="500"
-                    data-sal-easing="ease"
-                    data-sal-delay="300"
-                >
-                    andydevs
-                </HeroSubtitle>
-            </HeroText>
+            <HeroTextContainer 
+                data-sal="slide-up"
+                data-sal-duration="500"
+                data-sal-easing="ease"
+                data-sal-delay="200">
+                <HeroLogo/>
+                <HeroText>
+                    <HeroTitle>Anshul Kharbanda</HeroTitle>
+                    <HeroSubtitle>andydevs</HeroSubtitle>
+                </HeroText>
+            </HeroTextContainer>
         </HeroContainer>
     )
 }

@@ -1,7 +1,9 @@
 import React from 'react'
 import { useStaticQuery, graphql } from 'gatsby'
+import { format } from 'date-fns'
 import styled from 'styled-components'
 import Section from '../components/section'
+import { Remark } from 'react-remark'
 
 const Title = styled.h3`
     font-weight: 600;
@@ -71,27 +73,19 @@ const WorkHighlight = styled.li`
 
 export default function Work() {
     // Query
-    const {
-        allWorkYaml: { nodes: workunits }
-    } = useStaticQuery(graphql`
+    const work = useStaticQuery(graphql`
         query WorkQuery {
-            allWorkYaml {
+            allContentfulWorkExperience(sort: {endDate: DESC}) {
                 nodes {
                     id
-                    company
+                    companyName
                     jobTitle
-                    timeline {
-                        current
-                        start {
-                            month
-                            year
-                        }
-                        end {
-                            month
-                            year
-                        }
+                    details {
+                        details
                     }
-                    highlights
+                    startDate
+                    endDate
+                    currentlyWorking
                 }
             }
         }
@@ -109,37 +103,41 @@ export default function Work() {
             </h1>
             <WorkTable>
                 <tbody>
-                    {workunits.map(
-                        ({ id, company, jobTitle, timeline, highlights }) => (
-                            <tr
-                                key={id}
-                                data-sal="slide-up"
-                                data-sal-duration="500"
-                                data-sal-easing="ease"
-                            >
-                                <WorkHeader>
-                                    <Title>{company}</Title>
-                                    <Subtitle>{jobTitle}</Subtitle>
-                                    <Subtitle>
-                                        {timeline.start.month}{' '}
-                                        {timeline.start.year}
-                                        &nbsp; &mdash; &nbsp;
-                                        {timeline.current
-                                            ? 'Present'
-                                            : `${timeline.end.month} ${timeline.end.year}`}
-                                    </Subtitle>
-                                </WorkHeader>
-                                <WorkHighlights>
-                                    <WorkHighlightsList>
-                                        {highlights.map((highlight, index) => (
-                                            <WorkHighlight key={index}>
-                                                {highlight}
-                                            </WorkHighlight>
-                                        ))}
-                                    </WorkHighlightsList>
-                                </WorkHighlights>
-                            </tr>
-                        )
+                    {work.allContentfulWorkExperience.nodes.map(
+                        ({ id, companyName, jobTitle, details, startDate, endDate, currentlyWorking }) => {
+                            let start = new Date(startDate)
+                            let end = endDate && new Date(endDate)
+                            let datefmt = 'MMMM yyyy'
+                            return (
+                                <tr
+                                    key={id}
+                                    data-sal="slide-up"
+                                    data-sal-duration="500"
+                                    data-sal-easing="ease"
+                                >
+                                    <WorkHeader>
+                                        <Title>{companyName}</Title>
+                                        <Subtitle>{jobTitle}</Subtitle>
+                                        <Subtitle>
+                                            {format(start, datefmt)}
+                                            &nbsp; &mdash; &nbsp;
+                                            {currentlyWorking ? 'Present' : format(end, datefmt)}
+                                        </Subtitle>
+                                    </WorkHeader>
+                                    <WorkHighlights>
+                                        <Remark
+                                            rehypeReactOptions={{
+                                                components: {
+                                                    ul: (props) => <WorkHighlightsList {...props}/>,
+                                                    li: (props) => <WorkHighlight {...props}/>
+                                                }
+                                            }}>
+                                            {details.details}
+                                        </Remark>
+                                    </WorkHighlights>
+                                </tr>
+                            )
+                        }
                     )}
                 </tbody>
             </WorkTable>

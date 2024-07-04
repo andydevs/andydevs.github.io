@@ -24,26 +24,9 @@ module.exports = {
         DEV_SSR: false
     },
     plugins: [
-        {
-            resolve: 'gatsby-plugin-react-svg',
-            options: {
-                rule: {
-                    include: /assets/
-                }
-            }
-        },
-        {
-            resolve: 'gatsby-plugin-sharp',
-            options: {
-                defaults: {
-                    placeholder: 'none',
-                    backgroundColor: '#005580',
-                    quality: 100
-                }
-            }
-        },
-        'gatsby-transformer-sharp',
-        'gatsby-plugin-image',
+        'gatsby-plugin-react-helmet',
+        'gatsby-plugin-scroll-reveal',
+        'gatsby-plugin-styled-components',
         {
             resolve: 'gatsby-plugin-manifest',
             options: {
@@ -59,10 +42,29 @@ module.exports = {
                 display: 'swap'
             }
         },
-        'gatsby-plugin-styled-components',
-        'gatsby-plugin-react-helmet',
-        'gatsby-plugin-scroll-reveal',
-        'gatsby-transformer-yaml',
+        {
+            resolve: 'gatsby-plugin-react-svg',
+            options: {
+                rule: {
+                    include: /assets/
+                }
+            }
+        },
+
+        'gatsby-transformer-sharp',
+        'gatsby-plugin-image',
+        {
+            resolve: 'gatsby-plugin-sharp',
+            options: {
+                defaults: {
+                    placeholder: 'none',
+                    backgroundColor: '#005580',
+                    quality: 100
+                }
+            }
+        },
+
+        
         {
             resolve: 'gatsby-source-contentful',
             options: {
@@ -70,6 +72,8 @@ module.exports = {
                 accessToken: process.env.CONTENTFUL_ACCESS_TOKEN
             }
         },
+        
+        'gatsby-transformer-yaml',
         {
             resolve: 'gatsby-source-filesystem',
             options: {

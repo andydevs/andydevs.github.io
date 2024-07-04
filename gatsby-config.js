@@ -73,13 +73,6 @@ module.exports = {
             }
         },
         
-        'gatsby-transformer-yaml',
-        {
-            resolve: 'gatsby-source-filesystem',
-            options: {
-                path: `${__dirname}/content/`
-            }
-        },
         {
             resolve: 'gatsby-source-filesystem',
             options: {

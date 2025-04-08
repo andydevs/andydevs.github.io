@@ -3,7 +3,7 @@ on:
   push:
     branches: [master]
   schedule:
-    - cron: '0 0 1 DEC,MAR,JUN,SEP *'
+    - cron: '0 0 1 * *'
   workflow_dispatch:
 jobs:
   # Build
@@ -22,23 +22,17 @@ jobs:
         run: yarn build
         env:
           CONTENTFUL_ACCESS_TOKEN: ${{ secrets.CONTENTFUL_ACCESS_TOKEN }}
-      - name: Upload Artifact
-        uses: actions/upload-artifact@v2.2.3
+      - name: Upload GitHub Pages artifact
+        uses: actions/upload-pages-artifact@v3.0.1
         with:
           path: public
-          name: artifact
-  
+      
   # Deploy
   deploy:
     needs: [build]
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout Repo
-        uses: actions/checkout@v2
-      - name: Download Artifact
-        uses: actions/download-artifact@v2.0.9
-      - name: Deploy to GitHub Pages
-        uses: rdarida/simple-github-pages-deploy-action@v1
-        with:
-          git-base-folder: artifact
-          commit-message: Auto build static site
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v5.0.0
+      - name: Deploy GitHub Pages site
+        uses: actions/deploy-pages@v4.0.5

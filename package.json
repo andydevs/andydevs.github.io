@@ -23,6 +23,7 @@
     "@tsparticles/engine": "^3.4.0",
     "@tsparticles/react": "^3.0.0",
     "@tsparticles/slim": "^3.4.0",
+    "axios": "^1.8.4",
     "babel-plugin-styled-components": "^2.1.4",
     "date-fns": "^3.6.0",
     "gatsby": "^5.12.3",
@@ -44,6 +45,7 @@
     "react-dom": "^18.2.0",
     "react-helmet": "^6.1.0",
     "react-remark": "^2.1.0",
+    "sharp": "^0.34.1",
     "styled-components": "^6.0.7",
     "tsparticles-slim": "^2.12.0"
   },

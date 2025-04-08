@@ -49,6 +49,8 @@ const ImageTitle = styled.h3`
     margin: 16pt;
     font-weight: 500;
     font-size: 28pt;
+
+    color: ${props => props.black ? `var(--black)` : `var(--white)`}
 `
 
 const TitleHeader = styled.div`
@@ -70,11 +72,11 @@ Panel.Title = ({ title }) => (
     </TitleHeader>
 )
 
-Panel.ImageTitle = ({ title, imageData }) => (
+Panel.ImageTitle = ({ title, black=false, imageData }) => (
     <ImageTitleHeader>
         <ImageTitleContainer>
             <GatsbyImage image={imageData} />
-            <ImageTitle>{title}</ImageTitle>
+            <ImageTitle black={black}>{title}</ImageTitle>
         </ImageTitleContainer>
     </ImageTitleHeader>
 )

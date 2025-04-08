@@ -19,6 +19,7 @@ export default function Projects() {
                     screenshot {
                         gatsbyImageData(layout: CONSTRAINED)
                     }
+                    screenshotBlackTitle
                     description {
                         description
                     }
@@ -41,41 +42,44 @@ export default function Projects() {
             </h1>
             <Grid>
                 {projects.allContentfulProject.nodes.map(
-                    ({ id, title, screenshot, description, github, link }) => (
-                        <Panel
-                            key={id}
-                            large={screenshot !== undefined && screenshot !== null}
-                            data-sal="slide-up"
-                            data-sal-duration="500"
-                            data-sal-easing="ease"
-                        >
-                            {(screenshot && (
-                                <Panel.ImageTitle
-                                    title={title}
-                                    imageData={getImage(screenshot)}
-                                />
-                            )) || <Panel.Title title={title} />}
-                            <Panel.Body>
-                                <p>{description.description}</p>
-                            </Panel.Body>
-                            <Panel.Footer>
-                                <IconLink.Group>
-                                    {link && (
-                                        <IconLink
-                                            icon={faExternalLinkAlt}
-                                            href={link}
-                                        />
-                                    )}
-                                    {github && (
-                                        <IconLink
-                                            icon={faGithub}
-                                            href={github}
-                                        />
-                                    )}
-                                </IconLink.Group>
-                            </Panel.Footer>
-                        </Panel>
-                    )
+                    ({ id, title, screenshot, screenshotBlackTitle, description, github, link }) => {
+                        return (
+                            <Panel
+                                key={id}
+                                large={screenshot !== undefined && screenshot !== null}
+                                data-sal="slide-up"
+                                data-sal-duration="500"
+                                data-sal-easing="ease"
+                            >
+                                {(screenshot && (
+                                    <Panel.ImageTitle
+                                        title={title}
+                                        imageData={getImage(screenshot)}
+                                        black={screenshotBlackTitle}
+                                    />
+                                )) || <Panel.Title title={title} />}
+                                <Panel.Body>
+                                    <p>{description.description}</p>
+                                </Panel.Body>
+                                <Panel.Footer>
+                                    <IconLink.Group>
+                                        {link && (
+                                            <IconLink
+                                                icon={faExternalLinkAlt}
+                                                href={link}
+                                            />
+                                        )}
+                                        {github && (
+                                            <IconLink
+                                                icon={faGithub}
+                                                href={github}
+                                            />
+                                        )}
+                                    </IconLink.Group>
+                                </Panel.Footer>
+                            </Panel>
+                        )
+                    }
                 )}
             </Grid>
         </Section>

@@ -1,3 +1,6 @@
+const axios = require('axios')
+const sharp = require('sharp')
+
 exports.createSchemaCustomization = ({ actions }) => {
     const { createTypes } = actions
     const typeDefs = `

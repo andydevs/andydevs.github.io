@@ -23,26 +23,25 @@ jobs:
         env:
           CONTENTFUL_ACCESS_TOKEN: ${{ secrets.CONTENTFUL_ACCESS_TOKEN }}
       - name: Upload GitHub Pages artifact
-        uses: actions/upload-pages-artifact@v3.0.1
+        uses: actions/upload-artifact@v4.6.2
         with:
+          name: webpage
           path: public
+          
       
   # Deploy
   deploy:
     needs: build
-    
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    
-    # Grant GITHUB_TOKEN the permissions required to make a Pages deployment
-    permissions:
-      pages: write      # to deploy to Pages
-      id-token: write   # to verify the deployment originates from an appropriate source
-
     runs-on: ubuntu-latest
     steps:
-      - name: Configure GitHub Pages
-        uses: actions/configure-pages@v5.0.0
-      - name: Deploy GitHub Pages site
-        uses: actions/deploy-pages@v4.0.5
+      - name: Download a Build Artifact
+        uses: actions/download-artifact@v4.2.1
+        with:
+          name: webpage
+          path: public
+      - name: Push to GitHub Pages branch
+        uses: ftnext/action-push-ghpages@v1.0.0
+        with:
+          build_dir: public
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+                

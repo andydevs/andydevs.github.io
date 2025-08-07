@@ -8,6 +8,7 @@ import {
     faItchIo
 } from '@fortawesome/free-brands-svg-icons'
 import styled from 'styled-components'
+import { ResumeLink } from '../components/resume-link'
 
 const StyledFooter = styled.footer`
     margin: 35vh 0px;
@@ -50,7 +51,7 @@ export default function Footer() {
                 data-sal-duration="500"
                 data-sal-easing="ease"
             >
-                View my <a href="resume.pdf">Resume</a>
+                View my <ResumeLink />
             </h3>
             <p
                 data-sal="slide-up"

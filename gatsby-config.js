@@ -9,10 +9,9 @@ module.exports = {
         title: 'Andydevs',
         description: `Software engineer by trade. Hobbyist programmer with wide 
         experience in programming languages and frameworks. I graduated in 2020 
-        from Drexel University with a Bachelor's in Computer Engineering and I'm 
-        currently working as #jobTitle for #company. I'm most experienced in 
-        Python and JavaScript, although I'm continuously expanding my skillset 
-        and learning new things.`,
+        from Drexel University with a Bachelor's in Computer Engineering. 
+        I'm most experienced in Python and JavaScript, although I'm continuously 
+        expanding my skillset and learning new things.`,
         contact: {
             email: 'akanshul97@gmail.com',
             linkedin: 'https://www.linkedin.com/in/anshul-kharbanda-03433712b/',
@@ -50,7 +49,6 @@ module.exports = {
                 }
             }
         },
-
         'gatsby-transformer-sharp',
         'gatsby-plugin-image',
         {
@@ -63,8 +61,6 @@ module.exports = {
                 }
             }
         },
-
-        
         {
             resolve: 'gatsby-source-contentful',
             options: {
@@ -72,7 +68,6 @@ module.exports = {
                 accessToken: process.env.CONTENTFUL_ACCESS_TOKEN
             }
         },
-        
         {
             resolve: 'gatsby-source-filesystem',
             options: {

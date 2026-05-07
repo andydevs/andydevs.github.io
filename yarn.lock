@@ -4367,7 +4367,7 @@ __metadata:
     react-dom: "npm:^18.2.0"
     react-helmet: "npm:^6.1.0"
     react-remark: "npm:^2.1.0"
-    reactive-charts: "https://github.com/andydevs/reactive-charts.git#workspace=reactive-charts"
+    reactive-charts: "file:./other-packages/reactive-charts-v1.0.0.tgz"
     sharp: "npm:^0.34.5"
     styled-components: "npm:^6.0.7"
     tsparticles-slim: "npm:^2.12.0"
@@ -13499,13 +13499,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"reactive-charts@https://github.com/andydevs/reactive-charts.git#workspace=reactive-charts":
+"reactive-charts@file:./other-packages/reactive-charts-v1.0.0.tgz::locator=andydevs.github.io%40workspace%3A.":
   version: 1.0.0
-  resolution: "reactive-charts@https://github.com/andydevs/reactive-charts.git#workspace=reactive-charts&commit=a4fc1bb253e79c2dd781012e219688e28bc3fdb0"
+  resolution: "reactive-charts@file:./other-packages/reactive-charts-v1.0.0.tgz#./other-packages/reactive-charts-v1.0.0.tgz::hash=35ff36&locator=andydevs.github.io%40workspace%3A."
   dependencies:
     lodash: "npm:^4.18.1"
     react: "npm:^19.2.0"
-  checksum: 10c0/02bd1b82bd22b03e1d1a4c71a9895c5293a89f646d0d26c3761d5be28ee7833f528211ac9d2f6333667f5511f42f387dd8a617e8302c54d140bbaab2475b5cc6
+  checksum: 10c0/dcd44cb3b6ee8feda68adbd67d1eacf63559c25db593988c0d7a0834147350025d0edd110a11a2c6c76724c54648ab5b3930debe7674d5d3804ffb8b56f8e0a2
   languageName: node
   linkType: hard
 

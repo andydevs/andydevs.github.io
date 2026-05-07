@@ -46,7 +46,7 @@
     "react-dom": "^18.2.0",
     "react-helmet": "^6.1.0",
     "react-remark": "^2.1.0",
-    "reactive-charts": "https://github.com/andydevs/reactive-charts.git#workspace=reactive-charts",
+    "reactive-charts": "file:./other-packages/reactive-charts-v1.0.0.tgz",
     "sharp": "^0.34.5",
     "styled-components": "^6.0.7",
     "tsparticles-slim": "^2.12.0"

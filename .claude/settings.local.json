@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(node -e \"require\\('sharp'\\)\")",
+      "Bash(node -e \"process.versions\")"
+    ]
+  }
+}

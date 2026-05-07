@@ -1,5 +1,6 @@
 {
   "name": "andydevs.github.io",
+  "packageManager": "yarn@4.14.1",
   "private": true,
   "description": "Andydevs github website!",
   "version": "0.1.0",
@@ -36,7 +37,7 @@
     "gatsby-plugin-scroll-reveal": "0.0.7",
     "gatsby-plugin-sharp": "^5.12.0",
     "gatsby-plugin-styled-components": "^6.12.0",
-    "gatsby-source-contentful": "^8.13.2",
+    "gatsby-source-contentful": "^8.17.0",
     "gatsby-source-filesystem": "^5.12.0",
     "gatsby-transformer-json": "^5.12.0",
     "gatsby-transformer-sharp": "^5.12.0",
@@ -45,7 +46,8 @@
     "react-dom": "^18.2.0",
     "react-helmet": "^6.1.0",
     "react-remark": "^2.1.0",
-    "sharp": "^0.34.1",
+    "reactive-charts": "https://github.com/andydevs/reactive-charts.git#workspace=reactive-charts",
+    "sharp": "^0.34.5",
     "styled-components": "^6.0.7",
     "tsparticles-slim": "^2.12.0"
   },

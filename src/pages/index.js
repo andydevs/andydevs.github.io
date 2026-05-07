@@ -8,6 +8,7 @@ import About from '../sections/about'
 import Projects from '../sections/projects'
 import Work from '../sections/work'
 import Footer from '../sections/footer'
+import Current from '../sections/current'
 
 const StyledMain = styled.main`
     margin: 0pt auto;
@@ -46,6 +47,7 @@ export default function Home() {
             <Hero />
             <StyledMain>
                 <About />
+                <Current />
                 <Projects />
                 <Work />
             </StyledMain>

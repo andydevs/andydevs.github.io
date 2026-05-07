@@ -74,7 +74,6 @@ const StyledLink = styled.a`
     }
 `
 
-const article = subject => (/^[aeiouAEIOU]/.test(subject) ? 'an' : 'a')
 
 export default function About() {
     // Query
@@ -128,9 +127,7 @@ export default function About() {
                         data-sal-duration="500"
                         data-sal-easing="ease"
                     >
-                        {about.site.siteMetadata.description
-                            .replace('#jobTitle', `${article(about.currentJob.jobTitle)} ${about.currentJob.jobTitle}`)
-                            .replace('#company', about.currentJob.companyName)}
+                        {about.site.siteMetadata.description}
                     </Blurb>
                     <StyledLink
                         href={`https://github.com/${about.site.siteMetadata.contact.github}`}

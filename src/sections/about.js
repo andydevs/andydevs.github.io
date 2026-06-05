@@ -88,13 +88,11 @@ export default function About() {
                 }
             }
             profile: contentfulAsset(title: { glob: "Profile Photo" }) {
-                gatsbyImageData(
-                    layout: FIXED
-                    width: 300
-                    aspectRatio: 1
-                )
+                gatsbyImageData(layout: FIXED, width: 300, aspectRatio: 1)
             }
-            currentJob: contentfulWorkExperience(currentlyWorking: {eq: true}) {
+            currentJob: contentfulWorkExperience(
+                currentlyWorking: { eq: true }
+            ) {
                 jobTitle
                 companyName
             }
@@ -107,8 +105,7 @@ export default function About() {
                 data-sal="slide-up"
                 data-sal-delay="300"
                 data-sal-duration="500"
-                data-sal-easing="ease"
-            >
+                data-sal-easing="ease">
                 About Me
             </h1>
             <Grid>
@@ -125,8 +122,7 @@ export default function About() {
                         data-sal="slide-up"
                         data-sal-delay="200"
                         data-sal-duration="500"
-                        data-sal-easing="ease"
-                    >
+                        data-sal-easing="ease">
                         {about.site.siteMetadata.description}
                     </Blurb>
                     <StyledLink
@@ -134,8 +130,7 @@ export default function About() {
                         data-sal="slide-up"
                         data-sal-delay="300"
                         data-sal-duration="500"
-                        data-sal-easing="ease"
-                    >
+                        data-sal-easing="ease">
                         <FontAwesomeIcon className="icon" icon={faGithub} />
                         <span className="text">Check out my GitHub</span>
                     </StyledLink>
